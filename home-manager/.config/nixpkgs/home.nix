@@ -69,20 +69,8 @@
           "commands" = ["whichkey.show"];
         }
         {
-          "before" = ["<leader>" "s"];
-          "commands" = ["workbench.action.files.save"];
-        }
-        {
           "before" = ["<leader>" "n"];
           "commands" = [":nohl"];
-        }
-        {
-          "before" = ["<leader>" "b" "d"];
-          "commands" = ["workbench.action.closeActiveEditor"];
-        }
-        {
-          "before" = ["<leader>" "b" "l"];
-          "commands" = ["workbench.action.quickOpen"];
         }
       ];
       "whichkey.sortOrder" = "alphabetically";
@@ -95,8 +83,14 @@
           "command" = "workbench.action.showCommands";
         }
         {
+          "key" = "s";
+          "name" = "save";
+          "type" = "command";
+          "command" = "workbench.action.files.save";
+        }
+        {
           "key" = "b";
-          "name" = "buffers...";
+          "name" = "+buffers";
           "type" = "bindings";
           "bindings" = [
             {
@@ -104,6 +98,89 @@
               "name" = "show all";
               "type" = "command";
               "command" = "workbench.action.showAllEditors";
+            }
+            {
+              "key" = "d";
+              "name" = "close active editor";
+              "type" = "command";
+              "command" = "workbench.action.closeActiveEditor";
+            }
+            {
+              "key" = "n";
+              "name" = "next editor";
+              "type" = "command";
+              "command" = "workbench.action.nextEditor";
+            }
+            {
+              "key" = "p";
+              "name" = "previous editor";
+              "type" = "command";
+              "command" = "workbench.action.previousEditor";
+            }
+            {
+              "key" = "u";
+              "name" = "reopen closed editor";
+              "type" = "command";
+              "command" = "workbench.action.reopenClosedEditor";
+            }
+            {
+              "key" = "y";
+              "name" = "yank buffer";
+              "type" = "commands";
+              "commands" = [
+                "editor.action.selectAll"
+                "editor.action.clipboardCopyAction"
+                "cancelSelection"
+              ];
+            }
+          ];
+        }
+        {
+          "key" = "e";
+          "name" = "toggle explorer";
+          "type" = "command";
+          "command" = "workbench.action.toggleSidebarVisibility";
+        }
+        {
+          "key" = "g";
+          "name" = "+git";
+          "type" = "bindings";
+          "bindings" = [
+            {
+              "key" = "a";
+              "name" = "stage";
+              "type" = "command";
+              "command" = "git.stage";
+            }
+            {
+              "key" = "o";
+              "name" = "checkout";
+              "type" = "command";
+              "command" = "git.checkout";
+            }
+            {
+              "key" = "c";
+              "name" = "commit";
+              "type" = "command";
+              "command" = "git.commit";
+            }
+            {
+              "key" = "p";
+              "name" = "pull";
+              "type" = "command";
+              "command" = "git.pull";
+            }
+            {
+              "key" = "P";
+              "name" = "push";
+              "type" = "command";
+              "command" = "git.push";
+            }
+            {
+              "key" = "s";
+              "name" = "status";
+              "type" = "command";
+              "command" = "gitlens.showQuickRepoStatus";
             }
           ];
         }
