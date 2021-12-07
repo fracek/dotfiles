@@ -14,6 +14,7 @@
     i3lock
     mediainfo
     nix-bash-completions
+    neovim
     ranger
     tig
     ueberzug
@@ -21,7 +22,7 @@
     unzip
   ];
 
-  home.keyboard.layout = "dvorak";
+  home.keyboard.layout = "us";
 
   xsession.enable = true;
 
@@ -46,12 +47,67 @@
     enable = true;
     userSettings = {
       "editor.fontFamily" = "monospace";
-      "workbench.colorTheme" = "Moin Light";
+      "workbench.colorTheme" = "Paper White";
+      "workbench.iconTheme" = null;
       "workbench.activityBar.visible" = false;
-      "workbench.statusBar.visible" = false;
+      "workbench.statusBar.visible" = true;
       "editor.minimap.enabled" = false;
       "editor.lineNumbers" = "relative";
       "window.menuBarVisibility" = "toggle";
+      "gitlens.advanced.telemetry.enabled" = false;
+      "gitlens.codeLens.enabled" = false;
+      "gitlens.currentLine.enabled" = false;
+      "vim.easymotion" = true;
+      "vim.incsearch" = true;
+      "vim.useSystemClipboard" = true;
+      "vim.useCtrlKeys" = true;
+      "vim.hlsearch" = true;
+      "vim.leader" = ",";
+      "vim.normalModeKeyBindings" = [
+        {
+          "before" = ["<leader>" "<space>"];
+          "commands" = ["whichkey.show"];
+        }
+        {
+          "before" = ["<leader>" "s"];
+          "commands" = ["workbench.action.files.save"];
+        }
+        {
+          "before" = ["<leader>" "n"];
+          "commands" = [":nohl"];
+        }
+        {
+          "before" = ["<leader>" "b" "d"];
+          "commands" = ["workbench.action.closeActiveEditor"];
+        }
+        {
+          "before" = ["<leader>" "b" "l"];
+          "commands" = ["workbench.action.quickOpen"];
+        }
+      ];
+      "whichkey.sortOrder" = "alphabetically";
+      "whichkey.delay" = 0;
+      "whichkey.bindings" = [
+        {
+          "key" = ";";
+          "name" = "commands";
+          "type" = "command";
+          "command" = "workbench.action.showCommands";
+        }
+        {
+          "key" = "b";
+          "name" = "buffers...";
+          "type" = "bindings";
+          "bindings" = [
+            {
+              "key" = "b";
+              "name" = "show all";
+              "type" = "command";
+              "command" = "workbench.action.showAllEditors";
+            }
+          ];
+        }
+      ];
       "[nix]" = {
         "editor.insertSpaces" = true;
         "editor.tabSize" = 2;
@@ -59,73 +115,23 @@
     };
     keybindings = [
       {
-        key = "tab";
-        command = "extension.vim_tab";
-        when = "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert' && editorLangId != 'magit'";
+        "key" = "ctrl+h";
+        "command" = "workbench.action.navigateLeft";
       }
       {
-        key = "tab";
-        command = "-extension.vim_tab";
-        when = "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'";
+        "key" = "ctrl+l";
+        "command" = "workbench.action.navigateRight";
       }
       {
-        key = "x";
-        command = "magit.discard-at-point";
-        when = "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/";
+        "key" = "ctrl+j";
+        "command" = "workbench.action.navigateDown";
       }
       {
-        key = "k";
-        command = "-magit.discard-at-point";
-      }
-      {
-        key = "-";
-        command = "magit.reverse-at-point";
-        when = "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/";
-      }
-      {
-        key = "v";
-        command = "-magit.reverse-at-point";
-      }
-      {
-        key = "shift+-";
-        command = "magit.reverting";
-        when = "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/";
-      }
-      {
-        key = "shift+v";
-        command = "-magit.reverting";
-      }
-      {
-        key = "shift+o";
-        command = "magit.resetting";
-        when = "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/";
-      }
-      {
-        key = "shift+x";
-        command = "-magit.resetting";
-      }
-      {
-        key = "x";
-        command = "-magit.reset-mixed";
-      }
-      {
-        key = "ctrl+u x";
-        command = "-magit.reset-hard";
+        "key" = "ctrl+k";
+        "command" = "workbench.action.navigateUp";
       }
     ];
     extensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-      {
-        name = "moin-theme";
-        publisher = "nwwdles";
-        version = "1.2.1";
-        sha256 = "1anzh2x6434izdxf9c2844ygc3z04fljpc61nqmwqiz3hkwllnxf";
-      }
-      {
-        name = "magit";
-        publisher = "kahole";
-        version = "0.6.23";
-        sha256 = "0pfm45ln51wadqj5lccab7hmdd2j0a7dxh7fbfkp3gabicxndd02";
-      }
     ];
   };
 
@@ -137,28 +143,28 @@
       };
       colors = {
         primary = {
-          background = "#ffffff";
-          foreground = "#000000";
+          background = "#fefeff";
+          foreground = "#000338";
         };
         normal = {
-          black = "#000000";
-          red = "#a60000";
-          green = "#005e00";
-          yellow = "#813e00";
-          blue = "#0031a9";
-          magenta = "#721045";
-          cyan = "#00538b";
-          white = "#ffffff";
+          black = "#fdf6e3";
+          red = "#f74566";
+          green = "#74f745";
+          yellow = "#f7c845";
+          blue = "#4592f7";
+          magenta = "#d445f7";
+          cyan = "#59c0f8";
+          white = "#e2e4f3";
         };
         bright = {
-          black = "#282828";
-          red = "#7f1010";
-          green = "#104410";
-          yellow = "#5f4400";
-          blue = "#003497";
-          magenta = "#752f50";
-          cyan = "#005007";
-          white = "#f8f8f8";
+          black = "#160741";
+          red = "#f9718a";
+          green = "#8af862";
+          yellow = "#f9d36c";
+          blue = "#6ca9f9";
+          magenta = "#de71f9";
+          cyan = "#89d3fa";
+          white = "#fdf6e3";
         };
       };
     };
@@ -172,25 +178,6 @@
         pkgs.rofi-emoji
         pkgs.rofi-calc
       ];
-    };
-    padding = 10;
-    colors = {
-      window = {
-        background = "#ffffff";
-        border = "#00d3d0";
-        separator = "#00d3d0";
-      };
-      rows = {
-        normal = {
-          background = "#ffffff";
-          backgroundAlt = "#ffffff";
-          foreground = "#000000";
-          highlight = {
-            background = "#00d3d0";
-            foreground = "#000000";
-          };
-        };
-      };
     };
   };
 

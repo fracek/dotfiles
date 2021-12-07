@@ -10,23 +10,23 @@ theme.font = "Iosevka SS08 9"
 theme.icon_theme = "Papirus"
 
 local solarized = {
-    base03 = "#002b36",
-    base02 = "#073642",
-    base01 = "#586e75",
-    base00 = "#657b83",
-    base0 = "#839496",
-    base1 = "#93a1a1",
-    base2 = "#eee8d5",
-    base3 = "#fdf6e3",
+    base03 = "#000338",
+    base02 = "#160741",
+    base01 = "#586174",
+    base00 = "#646c82",
+    base0 = "#838d95",
+    base1 = "#aab1b5",
+    base2 = "#e2e4f3",
+    base3 = "#fefeff",
 
-    yellow = "#b58900",
-    orange = "#cb4b16",
-    red = "#dc322f",
-    magenta = "#d33682",
-    violet = "#6c71c4",
-    blue = "#268bd2",
-    cyan = "#2aa198",
-    green = "#859900"
+    yellow = "#f7c845",
+    orange = "#f78945",
+    red = "#f74566",
+    magenta = "#d445f7",
+    violet = "#9b45f7",
+    blue = "#4592f7",
+    cyan = "#59c0f8",
+    green = "#74f745"
 }
 
 local colors = {
