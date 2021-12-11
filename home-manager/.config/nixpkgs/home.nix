@@ -139,13 +139,19 @@
           "key" = "e";
           "name" = "toggle explorer";
           "type" = "command";
-          "command" = "workbench.action.toggleSidebarVisibility";
+          "command" = "workbench.view.explorer";
         }
         {
           "key" = "g";
           "name" = "+git";
           "type" = "bindings";
           "bindings" = [
+            {
+              "key" = "v";
+              "name" = "view";
+              "type" = "command";
+              "command" = "workbench.view.scm";
+            }
             {
               "key" = "a";
               "name" = "stage";
@@ -206,6 +212,51 @@
       {
         "key" = "ctrl+k";
         "command" = "workbench.action.navigateUp";
+      }
+      {
+        "key" = "r";
+        "command" = "renameFile";
+        "when" = "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus";
+      }
+      {
+        "key" = "enter";
+        "command" = "-renameFile";
+        "when" = "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus";
+      }
+      {
+        "key" = "j";
+        "command" = "list.focusDown";
+        "when" = "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus";
+      }
+      {
+        "key" = "k";
+        "command" = "list.focusUp";
+        "when" = "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus";
+      }
+      {
+        "key" = "ctrl+j";
+        "command" = "selectNextSuggestion";
+        "when" = "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible";
+      }
+      {
+        "key" = "ctrl+k";
+        "command" = "selectPrevSuggestion";
+        "when" = "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible";
+      }
+      {
+        "key" = "ctrl+j";
+        "command" = "workbench.action.quickOpenNavigateNext";
+        "when" = "inQuickOpen";
+      }
+      {
+        "key" = "ctrl+k";
+        "command" = "workbench.action.quickOpenNavigatePrevious";
+        "when" = "inQuickOpen";
+      }
+      {
+        "key" = "a";
+        "command" = "git.stage";
+        "when" = "listFocus && sideBarFocus && activeViewlet == 'workbench.view.scm'";
       }
     ];
     extensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace [
