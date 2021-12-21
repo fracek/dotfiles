@@ -35,7 +35,14 @@
 
   programs.bash = {
     enable = true;
+    shellAliases = {
+      hu = "${pkgs.exa}/bin/exa ";
+      ha = "${pkgs.exa}/bin/exa -a";
+      hh = "${pkgs.exa}/bin/exa -la";
+      ht = "${pkgs.exa}/bin/exa --tree";
+    };
     initExtra = ''
+      set -o vi
       export EDITOR=vim
       source $HOME/.nix-profile/etc/profile.d/bash_completion.sh
       source ${pkgs.bashCompletion}/share/bash-completion/bash_completion
