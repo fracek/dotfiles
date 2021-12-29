@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   home.packages = with pkgs; [
@@ -58,6 +58,7 @@
       "workbench.iconTheme" = null;
       "workbench.activityBar.visible" = false;
       "workbench.statusBar.visible" = true;
+      "workbench.sideBar.location" = "right";
       "editor.minimap.enabled" = false;
       "editor.lineNumbers" = "relative";
       "window.menuBarVisibility" = "toggle";
