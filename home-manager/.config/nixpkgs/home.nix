@@ -351,7 +351,7 @@
 
         "#window" = {
           width = 600;
-          border = 1;
+          border = 4;
           border-radius = 0;
           border-color = mkLiteral "#000338";
         };

@@ -46,7 +46,3 @@ client.connect_signal("request::titlebars", window.setup_titlebar)
 client.connect_signal("focus", window.draw_focused_border)
 client.connect_signal("unfocus", window.draw_unfocused_border)
 client.connect_signal("mouse::enter", mouse.sloppy_focus)
-
-client.connect_signal("manage", window.draw_rounded_border)
-client.connect_signal("property::floating", window.draw_rounded_border)
-client.connect_signal("request::geometry", window.draw_rounded_border)
