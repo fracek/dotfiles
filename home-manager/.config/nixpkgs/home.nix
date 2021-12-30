@@ -145,9 +145,15 @@
         }
         {
           "key" = "e";
-          "name" = "toggle explorer";
+          "name" = "view explorer";
           "type" = "command";
           "command" = "workbench.view.explorer";
+        }
+        {
+          "key" = "t";
+          "name" = "toggle sidebar";
+          "type" = "command";
+          "command" = "workbench.action.toggleSidebarVisibility";
         }
         {
           "key" = "g";
