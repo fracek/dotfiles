@@ -89,6 +89,8 @@ theme.power_icon = dir .. "/icons/power.svg"
 theme.tasklist_disable_icon = true
 theme.tasklist_bg_focus = solarized.magenta
 theme.tasklist_bg_normal = solarized.cyan
+theme.tasklist_fg_normal = solarized.base1
+theme.tasklist_fg_focus = solarized.base3
 
 theme.wibar_ontop = true
 theme.wibar_type = "dock"
@@ -129,9 +131,9 @@ theme.titlebar_maximized_button_focus_inactive = "/usr/share/awesome/themes/open
 theme.titlebar_maximized_button_normal_active = "/usr/share/awesome/themes/openSUSE/titlebar/maximized_focus_active.png"
 theme.titlebar_maximized_button_focus_active = "/usr/share/awesome/themes/openSUSE/titlebar/maximized_focus_active.png"
 
-local wallpaper_path = dir .. "/wallpapers/landscape.jpeg"
+local wallpaper_path = dir .. "/wallpapers/synth.jpg"
 theme.wallpaper = function(s)
-    gears.wallpaper.centered(wallpaper_path, s)
+    gears.wallpaper.fit(wallpaper_path, s)
 end
 
 
