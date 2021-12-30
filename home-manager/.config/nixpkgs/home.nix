@@ -340,5 +340,10 @@
 
   services.picom = {
     enable = true;
+    shadow = true;
+    shadowOffsets = [ (-4) (-4) ];
+    extraOptions = ''
+      shadow-radius = 8;
+    '';
   };
 }
