@@ -315,6 +315,93 @@
         pkgs.rofi-calc
       ];
     };
+    extraConfig = {
+      fixed-num-lines = true;
+      case-sensitive = false;
+      matching = "fuzzy";
+    };
+    theme =
+      let
+        inherit (config.lib.formats.rasi) mkLiteral;
+      in {
+        "*" = {
+          margin = 0;
+          margin-bottom = 0;
+          margin-top = 0;
+          spacing = 0;
+          font = "monospace 10";
+          background-color = mkLiteral "#fefeff";
+          text-color = mkLiteral "#000338";
+        };
+
+        "#listview" = {
+          spacing = 0;
+          scrollbar = true;
+          dynamic = true;
+          lines = 10;
+          margin = 0;
+          padding-top = 500;
+        };
+
+        "#window" = {
+          width = 600;
+          border = 1;
+          border-radius = 0;
+          border-color = mkLiteral "#000338";
+        };
+
+        "#mainbox" = {
+          padding = 0;
+          border = 0;
+        };
+
+        "#element" = {
+          padding = 8;
+        };
+
+        "#element.normal.normal" = {
+          background-color = mkLiteral "#fefeff";
+          text-color = mkLiteral "#000338";
+        };
+
+        "#element.alternate.normal" = {
+          background-color = mkLiteral "#fefeff";
+          text-color = mkLiteral "#000338";
+        };
+
+        "#element.selected.normal" = {
+          background-color = mkLiteral "#e2e4f3";
+          text-color = mkLiteral "#000338";
+        };
+
+        "#inputbar" = {
+          margin = 0;
+          spacing = 0;
+          border = mkLiteral "0 0 1 0";
+          border-color = mkLiteral "#000338";
+        };
+
+        "#prompt" = {
+          padding = 8;
+          border = mkLiteral "0 1 0 0";
+          border-color = mkLiteral "#000338";
+        };
+
+        "#entry" = {
+          padding = 8;
+        };
+
+        "#scrollbar" = {
+          width = 0;
+          border = 0;
+          handle-width = 0;
+        };
+
+        "element-text, element-icon" = {
+          background-color = mkLiteral "inherit";
+          text-color = mkLiteral "inherit";
+        };
+      };
   };
 
   programs.git = {
@@ -340,6 +427,7 @@
 
   services.picom = {
     enable = true;
+    experimentalBackends = true;
     shadow = true;
     shadowOffsets = [ (-4) (-4) ];
     extraOptions = ''
