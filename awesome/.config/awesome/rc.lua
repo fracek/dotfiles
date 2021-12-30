@@ -14,7 +14,6 @@ do
     local theme_name = "chameleon"
     local theme_dir = os.getenv("HOME") .. "/.config/awesome/themes/"
     beautiful.init(theme_dir .. theme_name .. "/theme.lua")
-    --beautiful.init(awful.util.get_themes_dir() .. "openSUSE/theme.lua")
 end
 
 require("module.startup")

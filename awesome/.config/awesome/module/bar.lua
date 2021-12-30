@@ -61,7 +61,7 @@ local function create_tasklist(s)
         buttons = nil,
         layout = {
             spacing = 1,
-            layout = wibox.layout.fixed.horizontal
+            layout = wibox.layout.flex.horizontal
         },
         widget_template = {
             {
@@ -72,16 +72,17 @@ local function create_tasklist(s)
             },
             {
                 {
-                    id = "clienticon",
-                    widget = awful.widget.clienticon,
+                    {
+                        id = "text_role",
+                        widget = wibox.widget.textbox,
+                    },
+                    halign = 'center',
+                    valign = 'center',
+                    widget = wibox.container.place,
                 },
                 margins = dpi(2),
                 widget = wibox.container.margin
             },
-            nil,
-            create_callback = function(self, c, index, objects) --luacheck: no unused args
-                self:get_children_by_id("clienticon")[1].client = c
-            end,
             layout = wibox.layout.align.vertical,
         },
     }
@@ -373,15 +374,18 @@ function bar.set_bar(s)
 
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
-        expand = "none",
+        expand = "inside",
         {
             -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             s.mytaglist,
         },
         {
-            layout = wibox.layout.fixed.horizontal,
-            s.mytasklist, -- Middle widget
+            -- Middle widgets
+            widget = wibox.container.margin,
+            left = dpi(100),
+            right = dpi(100),
+            s.mytasklist, 
         },
         {
             -- Right widgets
