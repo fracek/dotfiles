@@ -25,6 +25,7 @@ local rules = require("module.rules")
 local mouse = require("module.mouse")
 local window = require("module.window")
 local wallpaper = require("module.wallpaper")
+local screen_ = require("module.screen")
 
 awful.layout.layouts = layout.layouts
 awful.rules.rules = rules.rules
@@ -35,6 +36,7 @@ root.buttons(keys.root_buttons)
 awful.screen.connect_for_each_screen(function(s)
     wallpaper.set_wallpaper(s)
     bar.set_bar(s)
+    screen_.set_padding(s)
 end)
 
 screen.connect_signal("property::geometry", wallpaper.set_wallpaper)
