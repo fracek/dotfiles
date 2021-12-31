@@ -81,7 +81,7 @@ theme.power_button_bg_focus = solarized.base03
 theme.menu_height = dpi(12)
 theme.menu_width = dpi(200)
 
-local dir = os.getenv('HOME') .. "/.config/awesome/themes/chameleon/"
+local dir = os.getenv('HOME') .. "/.config/awesome/themes/synth/"
 
 theme.menu_submenu_icon = dir .. "/icons/submenu.svg"
 theme.power_icon = dir .. "/icons/power.svg"
@@ -111,47 +111,14 @@ theme.titlebar_fg_focus = colors.bg
 theme.titlebar_close_button_normal = dir .. "/icons/close.svg"
 theme.titlebar_close_button_focus = theme.titlebar_close_button_normal
 
-theme.titlebar_ontop_button_normal_inactive = "/usr/share/awesome/themes/openSUSE/titlebar/ontop_focus_inactive.png"
-theme.titlebar_ontop_button_focus_inactive = "/usr/share/awesome/themes/openSUSE/titlebar/ontop_focus_inactive.png"
-theme.titlebar_ontop_button_normal_active = "/usr/share/awesome/themes/openSUSE/titlebar/ontop_focus_active.png"
-theme.titlebar_ontop_button_focus_active = "/usr/share/awesome/themes/openSUSE/titlebar/ontop_focus_active.png"
-
-theme.titlebar_sticky_button_normal_inactive = "/usr/share/awesome/themes/openSUSE/titlebar/sticky_focus_inactive.png"
-theme.titlebar_sticky_button_focus_inactive = "/usr/share/awesome/themes/openSUSE/titlebar/sticky_focus_inactive.png"
-theme.titlebar_sticky_button_normal_active = "/usr/share/awesome/themes/openSUSE/titlebar/sticky_focus_active.png"
-theme.titlebar_sticky_button_focus_active = "/usr/share/awesome/themes/openSUSE/titlebar/sticky_focus_active.png"
-
 theme.titlebar_floating_button_normal_inactive = dir .. "/icons/float_inactive.svg"
 theme.titlebar_floating_button_focus_inactive = theme.titlebar_floating_button_normal_inactive
 theme.titlebar_floating_button_normal_active = dir .. "/icons/float_active.svg"
 theme.titlebar_floating_button_focus_active = theme.titlebar_floating_button_normal_active
 
-theme.titlebar_maximized_button_normal_inactive = "/usr/share/awesome/themes/openSUSE/titlebar/maximized_focus_inactive.png"
-theme.titlebar_maximized_button_focus_inactive = "/usr/share/awesome/themes/openSUSE/titlebar/maximized_focus_inactive.png"
-theme.titlebar_maximized_button_normal_active = "/usr/share/awesome/themes/openSUSE/titlebar/maximized_focus_active.png"
-theme.titlebar_maximized_button_focus_active = "/usr/share/awesome/themes/openSUSE/titlebar/maximized_focus_active.png"
-
 local wallpaper_path = dir .. "/wallpapers/synth.jpg"
 theme.wallpaper = function(s)
     gears.wallpaper.fit(wallpaper_path, s)
 end
-
-
--- You can use your own layout icons like this:
-theme.layout_fairh = "/usr/share/awesome/themes/openSUSE/layouts/fairhw.png"
-theme.layout_fairv = "/usr/share/awesome/themes/openSUSE/layouts/fairvw.png"
-theme.layout_floating = "/usr/share/awesome/themes/openSUSE/layouts/floatingw.png"
-theme.layout_magnifier = "/usr/share/awesome/themes/openSUSE/layouts/magnifierw.png"
-theme.layout_max = "/usr/share/awesome/themes/openSUSE/layouts/maxw.png"
-theme.layout_fullscreen = "/usr/share/awesome/themes/openSUSE/layouts/fullscreenw.png"
-theme.layout_tilebottom = "/usr/share/awesome/themes/openSUSE/layouts/tilebottomw.png"
-theme.layout_tileleft = "/usr/share/awesome/themes/openSUSE/layouts/tileleftw.png"
-theme.layout_tile = "/usr/share/awesome/themes/openSUSE/layouts/tilew.png"
-theme.layout_tiletop = "/usr/share/awesome/themes/openSUSE/layouts/tiletopw.png"
-theme.layout_spiral = "/usr/share/awesome/themes/openSUSE/layouts/spiralw.png"
-theme.layout_dwindle = "/usr/share/awesome/themes/openSUSE/layouts/dwindlew.png"
-
-theme.awesome_icon = "/usr/share/awesome/icons/awesome16.png"
-theme.opensuse_icon = "/usr/share/awesome/themes/openSUSE/opensusegeeko.png"
 
 return theme

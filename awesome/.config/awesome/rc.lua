@@ -11,7 +11,7 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 local vicious = require("vicious")
 
 do
-    local theme_name = "chameleon"
+    local theme_name = "synth"
     local theme_dir = os.getenv("HOME") .. "/.config/awesome/themes/"
     beautiful.init(theme_dir .. theme_name .. "/theme.lua")
 end
