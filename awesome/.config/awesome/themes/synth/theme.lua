@@ -5,7 +5,7 @@ local dpi = xresources.apply_dpi
 
 local theme = {}
 
-theme.font = "Iosevka SS08 9"
+theme.font = "monospace 8"
 
 theme.icon_theme = "Papirus"
 

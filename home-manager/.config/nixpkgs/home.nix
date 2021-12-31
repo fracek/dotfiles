@@ -54,6 +54,7 @@
     enable = true;
     userSettings = {
       "editor.fontFamily" = "monospace";
+      "editor.fontSize" = "14";
       "workbench.colorTheme" = "Paper White";
       "workbench.iconTheme" = null;
       "workbench.activityBar.visible" = false;
@@ -281,7 +282,7 @@
     enable = true;
     settings = {
       font = {
-        size = 10;
+        size = 9;
       };
       colors = {
         primary = {
@@ -314,7 +315,7 @@
 
   programs.rofi = {
     enable = true;
-    font = "monospace 10";
+    font = "monospace 9";
     package = pkgs.rofi.override {
       plugins = [
         pkgs.rofi-emoji
@@ -335,7 +336,7 @@
           margin-bottom = 0;
           margin-top = 0;
           spacing = 0;
-          font = "monospace 10";
+          font = "monospace 9";
           background-color = mkLiteral "#fefeff";
           text-color = mkLiteral "#000338";
         };
