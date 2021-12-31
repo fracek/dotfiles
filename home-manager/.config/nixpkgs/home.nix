@@ -54,7 +54,7 @@
     enable = true;
     userSettings = {
       "editor.fontFamily" = "monospace";
-      "editor.fontSize" = "14";
+      "editor.fontSize" = 12;
       "workbench.colorTheme" = "Paper White";
       "workbench.iconTheme" = null;
       "workbench.activityBar.visible" = false;
