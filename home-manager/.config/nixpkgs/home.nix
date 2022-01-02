@@ -436,9 +436,10 @@
     enable = true;
     experimentalBackends = true;
     shadow = true;
-    shadowOffsets = [ (-4) (-4) ];
+    shadowOffsets = [ (-20) (-5) ];
+    shadowOpacity = "0.6";
     extraOptions = ''
-      shadow-radius = 8;
+      shadow-radius = 20;
     '';
   };
 }
