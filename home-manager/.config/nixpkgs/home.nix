@@ -47,6 +47,7 @@
       source $HOME/.nix-profile/etc/profile.d/bash_completion.sh
       source ${pkgs.bashCompletion}/share/bash-completion/bash_completion
       source ${pkgs.nix-bash-completions}/share/bash-completion/completions/*
+      export PS1="[\[$(tput sgr0)\]\[\033[38;5;5m\]\u@\h\[$(tput sgr0)\]:\[$(tput sgr0)\]\[\033[38;5;6m\]\w\[$(tput sgr0)\]]\\$\[$(tput sgr0)\] "
     '';
   };
 
