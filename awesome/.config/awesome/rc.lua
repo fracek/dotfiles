@@ -41,10 +41,10 @@ end)
 
 screen.connect_signal("property::geometry", wallpaper.set_wallpaper)
 
-client.connect_signal("property::floating", window.show_titlebar_on_floating)
+client.connect_signal("property::floating", window.always_show_titlebar)
 client.connect_signal("manage", window.set_as_slave)
-client.connect_signal("manage", window.show_titlebar_on_floating)
-client.connect_signal("request::titlebars", window.setup_titlebar)
+client.connect_signal("manage", window.always_show_titlebar)
+client.connect_signal("request::titlebars", window.setup_double_border)
 client.connect_signal("focus", window.draw_focused_border)
 client.connect_signal("unfocus", window.draw_unfocused_border)
 client.connect_signal("mouse::enter", mouse.sloppy_focus)

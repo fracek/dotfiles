@@ -35,10 +35,6 @@ local colors = {
 }
 
 theme.bg_normal = colors.bg
-theme.bg_focus = solarized.base03
-theme.bg_urgent = theme.magenta
-theme.bg_minimize = theme.bg_normal
-
 theme.fg_normal = colors.fg
 theme.fg_focus = colors.fg
 theme.fg_urgent = theme.fg_normal
@@ -47,8 +43,11 @@ theme.fg_minimize = theme.fg_normal
 theme.useless_gap = dpi(32)
 theme.border_width = dpi(4)
 theme.border_normal = theme.bg_normal
-theme.border_focus = theme.bg_focus
+theme.border_focus = theme.bg_normal
 theme.border_marked = theme.border_normal
+
+theme.titlebar_bg_normal = solarized.base1
+theme.titlebar_bg_focus = solarized.base03
 
 theme.taglist_bg_focus = solarized.magenta
 theme.taglist_fg_focus = solarized.magenta
@@ -105,16 +104,6 @@ theme.notification_width = dpi(200)
 theme.notification_height = dpi(50)
 theme.notification_icon_size = dpi(50)
 theme.notification_margin = dpi(10)
-
--- Define the image to load
-theme.titlebar_fg_focus = colors.bg
-theme.titlebar_close_button_normal = dir .. "/icons/close.svg"
-theme.titlebar_close_button_focus = theme.titlebar_close_button_normal
-
-theme.titlebar_floating_button_normal_inactive = dir .. "/icons/float_inactive.svg"
-theme.titlebar_floating_button_focus_inactive = theme.titlebar_floating_button_normal_inactive
-theme.titlebar_floating_button_normal_active = dir .. "/icons/float_active.svg"
-theme.titlebar_floating_button_focus_active = theme.titlebar_floating_button_normal_active
 
 local wallpaper_path = dir .. "/wallpapers/synth.jpg"
 theme.wallpaper = function(s)

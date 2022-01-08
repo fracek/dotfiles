@@ -49,6 +49,51 @@ function window.setup_titlebar(c)
     }
 end
 
+function window.setup_double_border(c)
+    local buttons = gears.table.join(
+        awful.button({}, 1, function()
+            c:emit_signal('request::activate', 'titlebar', {raise = true})
+            awful.mouse.client.move(c)
+        end),
+        awful.button({}, 3, function()
+            c:emit_signal('request::activate', 'titlebar', {raise = true})
+            awful.mouse.client.resize(c)
+        end)
+    )
+
+    awful.titlebar(c, {
+        size = beautiful.border_width or 2,
+        position = 'top'
+    }):setup({
+        buttons = buttons,
+        layout = wibox.layout.align.horizontal
+    })
+
+    awful.titlebar(c, {
+        size = beautiful.border_width or 2,
+        position = 'bottom'
+    }):setup({
+        buttons = buttons,
+        layout = wibox.layout.align.horizontal
+    })
+
+    awful.titlebar(c, {
+        size = beautiful.border_width or 2,
+        position = 'left'
+    }):setup({
+        buttons = buttons,
+        layout = wibox.layout.align.horizontal
+    })
+
+    awful.titlebar(c, {
+        size = beautiful.border_width or 2,
+        position = 'right'
+    }):setup({
+        buttons = buttons,
+        layout = wibox.layout.align.horizontal
+    })
+end
+
 function window.show_titlebar_on_floating(c)
     if c.floating then
         awful.titlebar.show(c)
