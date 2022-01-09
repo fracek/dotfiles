@@ -429,6 +429,10 @@
     };
   };
 
+  programs.fzf = {
+    enable = true;
+  };
+
   services.gnome-keyring = {
     enable = true;
   };
