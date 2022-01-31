@@ -33,6 +33,12 @@
     ];
   };
 
+  xsession.pointerCursor = {
+    package = pkgs.quintom-cursor-theme;
+    name = "Quintom_Snow";
+    size = 24;
+  };
+
   programs.bash = {
     enable = true;
     shellAliases = {
@@ -433,6 +439,23 @@
     enable = true;
   };
 
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Arc-Lighter";
+      package = pkgs.arc-theme;
+    };
+    iconTheme = {
+      name = "Arc";
+      package = pkgs.arc-icon-theme;
+    };
+  };
+
+  qt = {
+    enable = true;
+    platformTheme = "gtk";
+  };
+
   services.gnome-keyring = {
     enable = true;
   };
@@ -440,6 +463,7 @@
   services.picom = {
     enable = true;
     experimentalBackends = true;
+    backend = "xrender";
     shadow = true;
     shadowOffsets = [ (-20) (-5) ];
     shadowOpacity = "0.6";
