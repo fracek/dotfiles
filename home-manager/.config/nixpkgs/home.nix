@@ -39,6 +39,18 @@
     size = 24;
   };
 
+  programs.fish = {
+    enable = true;
+    functions = {
+    };
+    shellAliases = {
+      hu = "${pkgs.exa}/bin/exa ";
+      ha = "${pkgs.exa}/bin/exa -a";
+      hh = "${pkgs.exa}/bin/exa -la";
+      ht = "${pkgs.exa}/bin/exa --tree";
+    };
+  };
+
   programs.bash = {
     enable = true;
     shellAliases = {
