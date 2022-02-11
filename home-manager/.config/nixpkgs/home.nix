@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     atool
     atop
+    any-nix-shell
     bash-completion
     exa
     feh
@@ -49,6 +50,10 @@
       hh = "${pkgs.exa}/bin/exa -la";
       ht = "${pkgs.exa}/bin/exa --tree";
     };
+    interactiveShellInit = ''
+      any-nix-shell fish --info-right | source
+      fish_vi_key_bindings
+    '';
   };
 
   programs.bash = {
