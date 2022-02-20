@@ -56,24 +56,6 @@
     '';
   };
 
-  programs.bash = {
-    enable = true;
-    shellAliases = {
-      hu = "${pkgs.exa}/bin/exa ";
-      ha = "${pkgs.exa}/bin/exa -a";
-      hh = "${pkgs.exa}/bin/exa -la";
-      ht = "${pkgs.exa}/bin/exa --tree";
-    };
-    initExtra = ''
-      set -o vi
-      export EDITOR=vim
-      source $HOME/.nix-profile/etc/profile.d/bash_completion.sh
-      source ${pkgs.bashCompletion}/share/bash-completion/bash_completion
-      source ${pkgs.nix-bash-completions}/share/bash-completion/completions/*
-      export PS1="[\[$(tput sgr0)\]\[\033[38;5;5m\]\u@\h\[$(tput sgr0)\]:\[$(tput sgr0)\]\[\033[38;5;6m\]\w\[$(tput sgr0)\]]\\$\[$(tput sgr0)\] "
-    '';
-  };
-
   programs.vscode = {
     enable = true;
     userSettings = {
