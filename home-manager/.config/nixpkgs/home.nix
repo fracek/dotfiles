@@ -51,6 +51,13 @@
       hh = "${pkgs.exa}/bin/exa -la";
       ht = "${pkgs.exa}/bin/exa --tree";
     };
+    prezto = {
+      enable = true;
+      editor.keymap = "vi";
+      prompt = {
+        theme = "sorin";
+      };
+    };
   };
 
   programs.vscode = {
