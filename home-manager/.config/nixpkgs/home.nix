@@ -40,20 +40,17 @@
     size = 24;
   };
 
-  programs.fish = {
+  programs.zsh = {
     enable = true;
-    functions = {
-    };
+    enableAutosuggestions = true;
+    enableCompletion = true;
+    defaultKeymap = "viins";
     shellAliases = {
       hu = "${pkgs.exa}/bin/exa ";
       ha = "${pkgs.exa}/bin/exa -a";
       hh = "${pkgs.exa}/bin/exa -la";
       ht = "${pkgs.exa}/bin/exa --tree";
     };
-    interactiveShellInit = ''
-      any-nix-shell fish --info-right | source
-      fish_vi_key_bindings
-    '';
   };
 
   programs.vscode = {
@@ -436,6 +433,14 @@
 
   programs.fzf = {
     enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.tmux = {
+    enable = true;
+    clock24 = true;
+    keyMode = "vi";
+    prefix = "C-a";
   };
 
   gtk = {
