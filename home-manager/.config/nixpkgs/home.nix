@@ -459,6 +459,10 @@
     enable = true;
   };
 
+  services.network-manager-applet = {
+    enable = true;
+  };
+
   services.picom = {
     enable = true;
     experimentalBackends = true;
