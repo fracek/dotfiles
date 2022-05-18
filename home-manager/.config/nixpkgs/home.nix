@@ -51,6 +51,12 @@
       hh = "${pkgs.exa}/bin/exa -la";
       ht = "${pkgs.exa}/bin/exa --tree";
     };
+    initExtra = ''
+      any-nix-shell zsh --info-right | source /dev/stdin
+    '';
+    envExtra = ''
+      ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=13'
+    '';
     prezto = {
       enable = true;
       editor.keymap = "vi";
@@ -448,6 +454,7 @@
     clock24 = true;
     keyMode = "vi";
     prefix = "C-a";
+    shell = "${pkgs.zsh}/bin/zsh";
   };
 
   gtk = {
