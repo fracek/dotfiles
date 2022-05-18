@@ -10,6 +10,7 @@
     feh
     fortune
     git
+    gh
     lua
     htop
     i3lock
@@ -70,7 +71,7 @@
     enable = true;
     userSettings = {
       "editor.fontFamily" = "monospace";
-      "editor.fontSize" = 12;
+      "editor.fontSize" = 13;
       "workbench.colorTheme" = "Paper White";
       "workbench.iconTheme" = null;
       "workbench.activityBar.visible" = false;
@@ -298,7 +299,7 @@
     enable = true;
     settings = {
       font = {
-        size = 9;
+        size = 10;
       };
       colors = {
         primary = {
