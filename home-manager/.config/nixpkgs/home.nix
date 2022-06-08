@@ -78,6 +78,7 @@
       "workbench.colorTheme" = "Paper White";
       "workbench.iconTheme" = null;
       "workbench.activityBar.visible" = false;
+      "workbench.editor.showTabs" = false;
       "workbench.statusBar.visible" = true;
       "workbench.sideBar.location" = "right";
       "editor.minimap.enabled" = false;
