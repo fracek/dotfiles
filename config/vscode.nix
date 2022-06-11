@@ -234,7 +234,6 @@
       }
     ];
     extensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-      # TODO: vim
       {
         name = "vim";
         publisher = "vscodevim";

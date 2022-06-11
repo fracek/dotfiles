@@ -20,6 +20,7 @@
     git
     gh
     htop
+    i3lock
     mediainfo
     neovim
     ranger
@@ -90,6 +91,11 @@
   services.redshift = {
     enable = true;
     provider = "geoclue2";
+  };
+
+  services.screen-locker = {
+    enable = true;
+    lockCmd = "${pkgs.i3lock}/bin/i3lock -n -c 1e1e2e";
   };
 
   services.network-manager-applet = { enable = true; };
