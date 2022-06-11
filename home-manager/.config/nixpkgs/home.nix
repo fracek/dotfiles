@@ -5,7 +5,6 @@
     atool
     atop
     any-nix-shell
-    bash-completion
     exa
     feh
     fortune
@@ -15,7 +14,6 @@
     htop
     i3lock
     mediainfo
-    nix-bash-completions
     neovim
     ranger
     tig
@@ -460,6 +458,18 @@
     keyMode = "vi";
     prefix = "C-a";
     shell = "${pkgs.zsh}/bin/zsh";
+  };
+
+  programs.firefox = {
+    enable = true;
+    # package = pkgs.firefox.override {
+    #   cfg = {
+    #     enableTridactylNative = true;
+    #   };
+    # };
+    # profiles = {
+    #   default = {};
+    # };
   };
 
   gtk = {
