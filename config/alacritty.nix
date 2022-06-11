@@ -1,7 +1,5 @@
-{ pkgs, dotroot, fetchurl, ... }: 
+{ pkgs, dotroot, fetchurl, ... }:
 
 {
-  programs.alacritty = {
-    enable = true;
-  };
+  programs.alacritty = { enable = true; };
 }

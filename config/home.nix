@@ -2,9 +2,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./alacritty.nix
-  ];
+  imports = [ ./alacritty.nix ];
 
   home.packages = with pkgs; [
     any-nix-shell

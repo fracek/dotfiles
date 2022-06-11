@@ -40,6 +40,23 @@
             }
           ];
         };
+
+        danix = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./configuration.nix
+            ./hosts/danix.nix
+            ./hardware/danix.nix
+            { nix.registry.nixpkgs.flake = nixpkgs; }
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.fra = import ./config/home.nix;
+              nixpkgs.overlays = [ nur.overlay ];
+            }
+          ];
+        };
       };
     };
 }
