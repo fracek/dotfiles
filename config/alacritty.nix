@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       font = {
-        size = 11;
+        size = 12;
       };
       # catppuccin colors
       colors = {

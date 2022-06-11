@@ -21,6 +21,24 @@
     extraGroups = [ "wheel" "docker" "networkmanager" ];
   };
 
+  # Setup fonts.
+  fonts = {
+    enableDefaultFonts = true;
+    fonts = with pkgs; [
+      dejavu_fonts
+      jetbrains-mono
+    ];
+
+    fontconfig = {
+      defaultFonts = {
+        serif = [ "DejaVu Serif" ];
+        sansSerif = [ "DejaVu Sans" ];
+        monospace = [ "Jetbrains Mono" ];
+      };
+    };
+  };
+
+
   # Setup networking.
   networking = { networkmanager.enable = true; };
 
