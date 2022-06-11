@@ -3,9 +3,7 @@
 {
   xsession.windowManager.awesome = {
     enable = true;
-    luaModules = [
-      pkgs.luaPackages.vicious
-    ];
+    luaModules = [ pkgs.luaPackages.vicious ];
   };
 
   services.picom = {
@@ -28,5 +26,4 @@
     };
   };
 }
-
 

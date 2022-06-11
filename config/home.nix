@@ -5,6 +5,10 @@
   imports = [
     ./alacritty.nix
     ./awesome.nix
+    ./vscode.nix
+    ./zsh.nix
+    ./rofi.nix
+    ./firefox.nix
   ];
 
   home.packages = with pkgs; [
@@ -34,11 +38,6 @@
     gtk.enable = true;
     x11.enable = true;
   };
-
-  programs.zsh = import ./zsh.nix { pkgs = pkgs; };
-  programs.vscode = import ./vscode.nix { pkgs = pkgs; };
-  programs.rofi = import ./rofi.nix { pkgs = pkgs; };
-  programs.firefox = import ./firefox.nix { pkgs = pkgs; };
 
   programs.git = {
     enable = true;

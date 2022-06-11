@@ -1,14 +1,16 @@
 { pkgs, ... }:
 
 {
-  enable = true;
+  programs.firefox = {
+    enable = true;
 
-  extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-    bitwarden
-    darkreader
-    tridactyl
-    ublock-origin
-  ];
+    extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+      bitwarden
+      darkreader
+      tridactyl
+      ublock-origin
+    ];
 
-  profiles.default = { isDefault = true; };
+    profiles.default = { isDefault = true; };
+  };
 }
