@@ -182,6 +182,10 @@ function window.draw_rounded_border(c)
     end
 end
 
+function window.hide_border(c)
+    c.border_width = 0
+end
+
 function window.manage_compton_shadow(c)
     if c.floating and not c.maximized and not c.fullscreen then
         awful.spawn("xprop -id " .. c.window .. " -f _COMPTON_SHADOW 32c -set _COMPTON_SHADOW 1")
