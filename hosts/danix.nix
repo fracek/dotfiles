@@ -2,6 +2,9 @@
 
 {
   services.xserver.videoDrivers = [ "amdgpu" ];
+  users.users.fra = {
+    extraGroups = [ "i2c-dev" ];
+  };
 
   # Enable logitech mouse.
   hardware.logitech.wireless = {
