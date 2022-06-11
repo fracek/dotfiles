@@ -125,6 +125,53 @@ function window.set_as_slave(c)
     end
 end
 
+function window.draw_top_border(c)
+    local buttons = gears.table.join(
+        awful.button({}, 1, function()
+            c:emit_signal('request::activate', 'titlebar', {raise = true})
+            awful.mouse.client.move(c)
+        end),
+        awful.button({}, 3, function()
+            c:emit_signal('request::activate', 'titlebar', {raise = true})
+            awful.mouse.client.resize(c)
+        end)
+    )
+
+    awful.titlebar(c, {
+        size = beautiful.border_width or 2,
+        position = 'top',
+        bg_normal = beautiful.border_normal,
+        bg_focus = beautiful.border_focus,
+    }):setup({
+        buttons = buttons,
+        layout = wibox.layout.align.horizontal
+    })
+
+    awful.titlebar(c, {
+        size = beautiful.border_width or 2,
+        position = 'bottom'
+    }):setup({
+        buttons = buttons,
+        layout = wibox.layout.align.horizontal
+    })
+
+    awful.titlebar(c, {
+        size = beautiful.border_width or 2,
+        position = 'left'
+    }):setup({
+        buttons = buttons,
+        layout = wibox.layout.align.horizontal
+    })
+
+    awful.titlebar(c, {
+        size = beautiful.border_width or 2,
+        position = 'right'
+    }):setup({
+        buttons = buttons,
+        layout = wibox.layout.align.horizontal
+    })
+end
+
 function window.draw_rounded_border(c)
     if not c.fullscreen then
         c.shape = function(cr, w, h)
