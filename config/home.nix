@@ -5,6 +5,7 @@
   imports = [
     ./alacritty.nix
     ./awesome.nix
+    ./discord.nix
     ./vscode.nix
     ./zsh.nix
     ./rofi.nix

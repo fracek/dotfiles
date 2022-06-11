@@ -18,9 +18,14 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    discocss = {
+      url = "github:mlvzk/discocss/flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, nur, ... }:
+  outputs = { nixpkgs, home-manager, nur, discocss, ... }:
     let system = "x86_64-linux";
     in {
       nixosConfigurations = {
@@ -36,6 +41,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.fra = import ./config/home.nix;
+              home-manager.sharedModules = [ discocss.hmModule ];
               nixpkgs.overlays = [ nur.overlay ];
             }
           ];
@@ -53,6 +59,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.fra = import ./config/home.nix;
+              home-manager.sharedModules = [ discocss.hmModule ];
               nixpkgs.overlays = [ nur.overlay ];
             }
           ];
