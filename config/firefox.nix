@@ -10,5 +10,5 @@
     ublock-origin
   ];
 
-  profiles.fra = { isDefault = true; };
+  profiles.default = { isDefault = true; };
 }

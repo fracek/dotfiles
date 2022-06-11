@@ -2,7 +2,10 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./alacritty.nix ];
+  imports = [
+    ./alacritty.nix
+    ./awesome.nix
+  ];
 
   home.packages = with pkgs; [
     any-nix-shell
@@ -24,10 +27,6 @@
 
   # Setup X11 session.
   xsession.enable = true;
-  xsession.windowManager.bspwm = import ./bspwm.nix { pkgs = pkgs; };
-  services.sxhkd = import ./sxhkd.nix { pkgs = pkgs; };
-  # services.polybar.enable = true;
-
   home.pointerCursor = {
     package = pkgs.quintom-cursor-theme;
     name = "Quintom_Snow";
@@ -38,22 +37,8 @@
 
   programs.zsh = import ./zsh.nix { pkgs = pkgs; };
   programs.vscode = import ./vscode.nix { pkgs = pkgs; };
-  # programs.alacritty = import ./alacritty.nix { };
   programs.rofi = import ./rofi.nix { pkgs = pkgs; };
   programs.firefox = import ./firefox.nix { pkgs = pkgs; };
-
-  services.picom = {
-    enable = true;
-    experimentalBackends = true;
-    backend = "xrender";
-    shadow = true;
-    shadowOffsets = [ (-20) (-5) ];
-    shadowOpacity = "0.6";
-    extraOptions = ''
-      shadow-radius = 20;
-      corner-radius = 10;
-    '';
-  };
 
   programs.git = {
     enable = true;
