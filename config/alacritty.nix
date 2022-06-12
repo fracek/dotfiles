@@ -4,9 +4,7 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      font = {
-        size = 12;
-      };
+      font = { size = 12; };
       # catppuccin colors
       colors = {
         primary = {

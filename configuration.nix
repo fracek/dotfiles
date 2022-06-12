@@ -1,6 +1,6 @@
 # System configuration.
 
-{ config, pkgs, inputs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   # Use systemd-boot efi boot loader.
@@ -24,10 +24,7 @@
   # Setup fonts.
   fonts = {
     enableDefaultFonts = true;
-    fonts = with pkgs; [
-      dejavu_fonts
-      jetbrains-mono
-    ];
+    fonts = with pkgs; [ dejavu_fonts jetbrains-mono ];
 
     fontconfig = {
       defaultFonts = {
@@ -37,7 +34,6 @@
       };
     };
   };
-
 
   # Setup networking.
   networking = { networkmanager.enable = true; };
@@ -82,6 +78,12 @@
 
   # Packages and NixOS.
   nixpkgs.config.allowUnfree = true;
+
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = lib.optionalString (config.nix.package == pkgs.nixFlakes)
+      "experimental-features = nix-command flakes";
+  };
 
   environment.systemPackages = [ pkgs.git pkgs.vim ];
 

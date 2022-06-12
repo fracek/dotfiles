@@ -2,9 +2,7 @@
 
 {
   services.xserver.videoDrivers = [ "amdgpu" ];
-  users.users.fra = {
-    extraGroups = [ "i2c-dev" ];
-  };
+  users.users.fra = { extraGroups = [ "i2c-dev" ]; };
 
   # Enable logitech mouse.
   hardware.logitech.wireless = {
@@ -23,4 +21,10 @@
   hardware.enableRedistributableFirmware = true;
 
   programs.steam.enable = true;
+
+  # Printer
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [ hplipWithPlugin ];
+  };
 }

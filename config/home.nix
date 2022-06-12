@@ -24,6 +24,7 @@
     mediainfo
     neovim
     ranger
+    ripgrep
     tig
     ueberzug
     unrar
