@@ -69,6 +69,10 @@
   services.blueman.enable = true;
   hardware.bluetooth.enable = true;
 
+  # Setup gnome keyring.
+  services.gnome.gnome-keyring.enable = true;
+  programs.seahorse.enable = true;
+
   # Setup audio.
   sound.enable = true;
   hardware.pulseaudio = {

@@ -86,8 +86,6 @@
     platformTheme = "gtk";
   };
 
-  services.gnome-keyring = { enable = true; };
-
   services.redshift = {
     enable = true;
     provider = "geoclue2";
