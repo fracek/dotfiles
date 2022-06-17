@@ -1,0 +1,125 @@
+* {
+    bg: #1e1e2e;
+    fg: #cdd6f4;
+    red: #f38ba8;
+    green: #a6e3a1;
+    pink: #f5c2e7;
+
+    background-color: @bg;
+}
+
+configuration {
+    font: "monospace 14";
+    fixed-num-lines: true;
+    case-sensitive: false;
+    matching:  "fuzzy";
+}
+
+window {
+    border: 4px;
+    border-color: @pink;
+    border-radius: 0px;
+    padding: 8px;
+    width: 50%;
+    height: 50%;
+}
+
+prompt {
+    spacing: 0;
+    border: 0;
+    text-color: @fg;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: " ";
+    margin: 0px 4px 0px 0px;
+    text-color: inherit;
+}
+
+entry {
+    spacing: 0;
+    text-color: @fg;
+}
+
+case-indicator {
+    spacing: 0;
+    text-color: @fg;
+}
+
+inputbar {
+    spacing: 0;
+    text-color: @fg;
+    padding: 1px;
+    children: [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+
+mainbox {
+    border: 0;
+    padding: 8px;
+}
+
+listview {
+    lines: 10;
+    columns: 1;
+    fixed-height: 0;
+    border: 0;
+    spacing: 4px;
+    scrollbar: false;
+    padding: 4px 0px 0px;
+}
+
+element-text, element-icon {
+    background-color: @bg;
+    text-color: inherit;
+}
+
+element {
+    border: 0px;
+    padding: 1px;
+}
+
+element normal.normal {
+    background-color: @bg;
+    text-color: @fg;
+}
+
+element normal.urgent {
+    background-color: @bg;
+    text-color: @red;
+}
+
+element normal.active {
+    background-color: @bg;
+    text-color:	@green;
+}
+
+element selected.normal {
+    background-color: @bg;
+    text-color:	@pink;
+}
+
+element selected.urgent {
+    background-color: @bg;
+    text-color: @red;
+}
+
+element selected.active {
+    background-color: @bg;
+    text-color: @pink;
+}
+
+element alternate.normal {
+    background-color: @bg;
+    text-color: @fg;
+}
+
+element alternate.urgent {
+    background-color: @bg;
+    text-color:	@fg;
+}
+
+element alternate.active {
+    background-color: @bg;
+    text-color:	@fg;
+}
