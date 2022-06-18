@@ -8,7 +8,7 @@
 
   # Setup keyboard.
   services.xserver = {
-    dpi = 120;
+    dpi = 160;
     layout = "us";
     xkbVariant = "dvorak";
     xkbOptions = "ctrl:swapcaps,altwin:swap_alt_win";
