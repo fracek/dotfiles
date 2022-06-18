@@ -70,10 +70,11 @@
   programs.seahorse.enable = true;
 
   # Setup audio.
-  sound.enable = true;
-  hardware.pulseaudio = {
+  security.rtkit.enable = true;
+  services.pipewire = {
     enable = true;
-    package = pkgs.pulseaudioFull;
+    pulse.enable = true;
+    jack.enable = true;
   };
 
   # Packages and NixOS.
