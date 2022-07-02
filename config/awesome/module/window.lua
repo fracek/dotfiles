@@ -138,7 +138,7 @@ function window.draw_top_border(c)
     )
 
     awful.titlebar(c, {
-        size = beautiful.border_width or 2,
+        size = 2 * beautiful.border_width or 4,
         position = 'top',
         bg_normal = beautiful.border_normal,
         bg_focus = beautiful.border_focus,
@@ -149,7 +149,9 @@ function window.draw_top_border(c)
 
     awful.titlebar(c, {
         size = beautiful.border_width or 2,
-        position = 'bottom'
+        position = 'bottom',
+        bg_normal = beautiful.border_normal,
+        bg_focus = beautiful.border_focus,
     }):setup({
         buttons = buttons,
         layout = wibox.layout.align.horizontal
@@ -175,7 +177,7 @@ end
 function window.draw_rounded_border(c)
     if not c.fullscreen then
         c.shape = function(cr, w, h)
-            gears.shape.rounded_rect(cr, w, h, dpi(8))
+            gears.shape.rounded_rect(cr, w, h, beautiful.border_width)
         end
     else
         c.shape = gears.shape.rectangle

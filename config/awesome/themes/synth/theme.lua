@@ -18,6 +18,7 @@ local catppuccin = {
     rosewater = "#f5e0dc",
     sapphire = "#74c7ec",
     flamingo = "#f2cdcd",
+    muave = "#cba6f7",
     pink = "#f5c2e7",
     blue = "#89b4fa",
     red = "#f38ba8",
@@ -31,7 +32,7 @@ local colors = {
 }
 
 theme.bg_normal = colors.bg
-theme.bg_focus = catppuccin.pink
+theme.bg_focus = catppuccin.muave
 theme.fg_normal = colors.fg
 theme.fg_focus = colors.fg
 theme.fg_urgent = theme.fg_normal
@@ -46,8 +47,8 @@ theme.border_marked = theme.border_normal
 theme.titlebar_bg_normal = catppuccin.base
 theme.titlebar_bg_focus = catppuccin.base
 
-theme.taglist_bg_focus = catppuccin.pink
-theme.taglist_fg_focus = catppuccin.pink
+theme.taglist_bg_focus = catppuccin.muave
+theme.taglist_fg_focus = catppuccin.muave
 theme.taglist_bg_occupied = catppuccin.lavender
 theme.taglist_fg_occupied = catppuccin.lavender
 
@@ -80,7 +81,7 @@ theme.menu_submenu_icon = dir .. "/icons/submenu.svg"
 theme.power_icon = dir .. "/icons/power.svg"
 
 theme.tasklist_disable_icon = true
-theme.tasklist_bg_focus = catppuccin.pink
+theme.tasklist_bg_focus = catppuccin.muave
 theme.tasklist_bg_normal = catppuccin.lavender
 theme.tasklist_fg_normal = catppuccin.subtext
 theme.tasklist_fg_focus = catppuccin.text
