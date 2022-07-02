@@ -24,6 +24,7 @@ local catppuccin = {
     red = "#f38ba8",
     green = "#a6e3a1",
     yellow = "#f9e2af",
+    overlay = "#6c7086",
 }
 
 local colors = {
@@ -32,7 +33,7 @@ local colors = {
 }
 
 theme.bg_normal = colors.bg
-theme.bg_focus = catppuccin.muave
+theme.bg_focus = catppuccin.lavender
 theme.fg_normal = colors.fg
 theme.fg_focus = colors.fg
 theme.fg_urgent = theme.fg_normal
@@ -47,10 +48,12 @@ theme.border_marked = theme.border_normal
 theme.titlebar_bg_normal = catppuccin.base
 theme.titlebar_bg_focus = catppuccin.base
 
-theme.taglist_bg_focus = catppuccin.muave
-theme.taglist_fg_focus = catppuccin.muave
-theme.taglist_bg_occupied = catppuccin.lavender
-theme.taglist_fg_occupied = catppuccin.lavender
+theme.taglist_bg_normal = catppuccin.overlay
+theme.taglist_fg_normal = catppuccin.overlay
+theme.taglist_bg_focus = catppuccin.lavender
+theme.taglist_fg_focus = catppuccin.lavender
+theme.taglist_bg_occupied = catppuccin.subtext
+theme.taglist_fg_occupied = catppuccin.subtext
 
 theme.bg_systray = catppuccin.base
 
@@ -81,8 +84,8 @@ theme.menu_submenu_icon = dir .. "/icons/submenu.svg"
 theme.power_icon = dir .. "/icons/power.svg"
 
 theme.tasklist_disable_icon = true
-theme.tasklist_bg_focus = catppuccin.muave
-theme.tasklist_bg_normal = catppuccin.lavender
+theme.tasklist_bg_focus = catppuccin.lavender
+theme.tasklist_bg_normal = catppuccin.subtext
 theme.tasklist_fg_normal = catppuccin.subtext
 theme.tasklist_fg_focus = catppuccin.text
 
