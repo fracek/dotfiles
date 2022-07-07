@@ -23,4 +23,13 @@
 
   # Setup hidpi.
   hardware.video.hidpi.enable = true;
+
+  # Setup power management
+  services.tlp = {
+    enable = true;
+    settings = {
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+      CPU_SCALING_GOVERNOR_ON_AC = "powersave";
+    };
+  };
 }
