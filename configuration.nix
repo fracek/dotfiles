@@ -24,13 +24,13 @@
   # Setup fonts.
   fonts = {
     enableDefaultFonts = true;
-    fonts = with pkgs; [ dejavu_fonts jetbrains-mono ];
+    fonts = with pkgs; [ dejavu_fonts cascadia-code ];
 
     fontconfig = {
       defaultFonts = {
         serif = [ "DejaVu Serif" ];
         sansSerif = [ "DejaVu Sans" ];
-        monospace = [ "Jetbrains Mono" ];
+        monospace = [ "Cascadia Code" ];
       };
     };
   };
