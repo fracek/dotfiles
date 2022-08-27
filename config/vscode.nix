@@ -6,7 +6,7 @@
     userSettings = {
       "editor.fontFamily" = "monospace";
       "editor.fontSize" = 15;
-      "workbench.colorTheme" = "Catppuccin";
+      "workbench.colorTheme" = "Catppuccin Mocha";
       "workbench.iconTheme" = null;
       "workbench.activityBar.visible" = false;
       "workbench.editor.showTabs" = false;
