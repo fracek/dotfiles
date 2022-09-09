@@ -54,6 +54,7 @@
         autocrlf = "input";
       };
       init = { defaultBranch = "main"; };
+      push.default = "current";
     };
   };
 
