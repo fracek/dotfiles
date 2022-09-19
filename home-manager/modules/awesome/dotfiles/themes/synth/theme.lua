@@ -40,13 +40,13 @@ theme.fg_urgent = theme.fg_normal
 theme.fg_minimize = theme.fg_normal
 
 theme.useless_gap = dpi(32)
-theme.border_width = dpi(6)
+theme.border_width = dpi(3)
 theme.border_normal = theme.bg_normal
 theme.border_focus = theme.bg_focus
 theme.border_marked = theme.border_normal
 
-theme.titlebar_bg_normal = catppuccin.base
-theme.titlebar_bg_focus = catppuccin.base
+theme.titlebar_bg_normal = theme.bg_normal
+theme.titlebar_bg_focus = theme.bg_normal
 
 theme.taglist_bg_normal = catppuccin.overlay
 theme.taglist_fg_normal = catppuccin.overlay
