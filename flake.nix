@@ -90,5 +90,19 @@
             }
           )
           (builtins.attrNames (builtins.readDir ./home-manager/modules)));
-    };
+
+    } //
+
+    (flake-utils.lib.eachSystem [ "x86_64-linux" ])
+      (system:
+        let pkgs = nixpkgs.legacyPackages.${system}.extend self.overlays.default;
+        in
+        rec {
+          # Custom packages added via the overlay are selectively exposed here, to
+          # allow using them from other flakes that import this one.
+          packages = flake-utils.lib.flattenTree {
+            hello-custom = pkgs.hello-custom;
+          };
+        }
+      );
 }
