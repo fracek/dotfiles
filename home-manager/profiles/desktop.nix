@@ -8,6 +8,7 @@
       discord.enable = true;
       firefox.enable = true;
       rofi.enable = true;
+      vscode.enable = true;
     };
   };
 
@@ -86,15 +87,15 @@
     platformTheme = "gtk";
   };
 
-  # services.redshift = {
-  #   enable = true;
-  #   provider = "geoclue2";
-  # }
+  services.redshift = {
+    enable = true;
+    provider = "geoclue2";
+  };
 
   services.screen-locker = {
     enable = true;
     lockCmd = "${pkgs.i3lock}/bin/i3lock -n -c 1e1e2e";
   };
 
-  services.network-manager-applet = { enable = true; }; 
+  services.network-manager-applet = { enable = true; };
 }
