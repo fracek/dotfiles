@@ -4,8 +4,10 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.05";
 
+    flake-utils.url = "github:numtide/flake-utils";
+
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-22.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -25,45 +27,68 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nur, discocss, ... }:
-    let system = "x86_64-linux";
-    in {
-      nixosConfigurations = {
-        t460p = nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./configuration.nix
-            ./hosts/t460p.nix
-            ./hardware/t460p.nix
-            { nix.registry.nixpkgs.flake = nixpkgs; }
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.fra = import ./config/home.nix;
-              home-manager.sharedModules = [ discocss.hmModule ];
-              nixpkgs.overlays = [ nur.overlay ];
-            }
-          ];
-        };
+  outputs = { self, ... }@inputs:
+    with inputs;
+    {
+      # format with `nix fmt`.
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
 
-        danix = nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./configuration.nix
-            ./hosts/danix.nix
-            ./hardware/danix.nix
-            { nix.registry.nixpkgs.flake = nixpkgs; }
-            home-manager.nixosModules.home-manager
+      # expose overlay to output.
+      overlays.default = final: prev: (import ./overlays inputs) final prev;
+
+      # expose all modules in ./modules.
+      nixosModules = builtins.listToAttrs
+        (map
+          (x:
             {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.fra = import ./config/home.nix;
-              home-manager.sharedModules = [ discocss.hmModule ];
-              nixpkgs.overlays = [ nur.overlay ];
+              name = x;
+              value = import (./modules + "/${x}");
             }
-          ];
+          )
+          (builtins.attrNames (builtins.readDir ./modules)));
+
+      # each directory in ./machines is a host.
+      nixosConfigurations = builtins.listToAttrs
+        (map
+          (x:
+            {
+              name = x;
+              value = nixpkgs.lib.nixosSystem {
+                # Make inputs and the flake itself accessible as module parameters.
+                # Technically, adding the inputs is redundant as they can be also
+                # accessed with flake-self.inputs.X, but adding them individually
+                # allows to only pass what is needed to each module.
+                specialArgs = { flake-self = self; } // inputs;
+                system = "x86_64-linux";
+                modules = [
+                  (./machines + "/${x}/configuration.nix")
+                  { imports = builtins.attrValues self.nixosModules; }
+                  home-manager.nixosModules.home-manager
+                ];
+              };
+            }
+          )
+          (builtins.attrNames (builtins.readDir ./machines)));
+
+      # home manager configuration.
+      homeConfigurations = {
+        desktop = { pkgs, lib, username, ... }: {
+          imports = [
+            ./home-manager/profiles/common.nix
+            ./home-manager/profiles/desktop.nix
+          ] ++ (builtins.attrValues self.homeManagerModules);
         };
       };
+
+      # home manager modules.
+      homeManagerModules = builtins.listToAttrs
+        (map
+          (x:
+            {
+              name = x;
+              value = import (./home-manager/modules + "/${x}");
+            }
+          )
+          (builtins.attrNames (builtins.readDir ./home-manager/modules)));
     };
 }

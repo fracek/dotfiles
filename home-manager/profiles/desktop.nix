@@ -1,16 +1,15 @@
-# Home manager configuration.
-{ config, pkgs, ... }:
-
+{ pkgs, ... }:
 {
-  imports = [
-    ./alacritty.nix
-    ./awesome.nix
-    ./discord.nix
-    ./vscode.nix
-    ./zsh.nix
-    ./rofi.nix
-    ./firefox.nix
-  ];
+  fra = {
+    programs = {
+      awesome.enable = true;
+      alacritty.enable = true;
+      bash.enable = true;
+      discord.enable = true;
+      firefox.enable = true;
+      rofi.enable = true;
+    };
+  };
 
   home.packages = with pkgs; [
     any-nix-shell
@@ -60,13 +59,12 @@
 
   programs.fzf = {
     enable = true;
-    enableZshIntegration = true;
+    enableBashIntegration = true;
   };
 
   programs.tmux = {
     enable = true;
     clock24 = true;
-    keyMode = "vi";
     prefix = "C-a";
     shell = "${pkgs.zsh}/bin/zsh";
   };
@@ -88,15 +86,15 @@
     platformTheme = "gtk";
   };
 
-  services.redshift = {
-    enable = true;
-    provider = "geoclue2";
-  };
+  # services.redshift = {
+  #   enable = true;
+  #   provider = "geoclue2";
+  # }
 
   services.screen-locker = {
     enable = true;
     lockCmd = "${pkgs.i3lock}/bin/i3lock -n -c 1e1e2e";
   };
 
-  services.network-manager-applet = { enable = true; };
+  services.network-manager-applet = { enable = true; }; 
 }
