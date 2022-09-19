@@ -35,4 +35,12 @@
     enable = true;
     drivers = with pkgs; [ hplipWithPlugin ];
   };
+
+  system.stateVersion = "22.05";
+
+  # Use systemd-boot efi boot loader.
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
 }

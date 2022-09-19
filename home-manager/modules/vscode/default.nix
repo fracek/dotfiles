@@ -24,6 +24,7 @@ in
         "gitlens.advanced.telemetry.enabled" = false;
         "gitlens.codeLens.enabled" = false;
         "gitlens.currentLine.enabled" = false;
+        "git.mergeEditor" = true;
         "vim.easymotion" = true;
         "vim.incsearch" = true;
         "vim.useSystemClipboard" = true;
@@ -243,7 +244,7 @@ in
         {
           name = "vim";
           publisher = "vscodevim";
-          version = "1.22.2";
+          version = "1.23.2";
           sha256 = "dtIlgODzRdoMKnG9050ZcCX3w15A/R3FaMc+ZylvBbU=";
         }
         {
@@ -255,13 +256,13 @@ in
         {
           name = "gitlens";
           publisher = "eamodio";
-          version = "12.0.7";
+          version = "12.2.2";
           sha256 = "gPhiytthf35eDhtzkSK2JZjtj4877la3hB1Cswbrszw=";
         }
         {
           name = "catppuccin-vsc";
           publisher = "Catppuccin";
-          version = "1.0.6";
+          version = "2.1.1";
           sha256 = "4M8y8dc8BpH1yhabYJsHDT9uDWeqYjnvPBgLS+lTa5I=";
         }
       ];
