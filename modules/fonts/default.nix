@@ -13,13 +13,14 @@ in
         dejavu_fonts
         cascadia-code
         noto-fonts-emoji
+        monolisa
       ];
 
       fontconfig = {
         defaultFonts = {
           serif = [ "DejaVu Serif" ];
           sansSerif = [ "DejaVu Sans" ];
-          monospace = [ "Cascadia Code" ];
+          monospace = [ "MonoLisa" ];
           emoji = [ "Noto Color Emoji" ];
         };
       };

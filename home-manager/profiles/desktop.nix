@@ -30,6 +30,7 @@
     unrar
     unzip
     zathura
+    monolisa
   ];
 
   # Setup X11 session.
