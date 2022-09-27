@@ -56,6 +56,9 @@
       };
       init = { defaultBranch = "main"; };
       push.default = "current";
+      pull.rebase = true;
+      fetch.prune = true;
+      diff.colorMoved = "zebra";
     };
   };
 
