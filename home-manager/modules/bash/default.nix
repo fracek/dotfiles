@@ -19,6 +19,9 @@ in
         tf = "terraform";
         ktl = "kubectl";
       };
+      initExtra = ''
+        complete -o default -F __start_kubectl ktl
+      '';
     };
   };
 }
