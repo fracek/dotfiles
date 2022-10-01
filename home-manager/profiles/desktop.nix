@@ -59,6 +59,15 @@
       pull.rebase = true;
       fetch.prune = true;
       diff.colorMoved = "zebra";
+      alias = {
+        st = "status";
+        br = "branch";
+        ci = "commit";
+        sw = "switch";
+        re = "restore";
+        reee = "restore --source=HEAD";
+        brrr = "for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'";
+      };
     };
   };
 
