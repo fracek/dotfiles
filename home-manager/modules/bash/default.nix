@@ -9,7 +9,11 @@ in
   config = mkIf cfg.enable {
     programs.bash = {
       enable = true;
-      # enableCompletion = true;
+      historyControl = [
+        "ignoredups"
+        "ignorespace"
+        "erasedups"
+      ];
       shellAliases = {
         hu = "${pkgs.exa}/bin/exa ";
         ha = "${pkgs.exa}/bin/exa -a";
