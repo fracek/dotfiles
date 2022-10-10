@@ -18,6 +18,7 @@
     feh
     fortune
     git
+    git-absorb
     gh
     htop
     i3lock
@@ -65,6 +66,7 @@
         ci = "commit";
         sw = "switch";
         re = "restore";
+        ab = "absorb";
         reee = "restore --source=HEAD";
         brrr = "for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'";
       };
