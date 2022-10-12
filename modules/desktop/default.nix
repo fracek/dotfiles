@@ -1,4 +1,4 @@
-{ config, lib, pkgs, flake-self, nur, ... }:
+{ config, lib, pkgs, flake-self, nur, discocss, ... }:
 with lib;
 let
   cfg = config.fra.desktop;
@@ -28,6 +28,8 @@ in
       # home-manager versions and does not work with configs using
       # nixpkgs.config`
       useUserPackages = true;
+
+      sharedModules = [ discocss.hmModule ];
 
       # Pass all flake inputs to home-manager modules aswell so we can use them
       # there.
