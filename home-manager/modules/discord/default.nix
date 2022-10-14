@@ -9,7 +9,7 @@ in
   config = mkIf cfg.enable {
     programs.discocss = {
       enable = true;
-      discordAlias = true;
+      discordAlias = false;
       css = ''
         /**
          * @name Catppuccin

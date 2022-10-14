@@ -14,6 +14,7 @@
 
   home.packages = with pkgs; [
     any-nix-shell
+    discord
     exa
     feh
     fortune
@@ -65,6 +66,7 @@
         br = "branch";
         ci = "commit";
         sw = "switch";
+        swc = "switch -c";
         re = "restore";
         ab = "absorb";
         reee = "restore --source=HEAD";
