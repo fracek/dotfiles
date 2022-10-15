@@ -9,6 +9,7 @@
       firefox.enable = true;
       rofi.enable = true;
       vscode.enable = true;
+      obs-studio.enable = true;
     };
   };
 
