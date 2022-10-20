@@ -11,6 +11,7 @@
       vscode.enable = true;
       obs-studio.enable = true;
     };
+    i18n.enable = true;
   };
 
   home.packages = with pkgs; [
@@ -26,6 +27,7 @@
     i3lock
     mediainfo
     neovim
+    libguestfs-with-appliance
     ranger
     ripgrep
     tig
