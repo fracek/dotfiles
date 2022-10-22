@@ -3,15 +3,15 @@ stdenv.mkDerivation rec {
   pname = "monolisa";
   version = "2.0";
   src = pkgs.requireFile {
-    name = "MonoLisa-Personal-2.000.zip";
+    name = "MonoLisa-Personal-2.001.zip";
     message = ''
-      Please add MonoLisa-Personal-2.000.zip to the nixos store by running
+      Please add MonoLisa-Personal-2.001.zip to the nixos store by running
 
-      nix-prefetch-url --type sha256 file://$(pwd)/MonoLisa-Personal-2.000.zip
+      nix-prefetch-url --type sha256 file://$(pwd)/MonoLisa-Personal-2.001.zip
 
       and updating the sha256 below if necessary.
     '';
-    sha256 = "1kd3m7ca9zk0v42gyy7rfcfj956689c3gsl1nhbyijj1chbvmxa8";
+    sha256 = "0r6q4n8ahfgwix6hwjmh4q7d584r0jlpl7rh11ym8b2n5amfkzr6";
   };
 
   installPhase = ''
