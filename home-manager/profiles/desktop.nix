@@ -43,7 +43,7 @@
   home.pointerCursor = {
     package = pkgs.fuchsia-pop-cursor;
     name = "Fuchsia-Pop";
-    size = 24;
+    size = 32;
     gtk.enable = true;
     x11.enable = true;
   };
