@@ -1,17 +1,17 @@
 { lib, stdenv, requireFile, pkgs }:
 stdenv.mkDerivation rec {
   pname = "monolisa";
-  version = "2.0";
+  version = "2.002";
   src = pkgs.requireFile {
-    name = "MonoLisa-Personal-2.001.zip";
+    name = "MonoLisa-Personal-${version}.zip";
     message = ''
-      Please add MonoLisa-Personal-2.001.zip to the nixos store by running
+      Please add MonoLisa-Personal-${version}.zip to the nixos store by running
 
-      nix-prefetch-url --type sha256 file://$(pwd)/MonoLisa-Personal-2.001.zip
+      nix-prefetch-url --type sha256 file://$(pwd)/MonoLisa-Personal-${version}.zip
 
       and updating the sha256 below if necessary.
     '';
-    sha256 = "0r6q4n8ahfgwix6hwjmh4q7d584r0jlpl7rh11ym8b2n5amfkzr6";
+    sha256 = "180pgpyffsm3ilxx3xz6y4b2w4bpi731gpz503bgg2z94r2v03wj";
   };
 
   installPhase = ''
@@ -23,7 +23,7 @@ stdenv.mkDerivation rec {
   buildInputs = [ pkgs.unzip ];
 
   meta = with lib; {
-    description = "MonoLisa was designed by professionals to improve developers’ productivity and reduce fatigue.";
+    description = "MonoLisa was designed by professionals to improve developers' productivity and reduce fatigue.";
     homepage = "https://www.monolisa.dev/";
     license = licenses.unfree;
     maintainers = [ ];
