@@ -41,8 +41,8 @@
   # Setup X11 session.
   xsession.enable = true;
   home.pointerCursor = {
-    package = pkgs.quintom-cursor-theme;
-    name = "Quintom_Snow";
+    package = pkgs.fuchsia-pop-cursor;
+    name = "Fuchsia-Pop";
     size = 24;
     gtk.enable = true;
     x11.enable = true;
