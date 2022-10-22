@@ -9,7 +9,7 @@ in
   config = mkIf cfg.enable {
     programs.obs-studio = {
       enable = true;
-      plugins =  with pkgs.obs-studio-plugins; [
+      plugins = with pkgs.obs-studio-plugins; [
         obs-vkcapture
         obs-pipewire-audio-capture
       ];

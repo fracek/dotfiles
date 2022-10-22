@@ -41,8 +41,8 @@
   # Setup X11 session.
   xsession.enable = true;
   home.pointerCursor = {
-    package = pkgs.fuchsia-pop-cursor;
-    name = "Fuchsia-Pop";
+    package = pkgs.fuchsia-cursor;
+    name = "Fuchsia";
     size = 32;
     gtk.enable = true;
     x11.enable = true;
