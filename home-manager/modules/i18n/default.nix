@@ -11,11 +11,12 @@ in
       enabled = "fcitx5";
 
       fcitx5 = {
-        addons = [
-          pkgs.fcitx5-gtk
-          pkgs.fcitx5-lua
-          pkgs.fcitx5-chinese-addons
-          pkgs.fcitx5-configtool
+        addons = with pkgs; [
+          fcitx5-gtk
+          fcitx5-lua
+          fcitx5-chinese-addons
+          fcitx5-configtool
+          fcitx5-catppuccin
         ];
       };
     };
