@@ -56,14 +56,24 @@
         email = "francesco@ceccon.me";
       };
       core = {
-        editor = "vim";
+        editor = "code --wait -n";
         autocrlf = "input";
       };
       init = { defaultBranch = "main"; };
       push.default = "current";
       pull.rebase = true;
       fetch.prune = true;
-      diff.colorMoved = "zebra";
+      diff = {
+        colorMoved = "zebra";
+        tool = "vscode";
+      };
+      merge.tool = "vscode";
+      "difftool \"vscode\"" = {
+        cmd = "code -n --wait --diff $LOCAL $REMOTE";
+      };
+      "mergetool \"vscode\"" = {
+        cmd = "code -n --wait $MERGED";
+      };
       alias = {
         st = "status";
         br = "branch";
