@@ -119,7 +119,9 @@
 
   services.redshift = {
     enable = true;
-    provider = "geoclue2";
+    provider = "manual";
+    latitude = 52.0;
+    longitude = 0.12;
   };
 
   services.screen-locker = {
