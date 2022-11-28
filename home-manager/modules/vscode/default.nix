@@ -12,7 +12,7 @@ in
       userSettings = {
         "editor.fontFamily" = "monospace";
         "editor.fontSize" = 15;
-        "editor.experimental.StikyScroll.enabled" = true;
+        "editor.stickyScroll.enabled" = true;
         "workbench.colorTheme" = "Catppuccin Mocha";
         "workbench.iconTheme" = null;
         "workbench.activityBar.visible" = false;
