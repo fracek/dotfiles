@@ -14,14 +14,13 @@ in
 
     services.picom = {
       enable = true;
-      experimentalBackends = true;
       backend = "xrender";
       shadow = true;
       shadowOffsets = [ (-20) (-5) ];
-      shadowOpacity = "0.6";
-      extraOptions = ''
-        shadow-radius = 20;
-      '';
+      shadowOpacity = 0.6;
+      settings = {
+        "shadow-radius" = 20;
+      };
     };
 
     home.file = {

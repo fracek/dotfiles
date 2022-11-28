@@ -1,4 +1,4 @@
-{ config, lib, pkgs, flake-self, nur, discocss, ... }:
+{ config, lib, pkgs, flake-self, nur, ... }:
 with lib;
 let
   cfg = config.fra.desktop;
@@ -29,7 +29,7 @@ in
       # nixpkgs.config`
       useUserPackages = true;
 
-      sharedModules = [ discocss.hmModule ];
+      sharedModules = [ ];
 
       # Pass all flake inputs to home-manager modules aswell so we can use them
       # there.
@@ -71,7 +71,7 @@ in
 
     # Enable geoclue2.
     services.geoclue2.enable = true;
-    services.localtime.enable = true;
+    services.localtimed.enable = true;
 
     # Setup dconf.
     programs.dconf.enable = true;
