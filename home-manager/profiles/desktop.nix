@@ -36,6 +36,7 @@
     unzip
     zathura
     monolisa
+    supabase
   ];
 
   # Setup X11 session.

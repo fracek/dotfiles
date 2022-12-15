@@ -96,6 +96,7 @@
           # allow using them from other flakes that import this one.
           packages = flake-utils.lib.flattenTree {
             hello-custom = pkgs.hello-custom;
+            supabase = pkgs.supabase;
           };
         }
       );
