@@ -25,7 +25,7 @@ buildGoModule rec {
     description = "Supabase CLI ";
     homepage = "https://supabase.com/docs/reference/cli/about";
     license = licenses.mit;
-    maintainers = [];
+    maintainers = [ ];
     platforms = platforms.linux;
   };
 }

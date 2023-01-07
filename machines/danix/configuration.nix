@@ -2,9 +2,28 @@
 {
   imports = [ ./hardware-configuration.nix ];
 
-  fra.desktop = {
-    enable = true;
-    hostname = "t460p";
+  fra = {
+    desktop = {
+      enable = true;
+      hostname = "danix";
+    };
+
+    usbWakeupDisabled = {
+      enable = true;
+
+      devices = [
+        {
+          # Logitech receiver
+          vendor = "046d";
+          product = "c52b";
+        }
+        {
+          # Moonlander keyboard
+          vendor = "3297";
+          product = "1969";
+        }
+      ];
+    };
   };
 
   services.xserver.videoDrivers = [ "amdgpu" ];

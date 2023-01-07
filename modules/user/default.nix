@@ -10,7 +10,7 @@ in
     users.users.fra = {
       isNormalUser = true;
       shell = pkgs.bash;
-      extraGroups = [ "wheel" "docker" "networkmanager" "audio" ];
+      extraGroups = [ "wheel" "docker" "networkmanager" "audio" "dialout" ];
     };
 
     programs.bash.enableCompletion = true;
