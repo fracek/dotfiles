@@ -77,13 +77,16 @@
         cmd = "code -n --wait $MERGED";
       };
       alias = {
+        am = "amend";
         st = "status";
         br = "branch";
         ci = "commit";
-        sw = "switch";
-        swc = "switch -c";
+        co = "checkout";
+        bi = "branchless init";
+        sw = "branchless switch";
         re = "restore";
         reee = "restore --source=HEAD";
+        rt = "restack";
         brrr = "for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'";
       };
     };
