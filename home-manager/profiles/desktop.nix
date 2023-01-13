@@ -37,6 +37,7 @@
     zathura
     monolisa
     supabase
+    sapling
   ];
 
   # Setup X11 session.

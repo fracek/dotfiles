@@ -103,6 +103,7 @@
           packages = flake-utils.lib.flattenTree {
             hello-custom = pkgs.hello-custom;
             supabase = pkgs.supabase;
+            sapling = pkgs.sapling;
           };
         }
       );

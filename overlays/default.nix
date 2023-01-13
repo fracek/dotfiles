@@ -11,4 +11,5 @@ self: super:
   ctgen = super.python3.pkgs.callPackage ../packages/ctgen { };
   fuchsia-cursor = super.callPackage ../packages/fuchsia-cursor { };
   supabase = super.callPackage ../packages/supabase { };
+  sapling = super.callPackage ../packages/sapling { };
 }
