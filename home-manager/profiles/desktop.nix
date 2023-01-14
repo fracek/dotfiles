@@ -22,7 +22,6 @@
     fortune
     git
     git-branchless
-    gh
     htop
     i3lock
     mediainfo
@@ -89,6 +88,15 @@
         rt = "restack";
         brrr = "for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'";
       };
+    };
+  };
+
+  programs.gh = {
+    enable = true;
+
+    settings = {
+      git_protocol = "https";
+      enableGitCredentialHelper = true;
     };
   };
 
