@@ -36,7 +36,6 @@
     monolisa
     supabase
     sapling
-    kubefwd
   ];
 
   # Setup X11 session.

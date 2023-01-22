@@ -12,5 +12,4 @@ self: super:
   fuchsia-cursor = super.callPackage ../packages/fuchsia-cursor { };
   supabase = super.callPackage ../packages/supabase { };
   sapling = super.callPackage ../packages/sapling { };
-  kubefwd = super.callPackage ../packages/kubefwd { };
 }
