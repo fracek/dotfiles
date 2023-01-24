@@ -21,6 +21,7 @@
     feh
     fortune
     git
+    git-absorb
     htop
     i3lock
     mediainfo
@@ -76,6 +77,7 @@
       };
       alias = {
         am = "amend";
+        ab = "absorb";
         st = "status";
         br = "branch";
         ci = "commit";
