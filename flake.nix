@@ -104,6 +104,7 @@
             hello-custom = pkgs.hello-custom;
             supabase = pkgs.supabase;
             sapling = pkgs.sapling;
+            gefyra = pkgs.gefyra;
           };
         }
       );

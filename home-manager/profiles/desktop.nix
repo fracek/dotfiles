@@ -37,6 +37,7 @@
     monolisa
     supabase
     sapling
+    gefyra
   ];
 
   # Setup X11 session.
