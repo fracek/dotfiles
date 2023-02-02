@@ -36,12 +36,12 @@
       # common templates I use.
       templates = {
         rust = {
-          path = ./packages/rust;
+          path = ./templates/rust;
           description = "A rust project";
         };
 
         node = {
-          path = ./packages/node;
+          path = ./templates/node;
           description = "A node project";
         };
       };
