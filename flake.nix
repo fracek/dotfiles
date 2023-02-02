@@ -29,8 +29,6 @@
   outputs = { self, ... }@inputs:
     with inputs;
     {
-      # format with `nix fmt`.
-      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
 
       # expose overlay to output.
       overlays.default = final: prev: (import ./overlays inputs) final prev;
@@ -107,5 +105,31 @@
             gefyra = pkgs.gefyra;
           };
         }
-      );
+      ) //
+
+    (flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = nixpkgs.legacyPackages.${system}.extend self.overlays.default;
+      in
+      {
+        # format with `nix fmt`.
+        formatter = nixpkgs.legacyPackages.${system}.nixpkgs-fmt;
+
+        devShells = {
+          node = import ./shells/node.nix { inherit pkgs; };
+        };
+
+        templates = {
+          rust = {
+            path = ./packages/rust;
+            description = "A rust project";
+          };
+
+          node = {
+            path = ./packages/node;
+            description = "A node project";
+          };
+        };
+      }
+    ));
 }
