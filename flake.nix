@@ -33,6 +33,19 @@
       # expose overlay to output.
       overlays.default = final: prev: (import ./overlays inputs) final prev;
 
+      # common templates I use.
+      templates = {
+        rust = {
+          path = ./packages/rust;
+          description = "A rust project";
+        };
+
+        node = {
+          path = ./packages/node;
+          description = "A node project";
+        };
+      };
+
       # expose all modules in ./modules.
       nixosModules = builtins.listToAttrs
         (map
@@ -117,18 +130,6 @@
 
         devShells = {
           node = import ./shells/node.nix { inherit pkgs; };
-        };
-
-        templates = {
-          rust = {
-            path = ./packages/rust;
-            description = "A rust project";
-          };
-
-          node = {
-            path = ./packages/node;
-            description = "A node project";
-          };
         };
       }
     ));
