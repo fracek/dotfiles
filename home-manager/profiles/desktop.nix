@@ -37,7 +37,7 @@
     monolisa
     supabase
     sapling
-    gefyra
+    nodePackages.graphite-cli
   ];
 
   # Setup X11 session.
