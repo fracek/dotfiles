@@ -36,7 +36,7 @@
     zathura
     monolisa
     supabase
-    sapling
+    slack
     nodePackages.graphite-cli
   ];
 
