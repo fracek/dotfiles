@@ -24,8 +24,10 @@ in
     nix.registry.nixpkgs.flake = nixpkgs;
     nix.registry.fra.flake = flake-self;
 
-    # Allow unfree licenced packages
-    nixpkgs.config.allowUnfree = true;
+    nixpkgs.config = {
+      # Allow unfree licenced packages
+      allowUnfree = true;
+    };
 
     # Enable flakes
     nix = {

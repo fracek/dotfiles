@@ -15,29 +15,52 @@
   };
 
   home.packages = with pkgs; [
+    # nix
     any-nix-shell
-    discord
+
+    # system
+    bind
+    zip
+    i3lock
+    mediainfo
+    libguestfs-with-appliance
+    unrar
+    unzip
+    file
+    scrot
+
+    # cli
+    btop
+    htop
     exa
     feh
     fortune
-    git
-    git-absorb
-    htop
-    i3lock
-    mediainfo
-    neovim
-    libguestfs-with-appliance
     ranger
     ripgrep
-    tig
     ueberzug
-    unrar
-    unzip
-    zathura
+
+    # dev
+    git
+    git-absorb
+    grpcurl
+    jq
+    neovim
+    nodePackages.graphite-cli
+    ngrok
     monolisa
     supabase
+    tig
+
+    # office
+    chromium
+    zoom
+    inkscape
+    openrgb
+    mailspring
+    morgen
     slack
-    nodePackages.graphite-cli
+    tdesktop
+    zathura
   ];
 
   # Setup X11 session.

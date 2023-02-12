@@ -7,8 +7,12 @@ in
   options.fra.programs.discord.enable = mkEnableOption "discord";
 
   config = mkIf cfg.enable {
+    home.packages = with pkgs; [
+      discord
+    ];
+
     programs.discocss = {
-      enable = true;
+      enable = false;
       discordAlias = false;
       css = ''
               /**
