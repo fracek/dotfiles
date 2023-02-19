@@ -1,6 +1,6 @@
 { pkgs, flake-self, nur, ... }:
 let
-  editor = "vim";
+  editor = "nvim";
 in
 {
   nixpkgs = {

@@ -81,7 +81,7 @@
         email = "francesco@ceccon.me";
       };
       core = {
-        editor = "code --wait -n";
+        editor = "nvim";
         autocrlf = "input";
       };
       init = { defaultBranch = "main"; };
