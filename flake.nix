@@ -128,6 +128,7 @@
 
         devShells = {
           node = import ./shells/node.nix { inherit pkgs; };
+          go = import ./shells/go.nix { inherit pkgs; };
         };
       }
     ));
