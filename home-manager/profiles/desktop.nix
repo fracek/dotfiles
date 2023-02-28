@@ -3,6 +3,7 @@
   fra = {
     programs = {
       awesome.enable = true;
+      neovim.enable = true;
       alacritty.enable = true;
       bash.enable = true;
       discord.enable = true;
@@ -44,7 +45,6 @@
     git-absorb
     grpcurl
     jq
-    neovim
     nodePackages.graphite-cli
     ngrok
     monolisa
@@ -90,14 +90,6 @@
       fetch.prune = true;
       diff = {
         colorMoved = "zebra";
-        tool = "vscode";
-      };
-      merge.tool = "vscode";
-      "difftool \"vscode\"" = {
-        cmd = "code -n --wait --diff $LOCAL $REMOTE";
-      };
-      "mergetool \"vscode\"" = {
-        cmd = "code -n --wait $MERGED";
       };
       alias = {
         am = "amend";
