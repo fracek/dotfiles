@@ -33,7 +33,6 @@ in
         # tools
         neogit
         diffview-nvim
-        lspsaga-nvim
         nvim-lspconfig
         rust-tools-nvim
 

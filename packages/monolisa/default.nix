@@ -1,7 +1,7 @@
 { lib, stdenv, requireFile, pkgs }:
 stdenv.mkDerivation rec {
   pname = "monolisa";
-  version = "2.003";
+  version = "2.005";
   src = pkgs.requireFile {
     name = "MonoLisa-Basic-${version}-ttf.zip";
     message = ''
@@ -11,7 +11,7 @@ stdenv.mkDerivation rec {
 
       and updating the sha256 below if necessary.
     '';
-    sha256 = "0nq8lcwwgx9isn6853ap1vlf3jx1h0i2q78x15mg38xxxz1b2z9p";
+    sha256 = "0l3pdqqnzgdzqaks7kgrjhgwclsjvqlkkc58i7nxphsx326zb7an";
   };
 
   installPhase = ''

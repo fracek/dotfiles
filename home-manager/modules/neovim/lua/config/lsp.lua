@@ -1,11 +1,9 @@
 local M = {}
 
 function M.setup()
-
   require('rust-tools').setup {
     server = {
-      on_attach = function(_, bufnr)
-      end
+      on_attach = require('config.keymaps').on_attach
     }
   }
 
