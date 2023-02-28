@@ -28,11 +28,26 @@ in
         # languages
         vim-nix
 
+        rust-vim
+
         # tools
         neogit
         diffview-nvim
+        lspsaga-nvim
+        nvim-lspconfig
+        rust-tools-nvim
+
+        (nvim-treesitter.withPlugins (plugins: with plugins; [
+          tree-sitter-python
+          tree-sitter-rust
+          tree-sitter-lua
+          tree-sitter-markdown
+          tree-sitter-yaml
+          tree-sitter-bash
+        ]))
 
         # ui
+        nvim-tree-lua
         which-key-nvim
         telescope-nvim
         telescope-fzf-native-nvim
