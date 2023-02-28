@@ -46,7 +46,7 @@ function M.on_attach(client, bufnr)
   keymap('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
   keymap('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
   keymap('n', 'gr', vim.lsp.buf.references, bufopts)
-  keymap('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+  keymap('n', '<leader>fm', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
 return M
