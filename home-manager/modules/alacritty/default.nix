@@ -11,6 +11,9 @@ in
       enable = true;
       settings = {
         font = { size = 12; };
+        window = {
+          opacity = 0.98;
+        };
         # catppuccin mocha colors
         colors = {
           primary = {

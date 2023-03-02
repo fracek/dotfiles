@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup()
-  vim.g.mapleader = ','
+  vim.g.mapleader = ' '
 
   local keymap = vim.keymap.set
 

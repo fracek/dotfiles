@@ -14,12 +14,17 @@ in
 
     services.picom = {
       enable = true;
-      backend = "xrender";
+      backend = "glx";
       shadow = true;
       shadowOffsets = [ (-20) (-5) ];
       shadowOpacity = 0.6;
       settings = {
         "shadow-radius" = 20;
+        "blur" = {
+          method = "gaussian";
+          size = 20;
+          deviation = 5.0;
+        };
       };
     };
 
