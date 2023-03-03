@@ -6,9 +6,10 @@ function M.setup()
   require('config.ui').setup()
   require('config.telescope').setup()
   require('config.neogit').setup()
-  --require('config.lsp').setup()
+  require('config.lsp').setup()
   require('config.whichkey').setup()
   require('config.panel').setup()
+  require('config.treesitter').setup()
 end
 
 return M

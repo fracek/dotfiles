@@ -15,6 +15,15 @@ in
       MANWIDTH = 900;
     };
 
+    home.packages = with pkgs; [
+      # needed to compile tree sitter languages
+      tree-sitter
+      gcc
+
+      # lsp
+      rust-analyzer
+    ];
+
     programs.neovim = {
       enable = true;
 
@@ -68,6 +77,11 @@ in
         recursive = true;
         source = ./lua;
         target = ".config/nvim/lua";
+      };
+      ".config/nvim/after" = {
+        recursive = true;
+        source = ./after;
+        target = ".config/nvim/after";
       };
     };
   };

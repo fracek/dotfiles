@@ -5,13 +5,18 @@ function M.setup()
 
   local keymap = vim.keymap.set
 
+  -- general
   keymap('n', '<leader><space>', ':noh<CR>', { noremap = true, desc = 'Clear highlight' })
   keymap('n', '<leader>s', ':w<CR>', { noremap = true, desc = 'Save' })
 
-  keymap('n', '<leader>e', vim.diagnostic.open_float, { noremap = true, silent = true })
-  keymap('n', '[e', vim.diagnostic.goto_prev, { noremap = true, silent = true })
-  keymap('n', ']e', vim.diagnostic.goto_next, { noremap = true, silent = true })
-  keymap('n', '<leader>q', vim.diagnostic.setloclist, { noremap = true, silent = true })
+  -- tabs
+  keymap('n', '<leader>tn', '<cmd>tabnew<CR>', { noremap = true, silent = true, desc = 'Create new tab' })
+  keymap('n', '<leader>tp', '<cmd>BufferPick<CR>', { noremap = true, silent = true, desc = 'Pick buffer' })
+  keymap('n', '<leader>tx', '<cmd>BufferClose<CR>', { noremap = true, silent = true, desc = 'Close buffer' })
+  keymap('n', '<leader>t.', '<cmd>BufferNext<CR>', { noremap = true, silent = true, desc = 'Next buffer' })
+  keymap('n', '<leader>t,', '<cmd>BufferPrevious<CR>', { noremap = true, silent = true, desc = 'Prev buffer' })
+  keymap('n', '<leader>t>', '<cmd>BufferMoveNext<CR>', { noremap = true, silent = true, desc = 'Move to next buffer' })
+  keymap('n', '<leader>t<', '<cmd>BufferMovePrevious<CR>', { noremap = true, silent = true, desc = 'Move to prev buffer' })
 
   -- Telescope
   local telescope = require('telescope.builtin')
@@ -27,29 +32,21 @@ function M.setup()
 
   -- Nvim tree
   keymap('n', '<leader>pv', ':NvimTreeToggle<CR>', { noremap = true, desc = 'Toggle side panel' })
-end
 
-function M.on_attach(client, bufnr)
-  -- Enable completion triggered by <c-x><c-o>
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
-  local keymap = vim.keymap.set
-
-  keymap('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  keymap('n', 'gd', vim.lsp.buf.definition, bufopts)
-  keymap('n', 'K', vim.lsp.buf.hover, bufopts)
-  keymap('n', 'gi', vim.lsp.buf.implementation, bufopts)
-  keymap('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-  keymap('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-  keymap('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-  keymap('n', '<leader>wl', function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  end, bufopts)
-  keymap('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
-  keymap('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
-  keymap('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
-  keymap('n', 'gr', vim.lsp.buf.references, bufopts)
-  keymap('n', '<leader>fm', function() vim.lsp.buf.format { async = true } end, bufopts)
+  -- Lspsaga
+  keymap('n', 'gh', '<cmd>Lspsaga lsp_finder<CR>', { desc = 'LSP finder' })
+  keymap({'n','v'}, '<leader>ca', '<cmd>Lspsaga code_action<CR>', { desc = 'LSP code action' })
+  keymap('n', 'gr', '<cmd>Lspsaga rename<CR>', { desc = 'LSP rename' })
+  keymap('n', 'gp', '<cmd>Lspsaga rename ++project<CR>', { desc = 'LSP rename in project' })
+  keymap('n','gd', '<cmd>Lspsaga goto_definition<CR>', { desc = 'LSP goto definition' })
+  keymap('n', '[e', '<cmd>Lspsaga diagnostic_jump_prev<CR>', { desc = 'LSP prev diagnostic' })
+  keymap('n', ']e', '<cmd>Lspsaga diagnostic_jump_next<CR>', { desc = 'LSP next diagnostic' })
+  keymap('n', '[E', function()
+    require('lspsaga.diagnostic'):goto_prev({ severity = vim.diagnostic.severity.ERROR })
+  end, { desc = 'LSP prev error' })
+  keymap('n', ']E', function()
+    require('lspsaga.diagnostic'):goto_next({ severity = vim.diagnostic.severity.ERROR })
+  end, { desc = 'LSP next error' })
 end
 
 return M
