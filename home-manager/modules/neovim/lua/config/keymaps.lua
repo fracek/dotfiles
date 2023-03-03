@@ -24,6 +24,9 @@ function M.setup()
   local neogit = require('neogit')
   keymap('n', '<leader>ns', function() neogit.open({ kind = 'tab' }) end, { noremap = true, desc = 'Open neogit status' })
   keymap('n', '<leader>nc', function() neogit.open({ 'commit' }) end, { noremap = true, desc = 'Open neogit commit' })
+
+  -- Nvim tree
+  keymap('n', '<leader>pv', ':NvimTreeToggle<CR>', { noremap = true, desc = 'Toggle side panel' })
 end
 
 function M.on_attach(client, bufnr)

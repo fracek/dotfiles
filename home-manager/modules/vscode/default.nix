@@ -31,10 +31,10 @@ in
         "vim.useSystemClipboard" = true;
         "vim.useCtrlKeys" = true;
         "vim.hlsearch" = true;
-        "vim.leader" = ",";
+        "vim.leader" = " ";
         "vim.normalModeKeyBindings" = [
           {
-            "before" = [ "<leader>" "<space>" ];
+            "before" = [ "<leader>" "b" ];
             "commands" = [ "whichkey.show" ];
           }
           {
@@ -166,6 +166,7 @@ in
             ];
           }
         ];
+        "glassit.alpha" = 249;
         "[nix]" = {
           "editor.insertSpaces" = true;
           "editor.tabSize" = 2;

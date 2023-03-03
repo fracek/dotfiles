@@ -25,34 +25,37 @@ in
       withNodeJs = true;
 
       plugins = with pkgs.vimPlugins; [
-        # languages
-        vim-nix
+        packer-nvim
 
-        rust-vim
+        # requires compilation
+        telescope-fzf-native-nvim
+        # languages
+        # vim-nix
+
+        # rust-vim
 
         # tools
-        neogit
-        diffview-nvim
-        nvim-lspconfig
-        rust-tools-nvim
+        # neogit
+        # diffview-nvim
+        # nvim-lspconfig
+        # rust-tools-nvim
 
-        (nvim-treesitter.withPlugins (plugins: with plugins; [
-          tree-sitter-python
-          tree-sitter-rust
-          tree-sitter-lua
-          tree-sitter-markdown
-          tree-sitter-yaml
-          tree-sitter-bash
-        ]))
+        # (nvim-treesitter.withPlugins (plugins: with plugins; [
+#           tree-sitter-python
+#           tree-sitter-rust
+#           tree-sitter-lua
+#           tree-sitter-markdown
+#           tree-sitter-yaml
+#           tree-sitter-bash
+#         ]))
 
         # ui
-        nvim-tree-lua
-        which-key-nvim
-        telescope-nvim
-        telescope-fzf-native-nvim
+#         nvim-tree-lua
+#         which-key-nvim
+#         telescope-nvim
 
         # themes
-        catppuccin-nvim
+#         catppuccin-nvim
       ];
 
       extraConfig = ''
