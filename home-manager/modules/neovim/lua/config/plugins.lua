@@ -53,6 +53,9 @@ function M.setup()
     -- use editorconfig to keep things consistent
     use 'gpanders/editorconfig.nvim'
 
+    -- show undo tree
+    use 'mbbill/undotree' 
+
     -- Language support
     use 'neovim/nvim-lspconfig'
     use 'glepnir/lspsaga.nvim'

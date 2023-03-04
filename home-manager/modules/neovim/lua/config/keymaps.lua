@@ -6,7 +6,7 @@ function M.setup()
   local keymap = vim.keymap.set
 
   -- general
-  keymap('n', '<leader><space>', ':noh<CR>', { noremap = true, desc = 'Clear highlight' })
+  keymap('n', '<leader>b', ':noh<CR>', { noremap = true, desc = 'Clear highlight' })
   keymap('n', '<leader>s', ':w<CR>', { noremap = true, desc = 'Save' })
 
   -- tabs
@@ -17,6 +17,9 @@ function M.setup()
   keymap('n', '<leader>t,', '<cmd>BufferPrevious<CR>', { noremap = true, silent = true, desc = 'Prev buffer' })
   keymap('n', '<leader>t>', '<cmd>BufferMoveNext<CR>', { noremap = true, silent = true, desc = 'Move to next buffer' })
   keymap('n', '<leader>t<', '<cmd>BufferMovePrevious<CR>', { noremap = true, silent = true, desc = 'Move to prev buffer' })
+
+  -- Undotree
+  keymap('n', '<leader>u', vim.cmd.UndotreeToggle, { noremap = true, silent = true, desc = 'Toggle undo tree' })
 
   -- Telescope
   local telescope = require('telescope.builtin')

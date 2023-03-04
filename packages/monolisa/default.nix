@@ -11,7 +11,7 @@ stdenv.mkDerivation rec {
 
       and updating the sha256 below if necessary.
     '';
-    sha256 = "0l3pdqqnzgdzqaks7kgrjhgwclsjvqlkkc58i7nxphsx326zb7an";
+    sha256 = "0zsnylp6wnxw3dqndhigjq0lza126jadl07nh2fvd405k3lc42d1";
   };
 
   installPhase = ''
