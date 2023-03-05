@@ -47,7 +47,6 @@
     jq
     nodePackages.graphite-cli
     ngrok
-    monolisa
     supabase
     tig
 

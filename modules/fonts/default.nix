@@ -11,16 +11,26 @@ in
       enableDefaultFonts = true;
       fonts = with pkgs; [
         dejavu_fonts
-        cascadia-code
         noto-fonts-emoji
-        monolisa
+
+        (iosevka-bin.override {
+          variant = "sgr-iosevka-aile";
+        })
+
+        (iosevka-bin.override {
+          variant = "sgr-iosevka-etoile";
+        })
+
+        (iosevka-bin.override {
+          variant = "sgr-iosevka-term-ss08";
+        })
       ];
 
       fontconfig = {
         defaultFonts = {
-          serif = [ "DejaVu Serif" ];
-          sansSerif = [ "DejaVu Sans" ];
-          monospace = [ "MonoLisa" ];
+          serif = [ "Iosevka Etoile" ];
+          sansSerif = [ "Iosevka Aile" ];
+          monospace = [ "Iosevka Term SS08" ];
           emoji = [ "Noto Color Emoji" ];
         };
       };
