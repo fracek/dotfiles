@@ -6,6 +6,11 @@ function M.setup()
     sources = {
       { name = 'nvim_lsp' },
     },
+    snippet = {
+      expand = function(args)
+        vim.fn['vsnip#anonymous'](args.body)
+      end,
+    },
     mapping = cmp.mapping.preset.insert {
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.abort(),
