@@ -11,6 +11,7 @@
       rofi.enable = true;
       vscode.enable = true;
       obs-studio.enable = true;
+      tmux.enable = true;
     };
     i18n.enable = true;
   };
@@ -118,12 +119,6 @@
   programs.fzf = {
     enable = true;
     enableBashIntegration = true;
-  };
-
-  programs.tmux = {
-    enable = true;
-    clock24 = true;
-    prefix = "C-a";
   };
 
   gtk = {
