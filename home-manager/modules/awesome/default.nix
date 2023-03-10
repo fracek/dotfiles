@@ -12,12 +12,23 @@ in
       luaModules = [ pkgs.luaPackages.vicious ];
     };
 
+    home.packages = with pkgs; [
+      # used by vicious
+      alsa-utils
+    ];
+
     services.picom = {
       enable = true;
       backend = "glx";
       shadow = true;
       shadowOffsets = [ (-20) (-5) ];
       shadowOpacity = 0.6;
+      wintypes = {
+        dock = {
+          shadow = false;
+          blur-background = false;
+        };
+      };
       settings = {
         "shadow-radius" = 20;
         "blur" = {

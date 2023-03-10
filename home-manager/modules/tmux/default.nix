@@ -9,7 +9,7 @@ in
   config = mkIf cfg.enable {
     programs.tmux = {
       enable = true;
-      prefix = "C-b";
+      prefix = "C-h";
       baseIndex = 1;
       keyMode = "vi";
       extraConfig = ''
