@@ -39,10 +39,15 @@ function M.setup()
   vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
 
   -- status line
+  local catppuccin_palette = require('catppuccin.palettes').get_palette()
+  local custom_catppuccin = require('lualine.themes.catppuccin')
+  custom_catppuccin.normal.a.bg = catppuccin_palette.flamingo
+  custom_catppuccin.normal.b.fg = catppuccin_palette.flamingo
+
   require('lualine').setup {
     options = {
       icons_enabled = false,
-      theme = 'catppuccin',
+      theme = custom_catppuccin,
       disabled_filetypes = {},
       component_separators = '|',
       section_separators = { left = '', right = ''},
