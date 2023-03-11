@@ -12,7 +12,7 @@ function M.setup()
     use 'nvim-lualine/lualine.nvim'
 
     -- tab bar
-    use 'romgrk/barbar.nvim'
+    use 'nanozuki/tabby.nvim'
 
     -- will replace me someday
     use 'github/copilot.vim'

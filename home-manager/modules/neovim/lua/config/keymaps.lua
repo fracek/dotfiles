@@ -11,12 +11,12 @@ function M.setup()
 
   -- tabs
   keymap('n', '<leader>tn', '<cmd>tabnew<CR>', { noremap = true, silent = true, desc = 'Create new tab' })
-  keymap('n', '<leader>tp', '<cmd>BufferPick<CR>', { noremap = true, silent = true, desc = 'Pick buffer' })
-  keymap('n', '<leader>tx', '<cmd>BufferClose<CR>', { noremap = true, silent = true, desc = 'Close buffer' })
-  keymap('n', '<leader>t.', '<cmd>BufferNext<CR>', { noremap = true, silent = true, desc = 'Next buffer' })
-  keymap('n', '<leader>t,', '<cmd>BufferPrevious<CR>', { noremap = true, silent = true, desc = 'Prev buffer' })
-  keymap('n', '<leader>t>', '<cmd>BufferMoveNext<CR>', { noremap = true, silent = true, desc = 'Move to next buffer' })
-  keymap('n', '<leader>t<', '<cmd>BufferMovePrevious<CR>', { noremap = true, silent = true, desc = 'Move to prev buffer' })
+  keymap('n', '<leader>tc', '<cmd>tabclose<CR>', { noremap = true, silent = true, desc = 'Close tab' })
+  keymap('n', '<leader>to', '<cmd>tabonly<CR>', { noremap = true, silent = true, desc = 'Only tab' })
+  keymap('n', '<leader>t.', '<cmd>tabn<CR>', { noremap = true, silent = true, desc = 'Next tab' })
+  keymap('n', '<leader>t,', '<cmd>tabp<CR>', { noremap = true, silent = true, desc = 'Prev tab' })
+  keymap('n', '<leader>t>', '<cmd>+tabmove<CR>', { noremap = true, silent = true, desc = 'Move to next tab' })
+  keymap('n', '<leader>t<', '<cmd>-tabmove<CR>', { noremap = true, silent = true, desc = 'Move to prev tab' })
 
   -- Undotree
   keymap('n', '<leader>u', vim.cmd.UndotreeToggle, { noremap = true, silent = true, desc = 'Toggle undo tree' })

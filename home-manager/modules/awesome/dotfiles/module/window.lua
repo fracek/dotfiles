@@ -177,7 +177,7 @@ end
 function window.draw_rounded_border(c)
     if not c.fullscreen then
         c.shape = function(cr, w, h)
-            gears.shape.rounded_rect(cr, w, h, beautiful.border_width)
+            gears.shape.rounded_rect(cr, w, h, dpi(8))
         end
     else
         c.shape = gears.shape.rectangle
