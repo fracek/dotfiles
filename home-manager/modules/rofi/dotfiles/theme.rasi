@@ -1,9 +1,9 @@
 * {
-    bg: #1e1e2e;
-    fg: #cdd6f4;
-    red: #f38ba8;
-    green: #a6e3a1;
-    pink: #f5c2e7;
+    bg: #191724;
+    fg: #e0def4;
+    red: #eb6f92;
+    green: #31748f;
+    pink: #ebbcba;
 
     background-color: @bg;
 }

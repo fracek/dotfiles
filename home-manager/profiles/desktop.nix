@@ -124,8 +124,8 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Catppuccin";
-      package = pkgs.catppuccin-gtk;
+      name = "Rose-Pine";
+      package = pkgs.rose-pine-gtk-theme;
     };
     iconTheme = {
       name = "Arc";

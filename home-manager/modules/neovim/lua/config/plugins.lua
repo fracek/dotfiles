@@ -6,7 +6,7 @@ function M.setup()
   return require('packer').startup(function(use)
     -- Base plugins
     -- The best theme
-    use { 'catppuccin/nvim', as = 'catppuccin' }
+    use { 'rose-pine/neovim', as = 'rose-pine' }
 
     -- status line
     use 'nvim-lualine/lualine.nvim'

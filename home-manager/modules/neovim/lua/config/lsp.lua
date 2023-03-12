@@ -36,7 +36,6 @@ function M.setup()
   require('lspsaga').setup {
     ui = {
       title = false,
-      kind = require('catppuccin.groups.integrations.lsp_saga').custom_kind(),
     },
     symbol_in_winbar = {
       enable = false,
