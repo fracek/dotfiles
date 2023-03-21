@@ -1,6 +1,8 @@
 local M = {}
 
 function M.setup()
+  local circles = require('circles')
+
   require('nvim-tree').setup {
     git = {
       enable = false,
@@ -10,13 +12,10 @@ function M.setup()
     },
     renderer = {
       icons = {
+        glyphs = circles.get_nvimtree_glyphs(),
         show = {
-	  file = false,
-	  folder = false,
-	  folder_arrow = false,
-	  git = false,
-	  modified = false,
-	},
+          folder_arrow = false,
+        },
       },
     },
   }

@@ -69,6 +69,12 @@ function M.setup()
 
     -- Blazing fast
     use 'simrat39/rust-tools.nvim'
+
+    -- no icons
+    use {
+      'projekt0n/circles.nvim',
+      requires = 'nvim-tree/nvim-web-devicons',
+    }
   end)
 end
 

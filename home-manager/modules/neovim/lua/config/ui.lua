@@ -29,6 +29,12 @@ function M.setup()
   vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
   vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
 
+  -- no icons
+  require('circles').setup {
+    icons = { empty = "◯", filled = "⬤", lsp_prefix = "⌑" },
+    lsp = true,
+  }
+
   -- status line
   require('lualine').setup {
     options = {
