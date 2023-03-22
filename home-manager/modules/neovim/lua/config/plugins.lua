@@ -41,6 +41,9 @@ function M.setup()
     -- Need side panel
     use 'nvim-tree/nvim-tree.lua'
 
+    -- like ace-window
+    use 'yorickpeterse/nvim-window'
+
     -- Better syntax highlight
     use {
       'nvim-treesitter/nvim-treesitter',

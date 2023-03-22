@@ -50,6 +50,9 @@ function M.setup()
   keymap('n', ']E', function()
     require('lspsaga.diagnostic'):goto_next({ severity = vim.diagnostic.severity.ERROR })
   end, { desc = 'LSP next error' })
+
+  -- window picker
+  keymap('n', '<leader>w', function() require('nvim-window').pick() end, { noremap = true, silent = true, desc = 'Jump window' })
 end
 
 return M

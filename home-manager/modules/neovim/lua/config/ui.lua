@@ -66,6 +66,14 @@ function M.setup()
   require('tabby.tabline').use_preset('active_wins_at_tail', {
     nerdfont = false,
   })
+
+  -- window selector
+  vim.cmd[[hi NvimWindowNormal guibg=#ebbcba guifg=#191724]]
+  require('nvim-window').setup {
+    normal_hl = 'NvimWindowNormal',
+    hint_hl = 'Bold',
+    border = 'none',
+  }
 end
 
 return M
