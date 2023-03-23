@@ -13,6 +13,14 @@ in
       example = "nixos";
       description = "the machine hostname";
     };
+
+    withPicom = mkOption {
+      type = types.bool;
+      default = true;
+      description = ''
+        Enable picom.
+      '';
+    };
   };
 
   config = mkIf cfg.enable {
@@ -35,6 +43,7 @@ in
       # there.
       extraSpecialArgs = {
         inherit flake-self nur;
+        withPicom = cfg.withPicom;
       };
     };
 

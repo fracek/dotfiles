@@ -1,8 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, withPicom, ... }:
 {
   fra = {
     programs = {
-      awesome.enable = true;
+      awesome = {
+        inherit withPicom;
+        enable = true;
+      };
       neovim.enable = true;
       alacritty.enable = true;
       bash.enable = true;

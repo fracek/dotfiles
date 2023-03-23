@@ -4,7 +4,16 @@ let
   cfg = config.fra.programs.awesome;
 in
 {
-  options.fra.programs.awesome.enable = mkEnableOption "awesome window manager";
+  options.fra.programs.awesome = {
+    enable = mkEnableOption "awesome window manager";
+    withPicom = mkOption {
+      default = true;
+      type = types.bool;
+      description = ''
+        Enable picom.
+      '';
+    };
+  };
 
   config = mkIf cfg.enable {
     xsession.windowManager.awesome = {
@@ -18,7 +27,7 @@ in
     ];
 
     services.picom = {
-      enable = true;
+      enable = cfg.withPicom;
       backend = "glx";
       shadow = true;
       shadowOffsets = [ (-20) (-5) ];
