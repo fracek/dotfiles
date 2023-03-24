@@ -42,6 +42,21 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Setup trackpoint.
+  hardware.trackpoint.enable = true;
+  hardware.trackpoint.emulateWheel = true;
+  hardware.trackpoint.sensitivity = 200;
+  hardware.trackpoint.speed = 255;
+
+  # Setup power management
+  services.tlp = {
+    enable = true;
+    settings = {
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+    };
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
