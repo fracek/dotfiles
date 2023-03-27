@@ -21,6 +21,16 @@
       efi.efiSysMountPoint = "/boot/efi";
     };
     kernelPackages = pkgs.linuxPackages_latest;
+    kernelModules = [
+      "acpi_call"
+    ];
+    kernelParams = [
+      "acpi_backlight=native"
+      "mem_sleep_default=deep"
+    ];
+    extraModulePackages = with config.boot.kernelPackages; [
+      acpi_call
+    ];
   };
 
   # Use dhcp.
@@ -39,14 +49,14 @@
     synaptics.enable = true;
   };
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
   # Setup trackpoint.
   hardware.trackpoint.enable = true;
   hardware.trackpoint.emulateWheel = true;
   hardware.trackpoint.sensitivity = 200;
   hardware.trackpoint.speed = 255;
+
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
 
   # Setup power management
   services.tlp = {
@@ -55,6 +65,19 @@
       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
       CPU_SCALING_GOVERNOR_ON_AC = "performance";
     };
+  };
+
+  # Setup hidpi.
+  hardware.video.hidpi.enable = true;
+
+  # fingerprint
+  services.fprintd = {
+    enable = true;
+  };
+
+  # needed by fprint
+  security.polkit = {
+    enable = true;
   };
 
   # This value determines the NixOS release from which the default
