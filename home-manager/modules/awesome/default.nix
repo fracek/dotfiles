@@ -24,6 +24,10 @@ in
     home.packages = with pkgs; [
       # used by vicious
       alsa-utils
+      # to change brightness
+      brightnessctl
+      # to control volume
+      pamixer
     ];
 
     services.picom = {
