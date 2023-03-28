@@ -23,13 +23,17 @@ function M.setup()
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
   -- advertise capabilities to lsp servers
-  require('lspconfig').rust_analyzer.setup {
+  local lspconfig = require('lspconfig')
+  lspconfig.rust_analyzer.setup {
     capabilities = capabilities,
   }
-  require('lspconfig').tsserver.setup {
+  lspconfig.tsserver.setup {
     capabilities = capabilities,
   }
-  require('lspconfig').pylsp.setup {
+  lspconfig.pylsp.setup {
+    capabilities = capabilities,
+  }
+  lspconfig.gopls.setup {
     capabilities = capabilities,
   }
 
