@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
   buildPhase = ''
     runHook preBuild
     # rose pine
-    cbmp -d 'svg' -n 'Fuchsia' -bc '#ebbcba' -oc '#26233a'
+    cbmp -d 'svg' -n 'Fuchsia' -bc '#f6c177' -oc '#e0def4'
     ctgen build.toml -d 'bitmaps/Fuchsia' -n 'Fuchsia' -c 'My personal Fuchsia cursor theme'
     runHook postBuild
   '';
