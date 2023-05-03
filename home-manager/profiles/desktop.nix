@@ -33,6 +33,7 @@
     unzip
     file
     scrot
+    xclip
 
     # cli
     btop
