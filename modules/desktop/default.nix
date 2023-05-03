@@ -61,6 +61,9 @@ in
     networking = {
       networkmanager.enable = true;
       hostName = cfg.hostname;
+
+      firewall.enable = false;
+      nftables.enable = true;
     };
 
     # Setup docker.
