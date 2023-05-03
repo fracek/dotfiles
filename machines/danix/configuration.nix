@@ -55,6 +55,12 @@
     drivers = with pkgs; [ hplipWithPlugin ];
   };
 
+  # vpn
+  services.mullvad-vpn = {
+    enable = true;
+    package = pkgs.mullvad-vpn;
+  };
+
   system.stateVersion = "22.05";
 
   # Use systemd-boot efi boot loader.
