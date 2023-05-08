@@ -1,9 +1,10 @@
 { pkgs, ... }:
 pkgs.mkShell {
-  packages = [
-    pkgs.nodejs
-    pkgs.nodePackages.typescript
-    pkgs.nodePackages.typescript-language-server
+  packages = with pkgs; [
+    nodejs
+    nodePackages.pnpm
+    nodePackages.typescript
+    nodePackages.typescript-language-server
   ];
   NIX_LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
     pkgs.stdenv.cc.cc
