@@ -25,8 +25,9 @@ function M.setup()
   local telescope = require('telescope.builtin')
   keymap('n', '<leader>ff', telescope.find_files, { desc = 'Telescope find files' })
   keymap('n', '<leader>fg', telescope.live_grep, { desc = 'Telescope grep' })
-  keymap('n', '<leader>fb', telescope.buffers, { desc = 'Telescope buffers' })
   keymap('n', '<leader>fh', telescope.help_tags, { desc = 'Telescope help' })
+  keymap('n', '<leader>ft', '<cmd>Telescope file_browser<CR>', { desc = 'Telescope file browser' })
+  keymap('n', '<leader>fb', '<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>', { desc = 'Telescope file browser (current file)' })
 
   -- Neogit
   local neogit = require('neogit')

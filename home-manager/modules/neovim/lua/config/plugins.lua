@@ -23,6 +23,14 @@ function M.setup()
       requires = 'nvim-lua/plenary.nvim'
     }
 
+    use {
+      'nvim-telescope/telescope-file-browser.nvim', 
+      requires = {
+        'nvim-telescope/telescope.nvim', 
+        'nvim-lua/plenary.nvim'
+      }
+    }
+
     -- Almost as good as magit
     use {
       'TimUntersberger/neogit',
@@ -37,9 +45,6 @@ function M.setup()
 
     -- CBA remember all keys
     use 'folke/which-key.nvim'
-
-    -- Need side panel
-    use 'nvim-tree/nvim-tree.lua'
 
     -- like ace-window
     use 'yorickpeterse/nvim-window'
@@ -73,12 +78,6 @@ function M.setup()
 
     -- Blazing fast
     use 'simrat39/rust-tools.nvim'
-
-    -- no icons
-    use {
-      'projekt0n/circles.nvim',
-      requires = 'nvim-tree/nvim-web-devicons',
-    }
   end)
 end
 
