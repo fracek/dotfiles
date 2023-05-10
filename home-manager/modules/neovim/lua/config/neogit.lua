@@ -7,6 +7,10 @@ function M.setup()
       diffview = true
     },
   }
+
+  require('diffview').setup {
+    use_icons = false,
+  }
 end
 
 return M
