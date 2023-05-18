@@ -36,7 +36,7 @@ function M.setup()
       theme = 'rose-pine',
       disabled_filetypes = {},
       component_separators = '|',
-      section_separators = { left = '', right = ''},
+      section_separators = { left = '▒', right = '░'},
     },
     sections = {
       lualine_a = { 'mode' },

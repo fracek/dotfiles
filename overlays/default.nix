@@ -11,5 +11,5 @@ self: super:
   fuchsia-cursor = super.callPackage ../packages/fuchsia-cursor { };
   supabase = super.callPackage ../packages/supabase { };
   morgen = super.callPackage ../packages/morgen { };
-  iosevka-bin = super.callPackage ../packages/iosevka-bin { };
+  monolisa = super.callPackage ../packages/monolisa { };
 }

@@ -9,6 +9,7 @@ function M.setup()
       },
       file_browser = {
         hijack_netrw = true,
+        dir_icon = "○",
       },
     },
   }
