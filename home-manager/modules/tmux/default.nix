@@ -24,7 +24,7 @@ in
 
       set-option -g message-style bg=#eba0ac,fg=#1e1e2e
 
-      set-window-option -g window-status-current-style fg=#b4befe
+      set-window-option -g window-status-current-style fg=#ebbcba
       set-window-option -g mouse on
       '';
     };
