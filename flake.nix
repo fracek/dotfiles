@@ -127,6 +127,7 @@
         formatter = nixpkgs.legacyPackages.${system}.nixpkgs-fmt;
 
         devShells = {
+          ld = import ./shells/ld.nix { inherit pkgs; };
           node = import ./shells/node.nix { inherit pkgs; };
           go = import ./shells/go.nix { inherit pkgs; };
           protobuf = import ./shells/protobuf.nix { inherit pkgs; };
