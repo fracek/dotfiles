@@ -12,7 +12,6 @@
       discord.enable = true;
       firefox.enable = true;
       rofi.enable = true;
-      vscode.enable = true;
       obs-studio.enable = true;
       tmux.enable = true;
     };
@@ -54,6 +53,7 @@
     ngrok
     supabase
     tig
+    vscode
 
     # office
     chromium
@@ -65,6 +65,8 @@
     slack
     tdesktop
     zathura
+    mpv
+    ffmpeg
   ];
 
   # Setup X11 session.
