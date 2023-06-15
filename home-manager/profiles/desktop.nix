@@ -30,6 +30,7 @@
     libguestfs-with-appliance
     unrar
     unzip
+    pavucontrol
     file
     scrot
     xclip
