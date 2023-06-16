@@ -18,7 +18,7 @@ in
     nix.settings.allowed-users = [ "fra" ];
 
     # Set timezone and language.
-    time.timeZone = "Europe/London";
+    time.timeZone = "Europe/Amsterdam";
     i18n.defaultLocale = "en_GB.UTF-8";
     console = { useXkbConfig = true; };
   };
