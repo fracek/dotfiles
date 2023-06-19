@@ -46,7 +46,6 @@
     layout = "us";
     xkbVariant = "dvorak";
     xkbOptions = "ctrl:swapcaps,altwin:swap_alt_win";
-    synaptics.enable = true;
   };
 
   # Setup trackpoint.
@@ -66,9 +65,6 @@
       CPU_SCALING_GOVERNOR_ON_AC = "performance";
     };
   };
-
-  # Setup hidpi.
-  hardware.video.hidpi.enable = true;
 
   # fingerprint
   services.fprintd = {

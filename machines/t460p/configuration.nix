@@ -17,7 +17,6 @@
     layout = "us";
     xkbVariant = "dvorak";
     xkbOptions = "ctrl:swapcaps,altwin:swap_alt_win";
-    synaptics.enable = true;
   };
 
   # Setup trackpoint.
@@ -25,9 +24,6 @@
   hardware.trackpoint.emulateWheel = true;
   hardware.trackpoint.sensitivity = 200;
   hardware.trackpoint.speed = 255;
-
-  # Setup hidpi.
-  hardware.video.hidpi.enable = true;
 
   environment.variables = {
     GDK_SCALE = "2";
