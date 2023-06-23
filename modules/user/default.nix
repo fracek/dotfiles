@@ -15,7 +15,10 @@ in
 
     programs.bash.enableCompletion = true;
 
-    nix.settings.allowed-users = [ "fra" ];
+    nix.settings = {
+      allowed-users = [ "fra" ];
+      trusted-users = [ "root" "fra" ];
+    };
 
     # Set timezone and language.
     time.timeZone = "Europe/Amsterdam";

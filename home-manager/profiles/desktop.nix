@@ -24,6 +24,7 @@
 
     # system
     bind
+    cachix
     zip
     i3lock
     mediainfo
