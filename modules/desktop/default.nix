@@ -64,6 +64,10 @@ in
 
       firewall.enable = false;
       nftables.enable = true;
+
+      nameservers = [
+        "1.1.1.1"
+      ];
     };
 
     # Setup docker.
