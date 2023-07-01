@@ -70,6 +70,7 @@
     zathura
     mpv
     ffmpeg
+    simplescreenrecorder
   ];
 
   # Setup X11 session.
@@ -141,12 +142,12 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Rose-Pine";
+      name = "rose-pine";
       package = pkgs.rose-pine-gtk-theme;
     };
     iconTheme = {
-      name = "Arc";
-      package = pkgs.arc-icon-theme;
+      name = "oomox-rose-pine";
+      package = pkgs.rose-pine-icon-theme;
     };
   };
 
