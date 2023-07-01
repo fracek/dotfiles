@@ -53,6 +53,7 @@
     jq
     nodePackages.graphite-cli
     ngrok
+    insomnia
     supabase
     tig
     vscode
