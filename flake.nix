@@ -114,6 +114,7 @@
           packages = flake-utils.lib.flattenTree {
             hello-custom = pkgs.hello-custom;
             supabase = pkgs.supabase;
+            mirrord-bin = pkgs.mirrord-bin;
           };
         }
       ) //

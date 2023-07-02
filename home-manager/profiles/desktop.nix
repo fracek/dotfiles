@@ -55,6 +55,7 @@
     ngrok
     insomnia
     supabase
+    mirrord-bin
     tig
     vscode
 
