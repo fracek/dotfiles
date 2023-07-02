@@ -10,6 +10,7 @@ in
     fonts = {
       enableDefaultFonts = true;
       fonts = with pkgs; [
+        apple-fonts
         dejavu_fonts
         noto-fonts-emoji
         monolisa
@@ -17,9 +18,9 @@ in
 
       fontconfig = {
         defaultFonts = {
-          serif = [ "DejaVu Serif" ];
-          sansSerif = [ "DejaVu Sans" ];
-          monospace = [ "MonoLisa" ];
+          serif = [ "New York" ];
+          sansSerif = [ "SF Pro Display" ];
+          monospace = [ "SF Mono" ];
           emoji = [ "Noto Color Emoji" ];
         };
       };

@@ -41,7 +41,7 @@ in
       ];
 
       extraConfig = ''
-      lua require('config').setup()
+        lua require('config').setup()
       '';
     };
 

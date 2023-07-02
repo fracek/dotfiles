@@ -12,4 +12,5 @@ self: super:
   supabase = super.callPackage ../packages/supabase { };
   morgen = super.callPackage ../packages/morgen { };
   monolisa = super.callPackage ../packages/monolisa { };
+  apple-fonts = super.callPackage ../packages/apple-fonts { };
 }
