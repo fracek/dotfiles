@@ -66,6 +66,7 @@
     openrgb
     mailspring
     morgen
+    figma-linux
     slack
     tdesktop
     zathura
