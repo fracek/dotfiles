@@ -14,6 +14,7 @@
       rofi.enable = true;
       obs-studio.enable = true;
       tmux.enable = true;
+      xplr.enable = true;
     };
     i18n.enable = true;
   };
