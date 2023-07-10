@@ -11,7 +11,7 @@ in
       enable = true;
       userSettings = {
         "editor.fontFamily" = "monospace";
-        "editor.fontSize" = 15;
+        "editor.fontSize" = 16;
         "editor.stickyScroll.enabled" = true;
         "workbench.iconTheme" = null;
         "workbench.colorTheme" = "Rosé Pine";
@@ -276,6 +276,12 @@ in
           publisher = "jnoortheen";
           version = "0.2.1";
           sha256 = "sha256-yC4ybThMFA2ncGhp8BYD7IrwYiDU3226hewsRvJYKy4=";
+        }
+        {
+          name = "copilot";
+          publisher = "GitHub";
+          version = "1.95.246";
+          sha256 = "sha256-AW/VXfmookSH0Kl4PJySO5oNutmjeTjYMOZ0jH+3Liw=";
         }
       ];
     };
