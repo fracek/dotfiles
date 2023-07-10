@@ -67,7 +67,7 @@ function M.setup()
 
     -- Language support
     use 'neovim/nvim-lspconfig'
-    use 'glepnir/lspsaga.nvim'
+    use 'nvimdev/lspsaga.nvim'
     -- completion
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/nvim-cmp'

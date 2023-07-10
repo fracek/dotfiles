@@ -15,6 +15,7 @@
       obs-studio.enable = true;
       tmux.enable = true;
       xplr.enable = true;
+      vscode.enable = true;
     };
     i18n.enable = true;
   };
@@ -22,6 +23,7 @@
   home.packages = with pkgs; [
     # nix
     any-nix-shell
+    nil
 
     # system
     bind
@@ -58,7 +60,6 @@
     supabase
     mirrord-bin
     tig
-    vscode
 
     # office
     chromium

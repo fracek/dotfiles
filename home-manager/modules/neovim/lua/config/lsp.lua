@@ -46,6 +46,11 @@ function M.setup()
   require('lspsaga').setup {
     ui = {
       title = false,
+      devicon = false,
+    },
+    lightbulb = {
+      enabled = true,
+      sign = false,
     },
     symbol_in_winbar = {
       enable = false,
