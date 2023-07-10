@@ -178,7 +178,7 @@ in
       };
       keybindings = [
         {
-          "key" = "ctr+h";
+          "key" = "ctrl+h";
           "command" = "workbench.action.navigateLeft";
         }
         {
