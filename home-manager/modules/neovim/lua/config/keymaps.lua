@@ -37,20 +37,23 @@ function M.setup()
   -- Nvim tree
   keymap('n', '<leader>pv', ':NvimTreeToggle<CR>', { noremap = true, desc = 'Toggle side panel' })
 
-  -- Lspsaga
-  keymap('n', 'gh', '<cmd>Lspsaga lsp_finder<CR>', { desc = 'LSP finder' })
-  keymap({'n','v'}, '<leader>ca', '<cmd>Lspsaga code_action<CR>', { desc = 'LSP code action' })
-  keymap('n', 'gr', '<cmd>Lspsaga rename<CR>', { desc = 'LSP rename' })
-  keymap('n', 'gp', '<cmd>Lspsaga rename ++project<CR>', { desc = 'LSP rename in project' })
-  keymap('n','gd', '<cmd>Lspsaga goto_definition<CR>', { desc = 'LSP goto definition' })
-  keymap('n', '[e', '<cmd>Lspsaga diagnostic_jump_prev<CR>', { desc = 'LSP prev diagnostic' })
-  keymap('n', ']e', '<cmd>Lspsaga diagnostic_jump_next<CR>', { desc = 'LSP next diagnostic' })
-  keymap('n', '[E', function()
-    require('lspsaga.diagnostic'):goto_prev({ severity = vim.diagnostic.severity.ERROR })
-  end, { desc = 'LSP prev error' })
-  keymap('n', ']E', function()
-    require('lspsaga.diagnostic'):goto_next({ severity = vim.diagnostic.severity.ERROR })
-  end, { desc = 'LSP next error' })
+  -- LSP
+  -- Goto X
+  keymap('n','gd', vim.lsp.buf.definition, { desc = 'LSP goto definition' })
+  keymap('n','gD', vim.lsp.buf.declaration, { desc = 'LSP goto declaration' })
+  keymap('n','gi', vim.lsp.buf.implementation, { desc = 'LSP goto implementation' })
+  keymap('n', 'gh', vim.lsp.buf.references, { desc = 'LSP finder' })
+  -- Code
+  keymap('n', 'K', vim.lsp.buf.hover, { desc = 'LSP hover' })
+  keymap('n', '<C-k>', vim.lsp.buf.signature_help, { desc = 'LSP signature help' })
+  keymap({'n','v'}, 'ca', vim.lsp.buf.code_action, { desc = 'LSP code action' })
+  keymap('n', 'ce', vim.lsp.buf.rename, { desc = 'LSP rename' })
+  keymap('n', '<leader>cu', function() 
+    vim.lsp.buf.format { async = true }
+  end, { desc = 'LSP format' })
+  -- Diagnostic
+  keymap('n', '[e', vim.diagnostic.goto_prev, { desc = 'LSP prev diagnostic' })
+  keymap('n', ']e', vim.diagnostic.goto_next, { desc = 'LSP next diagnostic' })
 
   -- window picker
   keymap('n', '<leader>w', function() require('nvim-window').pick() end, { noremap = true, silent = true, desc = 'Jump window' })

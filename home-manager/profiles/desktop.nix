@@ -103,7 +103,17 @@
       pull.rebase = true;
       fetch.prune = true;
       diff = {
+        # tool = "vscode";
         colorMoved = "zebra";
+      };
+      merge = {
+        # tool = "vscode";
+      };
+      "difftool \"vscode\"" = {
+        cmd = "code --wait --new-window --diff $LOCAL $REMOTE";
+      };
+      "mergetool \"vscode\"" = {
+        cmd = "code --wait --new-window $MERGED";
       };
       alias = {
         am = "amend";

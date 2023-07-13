@@ -65,9 +65,12 @@ function M.setup()
     -- show undo tree
     use 'mbbill/undotree' 
 
+    -- commenting
+    use 'numToStr/Comment.nvim'
+
     -- Language support
     use 'neovim/nvim-lspconfig'
-    use 'nvimdev/lspsaga.nvim'
+    -- use 'nvimdev/lspsaga.nvim'
     -- completion
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/nvim-cmp'

@@ -10,6 +10,7 @@ function M.setup()
   require('config.whichkey').setup()
   require('config.panel').setup()
   require('config.treesitter').setup()
+  require('config.comment').setup()
 end
 
 return M

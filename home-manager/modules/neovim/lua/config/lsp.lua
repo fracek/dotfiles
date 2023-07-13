@@ -43,19 +43,19 @@ function M.setup()
     capabilities = capabilities,
   }
 
-  require('lspsaga').setup {
-    ui = {
-      title = false,
-      devicon = false,
-    },
-    lightbulb = {
-      enabled = true,
-      sign = false,
-    },
-    symbol_in_winbar = {
-      enable = false,
-    },
-  }
+  -- require('lspsaga').setup {
+  --   ui = {
+  --     title = false,
+  --     devicon = false,
+  --   },
+  --   lightbulb = {
+  --     enabled = true,
+  --     sign = false,
+  --   },
+  --   symbol_in_winbar = {
+  --     enable = false,
+  --   },
+  -- }
 
   require('rust-tools').setup {
     tools = {
