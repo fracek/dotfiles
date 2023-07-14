@@ -287,12 +287,14 @@ in
           version = "1.95.246";
           sha256 = "sha256-AW/VXfmookSH0Kl4PJySO5oNutmjeTjYMOZ0jH+3Liw=";
         }
+        /*
         {
           name = "rust-analyzer";
           publisher = "rust-lang";
           version = "0.4.1582";
           sha256 = "sha256-/8M/x9ZV79YshLD8GzCAmGxJkjC947IWwenFAa1DJVQ=";
         }
+        */
         {
           name = "prettier-vscode";
           publisher = "esbenp";

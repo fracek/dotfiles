@@ -13,7 +13,6 @@ in
         apple-fonts
         dejavu_fonts
         noto-fonts-emoji
-        monolisa
       ];
 
       fontconfig = {
