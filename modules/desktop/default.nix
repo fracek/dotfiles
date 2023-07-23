@@ -55,7 +55,11 @@ in
       };
     };
 
-    environment.systemPackages = [ pkgs.git pkgs.vim ];
+    environment.systemPackages = with pkgs; [
+      git
+      vim
+      virt-manager
+    ];
 
     # Setup networking.
     networking = {
@@ -70,8 +74,12 @@ in
       ];
     };
 
-    # Setup docker.
-    virtualisation.docker.enable = true;
+    # Setup docker and qemu.
+    virtualisation = {
+      docker.enable = true;
+
+      libvirtd.enable = true;
+    };
 
     # Enable X11.
     services.xserver = {
