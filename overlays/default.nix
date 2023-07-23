@@ -15,6 +15,6 @@ self: super:
   fuchsia-cursor = super.callPackage ../packages/fuchsia-cursor { };
   fcitx5-catppuccin = super.callPackage ../packages/fcitx5-catppuccin { };
   # fonts
-  monolisa = super.callPackage ../packages/monolisa { };
-  apple-fonts = super.callPackage ../packages/apple-fonts { };
+  # monolisa = super.callPackage ../packages/monolisa { };
+  # apple-fonts = super.callPackage ../packages/apple-fonts { };
 }

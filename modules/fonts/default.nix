@@ -10,16 +10,27 @@ in
     fonts = {
       enableDefaultFonts = true;
       fonts = with pkgs; [
-        apple-fonts
         dejavu_fonts
         noto-fonts-emoji
+
+        (iosevka-bin.override {
+          variant = "sgr-iosevka-aile";
+        })
+
+        (iosevka-bin.override {
+          variant = "sgr-iosevka-etoile";
+        })
+
+        (iosevka-bin.override {
+          variant = "sgr-iosevka-term-ss08";
+        })
       ];
 
       fontconfig = {
         defaultFonts = {
-          serif = [ "New York" ];
-          sansSerif = [ "SF Pro Display" ];
-          monospace = [ "SF Mono" ];
+          serif = [ "Iosevka Etoile" ];
+          sansSerif = [ "Iosevka Aile" ];
+          monospace = [ "Iosevka Term SS08" ];
           emoji = [ "Noto Color Emoji" ];
         };
       };
