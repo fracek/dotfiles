@@ -109,6 +109,9 @@ in
     services.gnome.gnome-keyring.enable = true;
     programs.seahorse.enable = true;
 
+    # Setup tailscale.
+    services.tailscale.enable = true;
+
     # Setup audio.
     security.rtkit.enable = true;
     services.pipewire = {
