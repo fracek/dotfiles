@@ -98,23 +98,16 @@
         editor = "nvim";
         autocrlf = "input";
       };
+      merge = {
+        conflictStyle = "diff3";
+      };
+      diff = {
+        colorMoved = "default";
+      };
       init = { defaultBranch = "main"; };
       push.default = "current";
       pull.rebase = true;
       fetch.prune = true;
-      diff = {
-        # tool = "vscode";
-        colorMoved = "zebra";
-      };
-      merge = {
-        # tool = "vscode";
-      };
-      "difftool \"vscode\"" = {
-        cmd = "code --wait --new-window --diff $LOCAL $REMOTE";
-      };
-      "mergetool \"vscode\"" = {
-        cmd = "code --wait --new-window $MERGED";
-      };
       alias = {
         am = "amend";
         ab = "absorb";
@@ -128,6 +121,14 @@
         reee = "restore --source=HEAD";
         brrr = "for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'";
         lg = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all";
+      };
+    };
+    delta = {
+      enable = true;
+      options = {
+        navigate = true;
+        side-by-side = true;
+        line-numbers = true;
       };
     };
   };
@@ -151,6 +152,10 @@
     nix-direnv = {
       enable = true;
     };
+  };
+
+  programs.bat = {
+    enable = true;
   };
 
   gtk = {
