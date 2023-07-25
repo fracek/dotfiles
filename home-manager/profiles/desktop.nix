@@ -59,6 +59,7 @@
     insomnia
     supabase
     mirrord-bin
+    starkli-bin
     tig
 
     # office

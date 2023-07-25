@@ -115,6 +115,7 @@
             hello-custom = pkgs.hello-custom;
             supabase = pkgs.supabase;
             mirrord-bin = pkgs.mirrord-bin;
+            starkli-bin = pkgs.starkli-bin;
           };
         }
       ) //
