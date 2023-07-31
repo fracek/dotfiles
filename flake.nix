@@ -116,6 +116,7 @@
             supabase = pkgs.supabase;
             mirrord-bin = pkgs.mirrord-bin;
             starkli-bin = pkgs.starkli-bin;
+            youplot = pkgs.youplot;
           };
         }
       ) //

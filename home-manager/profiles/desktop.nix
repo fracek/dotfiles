@@ -61,6 +61,7 @@
     mirrord-bin
     starkli-bin
     tig
+    youplot
 
     # office
     chromium

@@ -9,6 +9,7 @@ self: super:
   supabase = super.callPackage ../packages/supabase { };
   mirrord-bin = super.callPackage ../packages/mirrord-bin { };
   starkli-bin = super.callPackage ../packages/starkli-bin { };
+  youplot = super.callPackage ../packages/youplot { };
   # desktop + eye candy
   morgen = super.callPackage ../packages/morgen { };
   ctgen = super.python3.pkgs.callPackage ../packages/ctgen { };
