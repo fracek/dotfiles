@@ -1,0 +1,43 @@
+# general ------------ foreground ---- background -----------------------------
+color error		color9  	default
+color indicator		color16 	color14 
+color markers		color1  	default
+color message		default		default
+color normal		default		default
+color prompt		default	        default
+color search		color1  	default
+color status 		color2  	default 
+color tilde		color1  	default
+color tree		color1  	default
+
+# message index ------ foreground ---- background -----------------------------
+color index		color8  	default
+color index_author	color14 	default
+color index_subject	color14 	default
+color index		color1  	default 	~D # deleted messages
+color index		color1  	default 	~F # flagged messages
+color index		color3  	default 	~N # new messages
+
+# message headers ---- foreground ---- background -----------------------------
+color hdrdefault	color8  	default
+color header		color13 	default		^Subject:.*
+
+# message body ------- foreground ---- background -----------------------------
+color attachment	color3  	default
+color body		color11 	default		[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+               # email addresses
+color body		color11 	default		(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+        # URLs
+color body		default 	default		(^|[[:space:]])\\*[^[:space:]]+\\*([[:space:]]|$) # *bold* text
+color body		default 	default		(^|[[:space:]])_[^[:space:]]+_([[:space:]]|$)     # _underlined_ text
+color body		default 	default		(^|[[:space:]])/[^[:space:]]+/([[:space:]]|$)     # /italic/ text
+color quoted		color5  	default
+color quoted1		color4  	default
+color quoted2		color4  	default
+color quoted3		color4  	default
+color quoted4		color4  	default
+color signature		color8  	default
+
+# sidebar ------------ foreground ---- background -----------------------------
+color sidebar_highlight	color6  	default
+color sidebar_new      	color3  	default
+color sidebar_divider  	color2  	default
+color sidebar_ordinary 	color8  	default

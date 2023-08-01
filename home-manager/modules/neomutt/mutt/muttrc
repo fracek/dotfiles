@@ -1,0 +1,49 @@
+# General
+set sidebar_visible=no
+set sidebar_short_path
+set sidebar_folder_indent
+set mail_check_stats
+set sidebar_format="%B %* [%?N?%N / ?%S]"
+
+set date_format="%y-%m-%d %H:%M"
+set index_format="%2C %Z %d %-30.30F %s"
+
+set use_threads=threads sort=last-date sort_aux=date
+
+# Colors
+source ~/.config/mutt/rose-pine.muttrc
+
+# Keys
+bind index G imap-fetch-mail
+
+bind index,pager \Cb sidebar-toggle-visible
+bind index,pager \Cp sidebar-prev
+bind index,pager \Cn sidebar-next
+bind index,pager \Co sidebar-open
+
+# Account
+set folder="imaps://imap.migadu.com"
+set imap_user="g@ceccon.me"
+set imap_pass="`rbw get migadu-g-ceccon`"
+set spoolfile=+INBOX
+set imap_check_subscribed
+
+set header_cache="~/.cache/mutt"
+set message_cachedir="~/.cache/mutt"
+set postponed=+Drafts
+unset imap_passive
+set imap_keepalive=300
+set mail_check=120
+
+set record=+Sent
+
+set realname="Francesco Ceccon"
+set from="g@ceccon.me"
+set use_from=yes
+set smtp_pass="$imap_pass"
+set smtp_url="smtps://$imap_user@smtp.migadu.com"
+set ssl_force_tls=yes
+
+set spoolfile=$folder
+mailboxes $spoolfile
+set trash=+Trash

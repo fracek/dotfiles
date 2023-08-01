@@ -7,6 +7,7 @@
         enable = true;
       };
       neovim.enable = true;
+      neomutt.enable = true;
       alacritty.enable = true;
       bash.enable = true;
       discord.enable = true;
@@ -164,6 +165,13 @@
     enable = true;
     nix-direnv = {
       enable = true;
+    };
+  };
+
+  programs.rbw = {
+    enable = true;
+    settings = {
+      email = "francesco@ceccon.me";
     };
   };
 
