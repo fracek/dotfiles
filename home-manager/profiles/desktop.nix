@@ -52,9 +52,9 @@
     # dev
     git
     git-absorb
+    git-branchless
     grpcurl
     jq
-    nodePackages.graphite-cli
     ngrok
     insomnia
     supabase
@@ -141,6 +141,17 @@
     settings = {
       git_protocol = "https";
       enableGitCredentialHelper = true;
+    };
+  };
+
+  programs.jujutsu = {
+    enable = true;
+    enableBashIntegration = true;
+    settings = {
+      user = {
+        name = "Francesco Ceccon";
+        email = "francesco@ceccon.me";
+      };
     };
   };
 
