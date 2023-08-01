@@ -153,6 +153,9 @@
         name = "Francesco Ceccon";
         email = "francesco@ceccon.me";
       };
+      ui = {
+        default-command = "log";
+      };
     };
   };
 
