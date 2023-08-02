@@ -63,6 +63,7 @@
     starkli-bin
     tig
     youplot
+    meld
 
     # office
     chromium
@@ -154,7 +155,12 @@
         email = "francesco@ceccon.me";
       };
       ui = {
-        default-command = "log";
+        "default-command" = "log";
+        "diff-editor" = "meld";
+        "merge-editor" = "meld";
+      };
+      aliases = {
+        "l" = ["log" "-r" "(main..@): | (main..@)-"];
       };
     };
   };

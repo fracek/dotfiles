@@ -10,6 +10,7 @@ in
     home.sessionVariables = {
       EDITOR = "nvim";
       VISUAL = "nvim";
+      PAGER = "less -FRX";
       DIFFPROG = "nvim -d";
       MANPAGER = "nvim +Man!";
       MANWIDTH = 900;
