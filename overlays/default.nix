@@ -19,4 +19,8 @@ self: super:
   # fonts
   # monolisa = super.callPackage ../packages/monolisa { };
   # apple-fonts = super.callPackage ../packages/apple-fonts { };
+
+  docker = super.docker.override {
+    buildGoPackage = super.buildGo118Package;
+  };
 }
