@@ -24,6 +24,11 @@
       url = "github:Mic92/nix-ld";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    jj = {
+      url = "github:martinvonz/jj";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, ... }@inputs:
@@ -31,7 +36,7 @@
     {
 
       # expose overlay to output.
-      overlays.default = final: prev: (import ./overlays inputs) final prev;
+      overlays.default = (import ./overlays inputs);
 
       # common templates I use.
       templates = {

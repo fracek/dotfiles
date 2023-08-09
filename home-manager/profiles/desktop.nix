@@ -160,7 +160,7 @@
         "merge-editor" = "meld";
       };
       aliases = {
-        "l" = ["log" "-r" "(main..@): | (main..@)-"];
+        "l" = ["log" "-r" "(main..@):: | (main..@)-"];
       };
     };
   };

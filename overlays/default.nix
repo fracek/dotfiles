@@ -23,4 +23,6 @@ self: super:
   docker = super.docker.override {
     buildGoPackage = super.buildGo118Package;
   };
+
+  jujutsu = inputs.jj.packages.${super.system}.jujutsu;
 }
