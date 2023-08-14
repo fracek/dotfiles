@@ -10,6 +10,8 @@ set index_format="%2C %Z %d %-30.30F %s"
 
 set use_threads=threads sort=last-date sort_aux=date
 
+auto_view text/html
+
 # Colors
 source ~/.config/mutt/rose-pine.muttrc
 

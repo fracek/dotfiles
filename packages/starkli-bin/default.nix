@@ -2,11 +2,11 @@
 
 stdenv.mkDerivation rec {
   name = "starkli";
-  version = "0.1.8";
+  version = "0.1.10";
 
   src = fetchurl {
     url = "https://github.com/xJonathanLEI/starkli/releases/download/v${version}/starkli-x86_64-unknown-linux-gnu.tar.gz";
-    sha256 = "sha256-LL+WDgXjY/hMa2irY6vOVfkGsoGNby16BadJxsZn/gI=";
+    sha256 = "sha256-6g7DwJKHpbAimEgSIarKmP5ao8PTboh1uJU4/ONj30Q=";
   };
 
   nativeBuildInputs = with pkgs; [

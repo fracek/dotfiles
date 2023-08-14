@@ -12,6 +12,12 @@ in
       vimKeys = true;
     };
 
+    home.packages = with pkgs; [
+      mailcap
+      lynx
+      feh
+    ];
+
     home.file = {
       ".config/mutt/muttrc" = {
         source = ./mutt/muttrc;
@@ -20,6 +26,10 @@ in
       ".config/mutt/rose-pine.muttrc" = {
         source = ./mutt/rose-pine.muttrc;
         target = ".config/mutt/rose-pine.muttrc";
+      };
+      ".mailcap" = {
+        source = ./mutt/mailcap;
+        target = ".mailcap";
       };
     };
   };
