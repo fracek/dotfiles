@@ -148,19 +148,21 @@
 
   programs.jujutsu = {
     enable = true;
-    enableBashIntegration = true;
+    enableBashIntegration = false;
     settings = {
       user = {
         name = "Francesco Ceccon";
         email = "francesco@ceccon.me";
       };
       ui = {
-        "default-command" = "log";
+        "default-command" = "st";
         "diff-editor" = "meld";
         "merge-editor" = "meld";
       };
       aliases = {
         "l" = ["log" "-r" "(main..@):: | (main..@)-"];
+        "a" = ["abandon"];
+        "b" = ["branch"];
       };
     };
   };
