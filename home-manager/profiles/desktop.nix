@@ -84,8 +84,8 @@
   # Setup X11 session.
   xsession.enable = true;
   home.pointerCursor = {
-    package = pkgs.fuchsia-cursor;
-    name = "Fuchsia";
+    package = pkgs.phinger-cursors;
+    name = "phinger-cursors-light";
     size = 32;
     gtk.enable = true;
     x11.enable = true;
