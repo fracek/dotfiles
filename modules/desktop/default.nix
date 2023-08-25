@@ -74,9 +74,13 @@ in
       ];
     };
 
-    # Setup docker and qemu.
+    # Setup docker/podman and qemu.
     virtualisation = {
-      docker.enable = true;
+      podman = {
+        enable = true;
+        dockerSocket.enable = true;
+        autoPrune.enable = true;
+      };
 
       libvirtd.enable = true;
     };

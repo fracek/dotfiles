@@ -20,9 +20,9 @@ self: super:
   # monolisa = super.callPackage ../packages/monolisa { };
   # apple-fonts = super.callPackage ../packages/apple-fonts { };
 
-  docker = super.docker.override {
-    buildGoPackage = super.buildGo118Package;
-  };
+  # docker = super.docker.override {
+  #   buildGoPackage = super.buildGo118Package;
+  # };
 
   jujutsu = inputs.jj.packages.${super.system}.jujutsu;
 }

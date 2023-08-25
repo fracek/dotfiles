@@ -64,6 +64,8 @@
     tig
     youplot
     meld
+    buildah
+    skopeo
 
     # office
     chromium
@@ -160,9 +162,9 @@
         "merge-editor" = "meld";
       };
       aliases = {
-        "l" = ["log" "-r" "(main..@):: | (main..@)-"];
-        "a" = ["abandon"];
-        "b" = ["branch"];
+        "l" = [ "log" "-r" "(main..@):: | (main..@)-" ];
+        "a" = [ "abandon" ];
+        "b" = [ "branch" ];
       };
     };
   };
