@@ -35,7 +35,7 @@ local colors = {
 }
 
 theme.bg_normal = colors.bg
-theme.bg_focus = catppuccin.pink
+theme.bg_focus = catppuccin.flamingo
 theme.fg_normal = colors.fg
 theme.fg_focus = colors.fg
 theme.fg_urgent = theme.fg_normal
@@ -53,8 +53,8 @@ theme.titlebar_bg_focus = theme.bg_normal
 theme.taglist_bg_empty = catppuccin.maroon
 theme.taglist_bg_normal = catppuccin.maroon
 theme.taglist_fg_normal = catppuccin.overlay
-theme.taglist_bg_focus = catppuccin.pink
-theme.taglist_fg_focus = catppuccin.pink
+theme.taglist_bg_focus = catppuccin.flamingo
+theme.taglist_fg_focus = catppuccin.flamingo
 theme.taglist_bg_occupied = catppuccin.maroon
 theme.taglist_fg_occupied = catppuccin.subtext
 

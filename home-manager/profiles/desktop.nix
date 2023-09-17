@@ -194,7 +194,7 @@
   gtk = {
     enable = true;
     theme = {
-      name = "catppuccin-";
+      name = "Catppuccin-Mocha-Compact-Pink-Dark";
       package = pkgs.catppuccin-gtk.override {
         accents = [ "pink" ];
         size = "compact";
@@ -202,7 +202,7 @@
       };
     };
     iconTheme = {
-      name = "papirus";
+      name = "Papirus";
       package = pkgs.papirus-icon-theme;
     };
   };
