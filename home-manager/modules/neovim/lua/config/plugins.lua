@@ -57,7 +57,6 @@ function M.setup()
         ts_update()
       end,
     }
-    use 'nvim-treesitter/nvim-treesitter-context'
 
     -- use editorconfig to keep things consistent
     use 'gpanders/editorconfig.nvim'
