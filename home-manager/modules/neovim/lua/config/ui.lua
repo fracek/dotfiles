@@ -1,10 +1,10 @@
 local M = {}
 
 function M.setup()
-  require('rose-pine').setup {
-    variant = 'main'
+  require('catppuccin').setup {
+    flavour = "mocha",
   }
-  vim.cmd.colorscheme 'rose-pine'
+  vim.cmd.colorscheme 'catppuccin'
 
   -- set termguicolors to enable highlight groups
   vim.opt.termguicolors = true
@@ -30,10 +30,15 @@ function M.setup()
   vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
 
   -- status line
+  local catppuccin_palette = require('catppuccin.palettes').get_palette()
+  local custom_catppuccin = require('lualine.themes.catppuccin')
+  custom_catppuccin.normal.a.bg = catppuccin_palette.pink
+  custom_catppuccin.normal.b.fg = catppuccin_palette.pink
+
   require('lualine').setup {
     options = {
       icons_enabled = false,
-      theme = 'rose-pine',
+      theme = custom_catppuccin,
       disabled_filetypes = {},
       component_separators = '|',
       section_separators = { left = '▒', right = '░'},

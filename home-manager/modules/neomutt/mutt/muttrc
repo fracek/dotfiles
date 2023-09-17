@@ -13,7 +13,7 @@ set use_threads=threads sort=last-date sort_aux=date
 auto_view text/html
 
 # Colors
-source ~/.config/mutt/rose-pine.muttrc
+source ~/.config/mutt/theme.muttrc
 
 # Keys
 bind index G imap-fetch-mail

@@ -264,12 +264,6 @@ in
           sha256 = "sha256-PnaOwOIcSo1Eff1wOtQPhoHYvrHDGTcsRy9mQfdBPX4";
         }
         {
-          name = "rose-pine";
-          publisher = "mvllow";
-          version = "2.8.0";
-          sha256 = "sha256-VvAKIOsektgukLD56UmIhEJ1QjNmRf/EZyPHIo3XrFE=";
-        }
-        {
           name = "gitlens";
           publisher = "eamodio";
           version = "2023.7.1005";

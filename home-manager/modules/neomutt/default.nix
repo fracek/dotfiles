@@ -23,9 +23,9 @@ in
         source = ./mutt/muttrc;
         target = ".config/mutt/muttrc";
       };
-      ".config/mutt/rose-pine.muttrc" = {
-        source = ./mutt/rose-pine.muttrc;
-        target = ".config/mutt/rose-pine.muttrc";
+      ".config/mutt/theme.muttrc" = {
+        source = ./mutt/theme.muttrc;
+        target = ".config/mutt/theme.muttrc";
       };
       ".mailcap" = {
         source = ./mutt/mailcap;

@@ -17,14 +17,14 @@ in
         set-option -g default-terminal "screen-256color"
 
         set-option -g status-position top
-        set-option -g status-style bg=default,fg=#7f849c
+        set-option -g status-style bg=default,fg=#cba6f7
         set-option -g status-justify absolute-centre
         set-option -g status-left ""
         set-option -g status-right ""
 
-        set-option -g message-style bg=#eba0ac,fg=#1e1e2e
+        set-option -g message-style bg=#f5c2e7,fg=#1e1e2e
 
-        set-window-option -g window-status-current-style fg=#ebbcba
+        set-window-option -g window-status-current-style fg=#f5c2e7
         set-window-option -g mouse on
       '';
     };

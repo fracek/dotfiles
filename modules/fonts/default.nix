@@ -11,26 +11,18 @@ in
       enableDefaultFonts = true;
       fonts = with pkgs; [
         dejavu_fonts
+        noto-fonts
         noto-fonts-emoji
-
-        (iosevka-bin.override {
-          variant = "sgr-iosevka-aile";
-        })
-
-        (iosevka-bin.override {
-          variant = "sgr-iosevka-etoile";
-        })
-
-        (iosevka-bin.override {
-          variant = "sgr-iosevka-term-ss08";
-        })
+        noto-fonts-cjk-sans
+        noto-fonts-cjk-serif
+        monolisa
       ];
 
       fontconfig = {
         defaultFonts = {
-          serif = [ "Iosevka Etoile" ];
-          sansSerif = [ "Iosevka Aile" ];
-          monospace = [ "Iosevka Term SS08" ];
+          serif = [ "Noto Serif" ];
+          sansSerif = [ "Noto Sans" ];
+          monospace = [ "MonoLisa" ];
           emoji = [ "Noto Color Emoji" ];
         };
       };

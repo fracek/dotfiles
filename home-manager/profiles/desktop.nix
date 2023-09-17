@@ -43,7 +43,6 @@
     # cli
     btop
     htop
-    exa
     feh
     fortune
     ranger
@@ -195,12 +194,16 @@
   gtk = {
     enable = true;
     theme = {
-      name = "rose-pine";
-      package = pkgs.rose-pine-gtk-theme;
+      name = "catppuccin-";
+      package = pkgs.catppuccin-gtk.override {
+        accents = [ "pink" ];
+        size = "compact";
+        variant = "mocha";
+      };
     };
     iconTheme = {
-      name = "oomox-rose-pine";
-      package = pkgs.rose-pine-icon-theme;
+      name = "papirus";
+      package = pkgs.papirus-icon-theme;
     };
   };
 

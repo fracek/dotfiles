@@ -15,17 +15,26 @@ in
         "erasedups"
       ];
       shellAliases = {
-        hu = "${pkgs.exa}/bin/exa ";
-        ha = "${pkgs.exa}/bin/exa -a";
-        hh = "${pkgs.exa}/bin/exa -la";
-        ht = "${pkgs.exa}/bin/exa --tree";
+        ls = "${pkgs.lsd}/bin/lsd";
+        hu = "${pkgs.lsd}/bin/lsd ";
+        ha = "${pkgs.lsd}/bin/lsd -a";
+        hh = "${pkgs.lsd}/bin/lsd -la";
+        ht = "${pkgs.lsd}/bin/lsd --tree";
 
-        tf = "terraform";
         ktl = "kubectl";
       };
       initExtra = ''
         complete -o default -F __start_kubectl ktl
       '';
+    };
+
+    programs.lsd = {
+      enable = true;
+      settings = {
+        icons = {
+          when = "never";
+        };
+      };
     };
   };
 }

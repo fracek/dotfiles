@@ -9,28 +9,35 @@ theme.font = "monospace 8"
 
 theme.icon_theme = "Papirus"
 
--- rose pine
-
-local colors = {
-  base = "#191724",
-  surface = "#1f1d2e",
-  overlay = "#26233a",
-  muted = "#6e6a86",
-  subtle = "#908caa",
-  text = "#e0def4",
-  love = "#eb6f92",
-  gold = "#f6c177",
-  rose = "#ebbcba",
-  pine = "#31748f",
-  foam = "#9ccfd8",
-  iris = "#c4a7e7",
-  transparent = "#00000000",
+-- catppuccin mocha
+local catppuccin = {
+    text = "#cdd6f4",
+    subtext = "#a6adc8",
+    base = "#1e1e2e",
+    lavender = "#b4befe",
+    rosewater = "#f5e0dc",
+    sapphire = "#74c7ec",
+    flamingo = "#f2cdcd",
+    maroon = "#eba0ac",
+    mauve = "#cba6f7",
+    pink = "#f5c2e7",
+    blue = "#89b4fa",
+    red = "#f38ba8",
+    green = "#a6e3a1",
+    yellow = "#f9e2af",
+    overlay = "#6c7086",
 }
 
-theme.bg_normal = colors.base
-theme.bg_focus = colors.rose
-theme.fg_normal = colors.text
-theme.fg_focus = colors.text
+local colors = {
+    fg = catppuccin.text,
+    bg = catppuccin.base,
+    transparent = "#00000000",
+}
+
+theme.bg_normal = colors.bg
+theme.bg_focus = catppuccin.pink
+theme.fg_normal = colors.fg
+theme.fg_focus = colors.fg
 theme.fg_urgent = theme.fg_normal
 theme.fg_minimize = theme.fg_normal
 
@@ -43,33 +50,34 @@ theme.border_marked = theme.border_normal
 theme.titlebar_bg_normal = theme.bg_normal
 theme.titlebar_bg_focus = theme.bg_normal
 
-theme.taglist_bg_empty = colors.rose
-theme.taglist_bg_normal = colors.rose
-theme.taglist_fg_normal = colors.overlay
-theme.taglist_bg_focus = colors.gold
-theme.taglist_fg_focus = colors.gold
-theme.taglist_bg_occupied = colors.rose
-theme.taglist_fg_occupied = colors.overlay
+theme.taglist_bg_empty = catppuccin.maroon
+theme.taglist_bg_normal = catppuccin.maroon
+theme.taglist_fg_normal = catppuccin.overlay
+theme.taglist_bg_focus = catppuccin.pink
+theme.taglist_fg_focus = catppuccin.pink
+theme.taglist_bg_occupied = catppuccin.maroon
+theme.taglist_fg_occupied = catppuccin.subtext
 
-theme.bar_indicator_clock = colors.rose
-theme.bar_indicator_systray = colors.rose
-theme.bar_indicator_fcitx_inactive = colors.rose
-theme.bar_indicator_fcitx_active = colors.love
+
+theme.bar_indicator_clock = catppuccin.sapphire
+theme.bar_indicator_systray = catppuccin.sapphire
+theme.bar_indicator_fcitx_inactive = catppuccin.flamingo
+theme.bar_indicator_fcitx_active = catppuccin.red
 
 theme.bg_systray = theme.bar_indicator_systray
 
-theme.bar_indicator_cpu_low = colors.foam
-theme.bar_indicator_cpu_medium = colors.gold
-theme.bar_indicator_cpu_high = colors.love
+theme.bar_indicator_cpu_low = catppuccin.green
+theme.bar_indicator_cpu_medium = catppuccin.yellow
+theme.bar_indicator_cpu_high = catppuccin.red
 
-theme.bar_indicator_bat_charging_full = colors.foam
-theme.bar_indicator_bat_charging = colors.iris
-theme.bar_indicator_bat_full = colors.pine
-theme.bar_indicator_bat_medium = colors.gold
-theme.bar_indicator_bat_low = colors.love
+theme.bar_indicator_bat_charging_full = catppuccin.blue
+theme.bar_indicator_bat_charging = catppuccin.lavender
+theme.bar_indicator_bat_full = catppuccin.green
+theme.bar_indicator_bat_medium = catppuccin.yellow
+theme.bar_indicator_bat_low = catppuccin.red
 
-theme.bar_indicator_volume_on = colors.rose
-theme.bar_indicator_volume_off = colors.iris
+theme.bar_indicator_volume_on = catppuccin.green
+theme.bar_indicator_volume_off = catppuccin.sapphire
 
 theme.menu_height = dpi(12)
 theme.menu_width = dpi(200)
@@ -80,15 +88,15 @@ theme.menu_submenu_icon = dir .. "/icons/submenu.svg"
 theme.power_icon = dir .. "/icons/power.svg"
 
 theme.tasklist_disable_icon = true
-theme.tasklist_bg_focus = colors.pine
-theme.tasklist_bg_normal = colors.foam
-theme.tasklist_fg_normal = colors.text
-theme.tasklist_fg_focus = colors.text
+theme.tasklist_bg_focus = catppuccin.lavender
+theme.tasklist_bg_normal = catppuccin.subtext
+theme.tasklist_fg_normal = catppuccin.subtext
+theme.tasklist_fg_focus = catppuccin.text
 
 theme.wibar_ontop = true
 theme.wibar_type = "dock"
 theme.wibar_bg = colors.transparent
-theme.wibar_fg = colors.overlay
+theme.wibar_fg = catppuccin.base
 
 -- Display the taglist squares
 theme.taglist_disable_icon = true
