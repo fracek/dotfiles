@@ -11,7 +11,6 @@
       alacritty.enable = true;
       bash.enable = true;
       discord.enable = true;
-      firefox.enable = true;
       rofi.enable = true;
       obs-studio.enable = true;
       tmux.enable = true;
@@ -65,6 +64,7 @@
     meld
     buildah
     skopeo
+    kubectl
 
     # office
     chromium
@@ -229,15 +229,15 @@
   xdg = {
     mime.enable = true;
     mimeApps.defaultApplications = {
-      "text/html" = "firefox.desktop";
-      "x-scheme-handler/http" = "firefox.desktop";
-      "x-scheme-handler/https" = "firefox.desktop";
-      "x-scheme-handler/about" = "firefox.desktop";
-      "x-scheme-handler/unknown" = "firefox.desktop";
+      "text/html" = "chromium.desktop";
+      "x-scheme-handler/http" = "chromium.desktop";
+      "x-scheme-handler/https" = "chromium.desktop";
+      "x-scheme-handler/about" = "chromium.desktop";
+      "x-scheme-handler/unknown" = "chromium.desktop";
     };
   };
 
   home.sessionVariables = {
-    DEFAULT_BROSWER = "${pkgs.firefox}/bin/firefox";
+    DEFAULT_BROSWER = "${pkgs.chromium}/bin/chromium";
   };
 }
