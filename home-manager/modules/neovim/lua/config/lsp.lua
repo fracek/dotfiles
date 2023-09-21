@@ -42,6 +42,9 @@ function M.setup()
   lspconfig.gopls.setup {
     capabilities = capabilities,
   }
+  lspconfig.ocamllsp.setup {
+    capabilities = capabilities,
+  }
 
   -- require('lspsaga').setup {
   --   ui = {
