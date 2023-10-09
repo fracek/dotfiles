@@ -11,7 +11,7 @@ self: super:
   starkli-bin = super.callPackage ../packages/starkli-bin { };
   youplot = super.callPackage ../packages/youplot { };
   # desktop + eye candy
-  morgen = super.callPackage ../packages/morgen { };
+  # morgen = super.callPackage ../packages/morgen { };
   ctgen = super.python3.pkgs.callPackage ../packages/ctgen { };
   cbmp = super.callPackage ../packages/cbmp { };
   fuchsia-cursor = super.callPackage ../packages/fuchsia-cursor { };

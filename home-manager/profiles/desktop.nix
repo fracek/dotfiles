@@ -68,7 +68,7 @@
 
     # office
     chromium
-    zoom
+    # zoom
     inkscape
     openrgb
     mailspring
@@ -77,6 +77,7 @@
     slack
     tdesktop
     zathura
+    zoom-us
     mpv
     ffmpeg
     simplescreenrecorder
