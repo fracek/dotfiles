@@ -14,7 +14,7 @@ in
         "editor.fontSize" = 16;
         "editor.stickyScroll.enabled" = true;
         "workbench.iconTheme" = null;
-        "workbench.colorTheme" = "Rosé Pine";
+        "workbench.colorTheme" = "Catppuccin Mocha";
         "workbench.activityBar.visible" = false;
         "workbench.editor.showTabs" = false;
         "workbench.statusBar.visible" = true;
@@ -281,19 +281,17 @@ in
           version = "1.95.246";
           sha256 = "sha256-AW/VXfmookSH0Kl4PJySO5oNutmjeTjYMOZ0jH+3Liw=";
         }
-        /*
-        {
-          name = "rust-analyzer";
-          publisher = "rust-lang";
-          version = "0.4.1582";
-          sha256 = "sha256-/8M/x9ZV79YshLD8GzCAmGxJkjC947IWwenFAa1DJVQ=";
-        }
-        */
         {
           name = "prettier-vscode";
           publisher = "esbenp";
           version = "9.19.0";
           sha256 = "sha256-ymIlBzCcssj+J8hHOokVWUpxKTEkzkhNr80uCblhkFs=";
+        }
+        {
+          name = "catppuccin-vsc";
+          publisher = "Catppuccin";
+          version = "3.4.0";
+          sha256 = "sha256-sPpphdTZ1UcPQ6c+zeuIlU757sGxDdQy+ZrUOMSNV3A=";
         }
       ];
     };

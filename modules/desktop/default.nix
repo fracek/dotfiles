@@ -124,6 +124,11 @@ in
       jack.enable = true;
     };
 
+    # Fix for kube + podman
+    systemd.services."user@".serviceConfig = {
+      Delegate = "memory pids cpu cpuset io";
+    };
+
     nixpkgs.config.allowUnfree = true;
   };
 }
