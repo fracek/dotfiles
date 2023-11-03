@@ -68,9 +68,9 @@
 
     # office
     chromium
-    # zoom
     inkscape
     openrgb
+    font-manager
     mailspring
     morgen
     figma-linux

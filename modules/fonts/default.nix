@@ -7,6 +7,8 @@ in
   options.fra.defaults.fonts.enable = mkEnableOption "fonts defaults";
 
   config = mkIf cfg.enable {
+    nixpkgs.config.input-fonts.acceptLicense = true;
+
     fonts = {
       enableDefaultFonts = true;
       fonts = with pkgs; [
@@ -15,14 +17,14 @@ in
         noto-fonts-emoji
         noto-fonts-cjk-sans
         noto-fonts-cjk-serif
-        monolisa
+        input-fonts
       ];
 
       fontconfig = {
         defaultFonts = {
-          serif = [ "Noto Serif" ];
-          sansSerif = [ "Noto Sans" ];
-          monospace = [ "MonoLisa" ];
+          serif = [ "Input Serif" ];
+          sansSerif = [ "Input Sans" ];
+          monospace = [ "Input Mono Narrow" ];
           emoji = [ "Noto Color Emoji" ];
         };
       };
