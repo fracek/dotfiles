@@ -254,8 +254,8 @@ in
         {
           name = "vim";
           publisher = "vscodevim";
-          version = "1.25.2";
-          sha256 = "sha256-hy2Ks6oRc9io6vfgql9aFGjUiRzBCS4mGdDO3NqIFEg=";
+          version = "1.27.1";
+          sha256 = "sha256-tfQ6+rPjflMd4PZ50kXo336IiwyZxdvx7EHWMEjKh1I=";
         }
         {
           name = "whichkey";
@@ -266,32 +266,32 @@ in
         {
           name = "gitlens";
           publisher = "eamodio";
-          version = "2023.7.1005";
-          sha256 = "sha256-eWT15G3RSHgNc9dB7z6ReAp4jilI0jHgKeh3HvoQGgc=";
+          version = "2023.11.2804";
+          sha256 = "sha256-bzfTILFvGS4Mhhy1LSGc40n3ekU4fCYtN2KOXAwLEiU=";
         }
         {
           name = "nix-ide";
           publisher = "jnoortheen";
-          version = "0.2.1";
-          sha256 = "sha256-yC4ybThMFA2ncGhp8BYD7IrwYiDU3226hewsRvJYKy4=";
+          version = "0.2.2";
+          sha256 = "sha256-jwOM+6LnHyCkvhOTVSTUZvgx77jAg6hFCCpBqY8AxIg=";
         }
         {
           name = "copilot";
           publisher = "GitHub";
-          version = "1.95.246";
-          sha256 = "sha256-AW/VXfmookSH0Kl4PJySO5oNutmjeTjYMOZ0jH+3Liw=";
+          version = "1.138.570";
+          sha256 = "sha256-/NKUPiWNlu47BV0vs8lM85wTOGPjZS8RdQzbXFH5Hvg=";
         }
         {
           name = "prettier-vscode";
           publisher = "esbenp";
-          version = "9.19.0";
-          sha256 = "sha256-ymIlBzCcssj+J8hHOokVWUpxKTEkzkhNr80uCblhkFs=";
+          version = "10.1.0";
+          sha256 = "sha256-SQuf15Jq84MKBVqK6UviK04uo7gQw9yuw/WEBEXcQAc=";
         }
         {
           name = "catppuccin-vsc";
           publisher = "Catppuccin";
-          version = "3.4.0";
-          sha256 = "sha256-sPpphdTZ1UcPQ6c+zeuIlU757sGxDdQy+ZrUOMSNV3A=";
+          version = "3.7.0";
+          sha256 = "sha256-v+QF8eWvaTXii+851rqm5lwqyTjxXblC3684Ro6Sk1U=";
         }
       ];
     };
