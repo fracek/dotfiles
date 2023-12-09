@@ -49,9 +49,8 @@
     ueberzug
 
     # dev
+    graphite-cli
     git
-    git-absorb
-    git-branchless
     grpcurl
     jq
     ngrok
