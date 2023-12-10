@@ -44,6 +44,9 @@ in
             "commands" = [ ":nohl" ];
           }
         ];
+        "vim.handleKeys" = {
+          "<C-p>" = false;
+        };
         # Whichkey
         "whichkey.sortOrder" = "alphabetically";
         "whichkey.delay" = 0;
