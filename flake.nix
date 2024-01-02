@@ -114,6 +114,7 @@
           packages = flake-utils.lib.flattenTree {
             hello-custom = pkgs.hello-custom;
             apalache = pkgs.apalache;
+            quint = pkgs.quint;
             supabase = pkgs.supabase;
             mirrord-bin = pkgs.mirrord-bin;
             starkli-bin = pkgs.starkli-bin;

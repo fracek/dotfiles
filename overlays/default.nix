@@ -7,6 +7,7 @@ self: super:
   # dev tools
   hello-custom = super.callPackage ../packages/hello-custom { };
   apalache = super.callPackage ../packages/apalache { };
+  quint = super.callPackage ../packages/quint { };
   supabase = super.callPackage ../packages/supabase { };
   mirrord-bin = super.callPackage ../packages/mirrord-bin { };
   starkli-bin = super.callPackage ../packages/starkli-bin { };
