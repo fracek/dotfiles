@@ -113,6 +113,7 @@
           # allow using them from other flakes that import this one.
           packages = flake-utils.lib.flattenTree {
             hello-custom = pkgs.hello-custom;
+            apalache = pkgs.apalache;
             supabase = pkgs.supabase;
             mirrord-bin = pkgs.mirrord-bin;
             starkli-bin = pkgs.starkli-bin;
