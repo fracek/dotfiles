@@ -25,7 +25,7 @@ in
         defaultFonts = {
           serif = [ "Input Serif" ];
           sansSerif = [ "Input Sans" ];
-          monospace = [ "Berkeley Mono Trial" ];
+          monospace = [ "Berkeley Mono" ];
           emoji = [ "Noto Color Emoji" ];
         };
       };

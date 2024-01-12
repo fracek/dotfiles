@@ -11,12 +11,19 @@ stdenv.mkDerivation {
 
       and updating the sha256 below if necessary.
     '';
-    sha256 = "1l4978v2m9sv4klz5zka2i04wwlgl756rqlfwxvy80bjhx0b2zfi";
+    sha256 = "0mwdgsqmqaj6hgx50v8l25zn3x7pi9kkzgxnn7xsxp8ng2anpvfy";
   };
 
   installPhase = ''
-    mkdir -p $out/share/fonts/truetype
-    cp -a *.ttf $out/share/fonts/truetype
+    runHook preInstall
+
+    ls -lAh *
+    mkdir -vp $out/share/fonts/{,truetype}
+
+    mv -v berkeley-mono/OTF $out/share/fonts/opentype
+    mv -v berkeley-mono{,variable}/TTF/*.ttf $out/share/fonts/truetype
+
+    runHook postInstall
   '';
 
   sourceRoot = ".";
