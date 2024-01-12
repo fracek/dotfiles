@@ -22,11 +22,11 @@
 
 stdenv.mkDerivation rec {
   pname = "mailspring";
-  version = "1.13.1";
+  version = "1.13.3";
 
   src = fetchurl {
     url = "https://github.com/Foundry376/Mailspring/releases/download/${version}/mailspring-${version}-amd64.deb";
-    sha256 = "sha256-6brbPybpM+KVJidw6HplVqFDLrMMw7/uJ/KCZmjZBQQ=";
+    sha256 = "sha256-2F5k8zRRI6x1EQ0k8wvIq1Q3Lnrn2ROp/Mq+H7Vqzlc=";
   };
 
   nativeBuildInputs = [

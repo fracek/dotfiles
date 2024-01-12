@@ -15,11 +15,11 @@
 
 stdenv.mkDerivation rec {
   pname = "morgen";
-  version = "3.0.1";
+  version = "3.1.6";
 
   src = fetchurl {
-    url = "https://download.todesktop.com/210203cqcj00tw1/morgen-${version}.deb";
-    sha256 = "sha256-lj+V5mntZzED2ZS62Uwlt/vTXwSuwzXeuEw8y/bA6og=";
+    url = "https://dl.todesktop.com/210203cqcj00tw1/linux/deb/x64?v=${version}";
+    sha256 = "sha256-/rMPNIpjkHdLE0lAdWCz71DbcqIW+1Y6RdFrYAfTSKU=";
   };
 
   nativeBuildInputs = [

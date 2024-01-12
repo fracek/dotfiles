@@ -113,12 +113,16 @@
           # allow using them from other flakes that import this one.
           packages = flake-utils.lib.flattenTree {
             hello-custom = pkgs.hello-custom;
+            # devtools
             apalache = pkgs.apalache;
             quint = pkgs.quint;
             supabase = pkgs.supabase;
             mirrord-bin = pkgs.mirrord-bin;
             starkli-bin = pkgs.starkli-bin;
             youplot = pkgs.youplot;
+            # office
+            mailspring = pkgs.mailspring;
+            morgen = pkgs.morgen;
           };
         }
       ) //
