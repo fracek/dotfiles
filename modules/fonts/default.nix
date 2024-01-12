@@ -18,13 +18,12 @@ in
         noto-fonts-emoji
         noto-fonts-cjk-sans
         noto-fonts-cjk-serif
-        input-fonts
       ];
 
       fontconfig = {
         defaultFonts = {
-          serif = [ "Input Serif" ];
-          sansSerif = [ "Input Sans" ];
+          serif = [ "Noto Serif" ];
+          sansSerif = [ "Noto Sans" ];
           monospace = [ "Berkeley Mono" ];
           emoji = [ "Noto Color Emoji" ];
         };
