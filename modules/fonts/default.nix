@@ -12,6 +12,7 @@ in
     fonts = {
       enableDefaultPackages = true;
       packages = with pkgs; [
+        berkeley-mono
         dejavu_fonts
         noto-fonts
         noto-fonts-emoji
@@ -24,7 +25,7 @@ in
         defaultFonts = {
           serif = [ "Input Serif" ];
           sansSerif = [ "Input Sans" ];
-          monospace = [ "Input Mono Narrow" ];
+          monospace = [ "Berkeley Mono Trial" ];
           emoji = [ "Noto Color Emoji" ];
         };
       };

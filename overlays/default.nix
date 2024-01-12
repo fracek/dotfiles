@@ -20,5 +20,6 @@ self: super:
   # fuchsia-cursor = super.callPackage ../packages/fuchsia-cursor { };
   fcitx5-catppuccin = super.callPackage ../packages/fcitx5-catppuccin { };
   # fonts
+  berkeley-mono = super.callPackage ../packages/berkeley-mono { };
   # monolisa = super.callPackage ../packages/monolisa { };
 }
