@@ -65,6 +65,9 @@
     skopeo
     kubectl
 
+    quint
+    apalache
+
     # office
     chromium
     inkscape
