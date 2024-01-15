@@ -54,6 +54,7 @@
     grpcurl
     jq
     ngrok
+    tree
     insomnia
     supabase
     mirrord-bin
@@ -64,9 +65,10 @@
     buildah
     skopeo
     kubectl
-
     quint
     apalache
+    duckdb
+    mongodb-compass
 
     # office
     chromium
