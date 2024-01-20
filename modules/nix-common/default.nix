@@ -1,4 +1,4 @@
-{ config, pkgs, lib, flake-self, nixpkgs, ... }:
+{ config, pkgs, lib, flake-self, nixpkgs, ethereum, ... }:
 with lib;
 let cfg = config.fra.defaults.nix;
 in
@@ -21,8 +21,12 @@ in
     # Let 'nixos-version --json' know the Git revision of this flake.
     system.configurationRevision =
       nixpkgs.lib.mkIf (flake-self ? rev) flake-self.rev;
-    nix.registry.nixpkgs.flake = nixpkgs;
-    nix.registry.fra.flake = flake-self;
+
+    nix.registry = {
+      nixpkgs.flake = nixpkgs;
+      fra.flake = flake-self;
+      ethereum.flake = ethereum;
+    };
 
     nixpkgs.config = {
       # Allow unfree licenced packages
