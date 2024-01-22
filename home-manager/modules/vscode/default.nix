@@ -14,7 +14,7 @@ in
         "editor.fontSize" = 16;
         "editor.stickyScroll.enabled" = true;
         "workbench.iconTheme" = null;
-        "workbench.colorTheme" = "Catppuccin Mocha";
+        "workbench.colorTheme" = "Omni";
         "workbench.activityBar.visible" = false;
         "workbench.editor.showTabs" = false;
         "workbench.statusBar.visible" = true;
@@ -291,10 +291,10 @@ in
           sha256 = "sha256-SQuf15Jq84MKBVqK6UviK04uo7gQw9yuw/WEBEXcQAc=";
         }
         {
-          name = "catppuccin-vsc";
-          publisher = "Catppuccin";
-          version = "3.7.0";
-          sha256 = "sha256-v+QF8eWvaTXii+851rqm5lwqyTjxXblC3684Ro6Sk1U=";
+          name = "theme-omni";
+          publisher = "rocketseat";
+          version = "1.0.12";
+          sha256 = "sha256-rZzyMc9iCVjEFmWCiLuKqohBwSbqoKEYRR2Bn5f6dbU=";
         }
       ];
     };
