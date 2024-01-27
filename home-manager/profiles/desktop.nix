@@ -49,6 +49,7 @@
     ueberzug
 
     # dev
+    docker-client
     graphite-cli
     git
     grpcurl
@@ -59,6 +60,8 @@
     supabase
     mirrord-bin
     starkli-bin
+    httpie
+    pgcli
     tig
     youplot
     meld
@@ -152,27 +155,6 @@
     };
   };
 
-  programs.jujutsu = {
-    enable = true;
-    enableBashIntegration = false;
-    settings = {
-      user = {
-        name = "Francesco Ceccon";
-        email = "francesco@ceccon.me";
-      };
-      ui = {
-        "default-command" = "st";
-        "diff-editor" = "meld";
-        "merge-editor" = "meld";
-      };
-      aliases = {
-        "l" = [ "log" "-r" "(main..@):: | (main..@)-" ];
-        "a" = [ "abandon" ];
-        "b" = [ "branch" ];
-      };
-    };
-  };
-
   programs.fzf = {
     enable = true;
     enableBashIntegration = true;
@@ -230,6 +212,10 @@
   };
 
   services.network-manager-applet = { enable = true; };
+
+  services.flameshot = {
+    enable = true;
+  };
 
   xdg = {
     mime.enable = true;
