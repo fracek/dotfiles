@@ -86,7 +86,7 @@ keys.root_keys = awful.util.table.join(awful.key({ modkey, }, "F1", hotkeys_popu
     awful.key({ modkey, "Shift" }, "j", function() awful.spawn("rofi -no-lazy-grab -show emoji -modi emoji -matching normal") end,
         { description = "show rofi emoji", group = "launcher" }),
 
-    awful.key({ modkey, "Shift" }, "k", function() awful.spawn("rofi -no-lazy-grab -show calc -modi calc") end,
+    awful.key({ modkey, "Shift" }, "k", function() awful.spawn("rofi -no-lazy-grab -show calc -modi calc -no-sort -no-persist-history -calc-command \"echo -n '{result}' | xclip -sel clip\"") end,
         { description = "show rofi calc", group = "launcher" }),
 
     awful.key({ modkey, "Shift" }, "r", function() awful.spawn("rofi -no-lazy-grab -show run") end,

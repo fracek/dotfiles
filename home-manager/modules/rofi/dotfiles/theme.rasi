@@ -1,9 +1,11 @@
 * {
-    bg: #191724;
-    fg: #e0def4;
-    red: #eb6f92;
-    green: #31748f;
-    pink: #ebbcba;
+    bg: #191622FF;
+    fg: #E1E1E6FF;
+    red: #E96379FF;
+    green: #67E480FF;
+    pink: #FF79C6FF;
+    border: #483C67FF;
+    message: #78D1E1FF;
 
     background-color: @bg;
 }
@@ -17,7 +19,7 @@ configuration {
 
 window {
     border: 4px;
-    border-color: @pink;
+    border-color: @border;
     border-radius: 8px;
     padding: 8px;
     width: 50%;
@@ -57,6 +59,11 @@ inputbar {
 mainbox {
     border: 0;
     padding: 8px;
+    children: [inputbar, message, listview];
+}
+
+textbox {
+    text-color: @message;
 }
 
 listview {
