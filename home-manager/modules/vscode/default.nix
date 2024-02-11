@@ -13,7 +13,7 @@ in
         "editor.fontFamily" = "monospace";
         "editor.fontSize" = 16;
         "editor.stickyScroll.enabled" = true;
-        "workbench.iconTheme" = null;
+        "workbench.iconTheme" = "quill-icons-minimal";
         "workbench.colorTheme" = "Omni";
         "workbench.activityBar.visible" = false;
         "workbench.editor.showTabs" = false;
@@ -295,6 +295,12 @@ in
           publisher = "rocketseat";
           version = "1.0.12";
           sha256 = "sha256-rZzyMc9iCVjEFmWCiLuKqohBwSbqoKEYRR2Bn5f6dbU=";
+        }
+        {
+          name = "quill-icons";
+          publisher = "cdonohue";
+          version = "0.0.2";
+          sha256 = "sha256-hi/NOVLJLoVo6Ka9xLTZ1lwrTyoBZoPf0ZpZMKXZmho=";
         }
       ];
     };
