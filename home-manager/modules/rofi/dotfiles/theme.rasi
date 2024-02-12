@@ -1,132 +1,111 @@
 * {
-    bg: #191622FF;
-    fg: #E1E1E6FF;
-    red: #E96379FF;
-    green: #67E480FF;
-    pink: #FF79C6FF;
-    border: #483C67FF;
-    message: #78D1E1FF;
+    bg-col:  #1e1e2e;
+    bg-col-light: #1e1e2e;
+    border-col: #f5c2e7;
+    selected-col: #1e1e2e;
+    blue: #89b4fa;
+    fg-col: #cdd6f4;
+    fg-col2: #f5c2e7;
+    grey: #6c7086;
 
-    background-color: @bg;
+    font: "monospace 14";
 }
 
-configuration {
-    font: "monospace 14";
-    fixed-num-lines: true;
-    case-sensitive: false;
-    matching:  "fuzzy";
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
 }
 
 window {
-    border: 4px;
-    border-color: @border;
-    border-radius: 8px;
-    padding: 8px;
     width: 50%;
     height: 50%;
+    border: 3px;
+    border-color: @border-col;
+    background-color: @bg-col;
+}
+
+mainbox {
+    background-color: @bg-col;
+}
+
+inputbar {
+    children: [prompt,entry];
+    background-color: @bg-col;
+    border-radius: 5px;
+    padding: 2px;
 }
 
 prompt {
-    spacing: 0;
-    border: 0;
-    text-color: @fg;
+    background-color: @fg-col2;
+    padding: 6px;
+    text-color: @bg-col;
+    border-radius: 3px;
+    margin: 20px 0px 0px 20px;
 }
 
 textbox-prompt-colon {
     expand: false;
-    str: " ";
-    margin: 0px 4px 0px 0px;
-    text-color: inherit;
+    str: ":";
 }
 
 entry {
-    spacing: 0;
-    text-color: @fg;
-}
-
-case-indicator {
-    spacing: 0;
-    text-color: @fg;
-}
-
-inputbar {
-    spacing: 0;
-    text-color: @fg;
-    padding: 1px;
-    children: [ prompt,textbox-prompt-colon,entry,case-indicator ];
-}
-
-mainbox {
-    border: 0;
-    padding: 8px;
-    children: [inputbar, message, listview];
-}
-
-textbox {
-    text-color: @message;
+    padding: 6px;
+    margin: 20px 0px 0px 10px;
+    text-color: @fg-col;
+    background-color: @bg-col;
 }
 
 listview {
-    lines: 10;
+    border: 0px 0px 0px;
+    padding: 6px 0px 0px;
+    margin: 10px 0px 0px 20px;
     columns: 1;
-    fixed-height: 0;
-    border: 0;
-    spacing: 4px;
-    scrollbar: false;
-    padding: 4px 0px 0px;
-}
-
-element-text, element-icon {
-    background-color: @bg;
-    text-color: inherit;
+    lines: 10;
+    background-color: @bg-col;
 }
 
 element {
-    border: 0px;
-    padding: 1px;
+    padding: 5px;
+    background-color: @bg-col;
+    text-color: @fg-col  ;
 }
 
-element normal.normal {
-    background-color: @bg;
-    text-color: @fg;
+element-icon {
+    size: 25px;
 }
 
-element normal.urgent {
-    background-color: @bg;
-    text-color: @red;
+element selected {
+    background-color:  @selected-col ;
+    text-color: @fg-col2  ;
 }
 
-element normal.active {
-    background-color: @bg;
-    text-color:	@green;
+mode-switcher {
+    spacing: 0;
+  }
+
+button {
+    padding: 10px;
+    background-color: @bg-col-light;
+    text-color: @grey;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
 }
 
-element selected.normal {
-    background-color: @bg;
-    text-color:	@pink;
+button selected {
+  background-color: @bg-col;
+  text-color: @blue;
 }
 
-element selected.urgent {
-    background-color: @bg;
-    text-color: @red;
+message {
+    background-color: @bg-col-light;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 5px;
 }
 
-element selected.active {
-    background-color: @bg;
-    text-color: @pink;
-}
-
-element alternate.normal {
-    background-color: @bg;
-    text-color: @fg;
-}
-
-element alternate.urgent {
-    background-color: @bg;
-    text-color:	@fg;
-}
-
-element alternate.active {
-    background-color: @bg;
-    text-color:	@fg;
+textbox {
+    padding: 6px;
+    margin: 20px 0px 0px 20px;
+    text-color: @blue;
+    background-color: @bg-col-light;
 }

@@ -14,7 +14,7 @@ in
         "editor.fontSize" = 16;
         "editor.stickyScroll.enabled" = true;
         "workbench.iconTheme" = "quill-icons-minimal";
-        "workbench.colorTheme" = "Omni";
+        "workbench.colorTheme" = "Catppuccin Mocha";
         "workbench.activityBar.visible" = false;
         "workbench.editor.showTabs" = false;
         "workbench.statusBar.visible" = true;
@@ -22,11 +22,14 @@ in
         "editor.minimap.enabled" = false;
         "editor.lineNumbers" = "relative";
         "editor.formatOnSave" = true;
+        "editor.semanticHighlighting.enabled" = true;
         "window.menuBarVisibility" = "toggle";
         "gitlens.advanced.telemetry.enabled" = false;
         "gitlens.codeLens.enabled" = false;
         "gitlens.currentLine.enabled" = false;
         "git.mergeEditor" = true;
+        "catppuccin.accentColor" = "pink";
+        "catppuccin.workbenchMode" = "flat";
         # Vim Config
         "vim.easymotion" = true;
         "vim.incsearch" = true;
@@ -261,16 +264,22 @@ in
           sha256 = "sha256-tfQ6+rPjflMd4PZ50kXo336IiwyZxdvx7EHWMEjKh1I=";
         }
         {
+          name = "catppuccin-vsc";
+          publisher = "Catppuccin";
+          version = "3.11.1";
+          sha256 = "sha256-wO3UwS2/I3ASNpAS9daBKnltTJfamhsSiOnH0QD8vkA=";
+        }
+        {
           name = "whichkey";
           publisher = "VSpaceCode";
-          version = "0.11.3";
+          version = "0.11.4";
           sha256 = "sha256-PnaOwOIcSo1Eff1wOtQPhoHYvrHDGTcsRy9mQfdBPX4";
         }
         {
           name = "gitlens";
           publisher = "eamodio";
-          version = "2023.11.2804";
-          sha256 = "sha256-bzfTILFvGS4Mhhy1LSGc40n3ekU4fCYtN2KOXAwLEiU=";
+          version = "2024.2.1104";
+          sha256 = "sha256-KaNC5auyU/XasehWsIQwFKrdtQU7gkVQAMWw2nplP9Q=";
         }
         {
           name = "nix-ide";
@@ -281,20 +290,14 @@ in
         {
           name = "copilot";
           publisher = "GitHub";
-          version = "1.138.570";
-          sha256 = "sha256-/NKUPiWNlu47BV0vs8lM85wTOGPjZS8RdQzbXFH5Hvg=";
+          version = "1.159.703";
+          sha256 = "sha256-JWyH1+2Y56omCzKZUmb5PlvY0le4LAFzHXdlQ/7uYpk=";
         }
         {
           name = "prettier-vscode";
           publisher = "esbenp";
           version = "10.1.0";
           sha256 = "sha256-SQuf15Jq84MKBVqK6UviK04uo7gQw9yuw/WEBEXcQAc=";
-        }
-        {
-          name = "theme-omni";
-          publisher = "rocketseat";
-          version = "1.0.12";
-          sha256 = "sha256-rZzyMc9iCVjEFmWCiLuKqohBwSbqoKEYRR2Bn5f6dbU=";
         }
         {
           name = "quill-icons";
