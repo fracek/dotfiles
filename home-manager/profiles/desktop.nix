@@ -72,6 +72,7 @@
     apalache
     duckdb
     mongodb-compass
+    radicle-bin
 
     # office
     chromium

@@ -12,6 +12,7 @@ self: super:
   mirrord-bin = super.callPackage ../packages/mirrord-bin { };
   starkli-bin = super.callPackage ../packages/starkli-bin { };
   youplot = super.callPackage ../packages/youplot { };
+  radicle-bin = super.callPackage ../packages/radicle-bin { };
   # desktop + eye candy
   mailspring = super.callPackage ../packages/mailspring { };
   morgen = super.callPackage ../packages/morgen { };
