@@ -218,6 +218,10 @@
     enable = true;
   };
 
+  services.ssh-agent = {
+    enable = true;
+  };
+
   xdg = {
     mime.enable = true;
     mimeApps.defaultApplications = {
