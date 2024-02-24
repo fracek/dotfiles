@@ -76,6 +76,8 @@
 
     # office
     chromium
+    libqalculate
+    qalculate-gtk
     inkscape
     openrgb
     font-manager
