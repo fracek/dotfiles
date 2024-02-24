@@ -89,6 +89,7 @@
     mpv
     ffmpeg
     simplescreenrecorder
+    framesh
   ];
 
   # Setup X11 session.
