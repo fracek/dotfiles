@@ -31,6 +31,8 @@ in
         "catppuccin.accentColor" = "pink";
         "catppuccin.workbenchMode" = "flat";
         # Vim Config
+        "vim.cursorStylePerMode.insert" = "line";
+        "vim.cursorStylePerMode.normal" = "block";
         "vim.easymotion" = true;
         "vim.incsearch" = true;
         "vim.useSystemClipboard" = true;
