@@ -2,7 +2,7 @@ local config = {}
 
 config.modkey = "Mod4"
 
-local terminal = "alacritty"
+local terminal = "wezterm"
 local editor = os.getenv("EDITOR") or os.getenv("VISUAL") or "vim"
 local editor_cmd = terminal .. " -e " .. editor
 

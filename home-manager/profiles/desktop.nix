@@ -16,6 +16,7 @@
       tmux.enable = true;
       xplr.enable = true;
       vscode.enable = true;
+      wezterm.enable = true;
     };
     i18n.enable = true;
   };
