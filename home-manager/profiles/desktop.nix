@@ -4,7 +4,7 @@
     programs = {
       awesome = {
         inherit withPicom;
-        enable = true;
+        enable = false;
       };
       neovim.enable = true;
       neomutt.enable = true;
@@ -95,15 +95,29 @@
     framesh
   ];
 
-  # Setup X11 session.
-  xsession.enable = true;
-  home.pointerCursor = {
-    package = pkgs.phinger-cursors;
-    name = "phinger-cursors-light";
-    size = 32;
-    gtk.enable = true;
-    x11.enable = true;
+  wayland.windowManager.hyprland = {
+    enable = true;
+    settings = {
+      input = {
+        kb_layout = "us";
+        kb_variant = "dvorak";
+        kb_options = "ctrl:nocaps";
+      };
+      bind = [
+        "SUPER,o,exec,wezerm"
+        "SUPER,a,exec,alacritty"
+      ];
+    };
   };
+  # Setup X11 session.
+  # xsession.enable = true;
+  # home.pointerCursor = {
+  #   package = pkgs.phinger-cursors;
+  #   name = "phinger-cursors-light";
+  #   size = 32;
+  #   gtk.enable = true;
+  #   x11.enable = true;
+  # };
 
   programs.git = {
     enable = true;
@@ -246,6 +260,9 @@
   };
 
   home.sessionVariables = {
+    NIXPKGS_ALLOW_INSECURE="1";
+    NIXPKGS_ALLOW_UNFREE="1";
+    NIXOS_OZONE_WL = "1";
     DEFAULT_BROSWER = "${pkgs.chromium}/bin/chromium";
   };
 }

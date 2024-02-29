@@ -85,18 +85,23 @@ in
       libvirtd.enable = true;
     };
 
-    # Enable X11.
-    services.xserver = {
+    programs.regreet.enable = true;
+    programs.hyprland = {
       enable = true;
-      displayManager.lightdm.enable = true;
-      displayManager.defaultSession = "xsession";
-      displayManager.session = [{
-        name = "xsession";
-        manage = "desktop";
-        start = "exec $HOME/.xsession";
-      }];
+      xwayland.enable = true;
     };
-
+    # Enable X11.
+    # services.xserver = {
+    #   enable = true;
+    #   displayManager.lightdm.enable = true;
+    #   displayManager.defaultSession = "xsession";
+    #   displayManager.session = [{
+    #     name = "xsession";
+    #     manage = "desktop";
+    #     start = "exec $HOME/.xsession";
+    #   }];
+    # };
+    #
     # Enable geoclue2.
     services.geoclue2.enable = true;
     services.localtimed.enable = true;

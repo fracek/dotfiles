@@ -15,19 +15,20 @@ in
     # recommended) to remove the `nixos` channel for both users
     # and root e.g. `nix-channel --remove nixos`. `nix-channel
     # --list` should be empty for all users afterwards
-    nix.nixPath = [ "nixpkgs=${nixpkgs}" ];
-    nixpkgs.overlays = [ flake-self.overlays.default ];
+    nix = {
+      nixPath = [ "nixpkgs=${nixpkgs}" ];
+      registry = {
+        nixpkgs.flake = nixpkgs;
+        fra.flake = flake-self;
+        ethereum.flake = ethereum;
+      };
+    };
 
     # Let 'nixos-version --json' know the Git revision of this flake.
     system.configurationRevision =
       nixpkgs.lib.mkIf (flake-self ? rev) flake-self.rev;
 
-    nix.registry = {
-      nixpkgs.flake = nixpkgs;
-      fra.flake = flake-self;
-      ethereum.flake = ethereum;
-    };
-
+    nixpkgs.overlays = [ flake-self.overlays.default ];
     nixpkgs.config = {
       # Allow unfree licenced packages
       allowUnfree = true;
