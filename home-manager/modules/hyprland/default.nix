@@ -11,7 +11,13 @@ in
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       gtk3
-    ];
+    ];  
+
+    programs.eww = {
+      enable = true;
+      package = pkgs.eww-wayland;
+      configDir = ./eww;
+    };
 
     wayland.windowManager.hyprland = {
       enable = true;

@@ -15,10 +15,6 @@
       url = "github:nix-community/NUR";
     };
 
-    ags = {
-      url = "github:Aylur/ags";
-    };
-
     oxalica = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -94,7 +90,6 @@
       homeConfigurations = {
         desktop = { pkgs, lib, username, ... }: {
           imports = [
-            inputs.ags.homeManagerModules.default
             ./home-manager/profiles/common.nix
             ./home-manager/profiles/desktop.nix
           ] ++ (builtins.attrValues self.homeManagerModules);
