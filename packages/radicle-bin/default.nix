@@ -24,13 +24,13 @@ stdenv.mkDerivation {
   buildInputs = [ stdenv.cc.cc.libgcc or null ];
 
   unpackPhase = ''
-  mkdir radicle
-  mkdir radicle/bin
-  mkdir radicle/man
-  mkdir temp
-  tar xzf $src --strip-components=1 -C temp
-  mv temp/*.1 radicle/man/
-  mv temp/* radicle/bin/
+    mkdir radicle
+    mkdir radicle/bin
+    mkdir radicle/man
+    mkdir temp
+    tar xzf $src --strip-components=1 -C temp
+    mv temp/*.1 radicle/man/
+    mv temp/* radicle/bin/
   '';
 
   installPhase = ''

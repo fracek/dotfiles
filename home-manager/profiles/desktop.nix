@@ -6,6 +6,7 @@
         inherit withPicom;
         enable = false;
       };
+      hyprland.enable = true;
       neovim.enable = true;
       neomutt.enable = true;
       alacritty.enable = true;
@@ -95,20 +96,6 @@
     framesh
   ];
 
-  wayland.windowManager.hyprland = {
-    enable = true;
-    settings = {
-      input = {
-        kb_layout = "us";
-        kb_variant = "dvorak";
-        kb_options = "ctrl:nocaps";
-      };
-      bind = [
-        "SUPER,o,exec,wezerm"
-        "SUPER,a,exec,alacritty"
-      ];
-    };
-  };
   # Setup X11 session.
   # xsession.enable = true;
   # home.pointerCursor = {
@@ -260,8 +247,8 @@
   };
 
   home.sessionVariables = {
-    NIXPKGS_ALLOW_INSECURE="1";
-    NIXPKGS_ALLOW_UNFREE="1";
+    NIXPKGS_ALLOW_INSECURE = "1";
+    NIXPKGS_ALLOW_UNFREE = "1";
     NIXOS_OZONE_WL = "1";
     DEFAULT_BROSWER = "${pkgs.chromium}/bin/chromium";
   };
