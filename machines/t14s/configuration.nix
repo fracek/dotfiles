@@ -71,11 +71,6 @@
     enable = true;
   };
 
-  # needed by fprint
-  security.polkit = {
-    enable = true;
-  };
-
   # vpn
   services.mullvad-vpn = {
     enable = true;

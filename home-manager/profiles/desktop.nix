@@ -1,11 +1,7 @@
-{ pkgs, withPicom, ... }:
+{ pkgs, ... }:
 {
   fra = {
     programs = {
-      awesome = {
-        inherit withPicom;
-        enable = false;
-      };
       hyprland.enable = true;
       neovim.enable = true;
       neomutt.enable = true;
@@ -96,15 +92,12 @@
     framesh
   ];
 
-  # Setup X11 session.
-  # xsession.enable = true;
-  # home.pointerCursor = {
-  #   package = pkgs.phinger-cursors;
-  #   name = "phinger-cursors-light";
-  #   size = 32;
-  #   gtk.enable = true;
-  #   x11.enable = true;
-  # };
+  home.pointerCursor = {
+    package = pkgs.phinger-cursors;
+    name = "phinger-cursors-light";
+    size = 32;
+    gtk.enable = true;
+  };
 
   programs.git = {
     enable = true;

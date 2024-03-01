@@ -10,6 +10,8 @@ in
     programs.vscode = {
       enable = true;
       userSettings = {
+        # fix vscode on wayland
+        "window.titleBarStyle" = "custom";
         "editor.fontFamily" = "monospace";
         "editor.fontSize" = 16;
         "editor.stickyScroll.enabled" = true;

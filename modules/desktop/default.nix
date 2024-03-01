@@ -90,18 +90,7 @@ in
       enable = true;
       xwayland.enable = true;
     };
-    # Enable X11.
-    # services.xserver = {
-    #   enable = true;
-    #   displayManager.lightdm.enable = true;
-    #   displayManager.defaultSession = "xsession";
-    #   displayManager.session = [{
-    #     name = "xsession";
-    #     manage = "desktop";
-    #     start = "exec $HOME/.xsession";
-    #   }];
-    # };
-    #
+
     # Enable geoclue2.
     services.geoclue2.enable = true;
     services.localtimed.enable = true;
@@ -114,12 +103,33 @@ in
     services.blueman.enable = true;
     hardware.bluetooth.enable = true;
 
-    # Setup gnome keyring.
-    services.gnome.gnome-keyring.enable = true;
+    # Setup gnome related services.
     programs.seahorse.enable = true;
+    services.gnome = {
+      evolution-data-server.enable = true;
+      glib-networking.enable = true;
+      gnome-keyring.enable = true;
+      gnome-online-accounts.enable = true;
+    };
 
-    # Setup tailscale.
-    services.tailscale.enable = true;
+    security = {
+      polkit.enable = true;
+    };
+    systemd = {
+      user.services.polkit-gnome-authentication-agent-1 = {
+        description = "polkit-gnome-authentication-agent-1";
+        wantedBy = [ "graphical-session.target" ];
+        wants = [ "graphical-session.target" ];
+        after = [ "graphical-session.target" ];
+        serviceConfig = {
+          Type = "simple";
+          ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+          Restart = "on-failure";
+          RestartSec = 1;
+          TimeoutStopSec = 10;
+        };
+      };
+    };
 
     # Setup audio.
     security.rtkit.enable = true;
