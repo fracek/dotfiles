@@ -2,13 +2,8 @@
 {
   fra = {
     programs = {
-      awesome = {
-        inherit withPicom;
-        enable = true;
-      };
       neovim.enable = true;
       neomutt.enable = true;
-      alacritty.enable = true;
       bash.enable = true;
       discord.enable = true;
       rofi.enable = true;
@@ -30,7 +25,6 @@
     bind
     cachix
     zip
-    i3lock
     mediainfo
     libguestfs-with-appliance
     unrar
@@ -219,12 +213,12 @@
     longitude = 0.12;
   };
 
-  services.screen-locker = {
-    enable = true;
-    lockCmd = "${pkgs.i3lock}/bin/i3lock -n -c 1e1e2e";
-  };
+  # services.screen-locker = {
+  #   enable = true;
+  #   lockCmd = "${pkgs.i3lock}/bin/i3lock -n -c 1e1e2e";
+  # };
 
-  services.network-manager-applet = { enable = true; };
+  # services.network-manager-applet = { enable = true; };
 
   services.flameshot = {
     enable = true;
@@ -246,6 +240,8 @@
   };
 
   home.sessionVariables = {
+    NIXPKGS_ALLOW_UNFREE = "1";
+    NIXPKGS_ALLOW_INSECURE = "1";
     DEFAULT_BROSWER = "${pkgs.chromium}/bin/chromium";
   };
 }

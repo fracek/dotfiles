@@ -13,14 +13,6 @@ in
       example = "nixos";
       description = "the machine hostname";
     };
-
-    withPicom = mkOption {
-      type = types.bool;
-      default = true;
-      description = ''
-        Enable picom.
-      '';
-    };
   };
 
   config = mkIf cfg.enable {
@@ -43,7 +35,6 @@ in
       # there.
       extraSpecialArgs = {
         inherit flake-self nur;
-        withPicom = cfg.withPicom;
       };
     };
 
@@ -59,6 +50,7 @@ in
       git
       vim
       virt-manager
+      gnome.gnome-tweaks
     ];
 
     # Setup networking.
@@ -85,16 +77,29 @@ in
       libvirtd.enable = true;
     };
 
-    # Enable X11.
+    # Enable Gnome.
     services.xserver = {
       enable = true;
-      displayManager.lightdm.enable = true;
-      displayManager.defaultSession = "xsession";
-      displayManager.session = [{
-        name = "xsession";
-        manage = "desktop";
-        start = "exec $HOME/.xsession";
-      }];
+      displayManager.gdm.enable = true;
+      desktopManager.gnome.enable = true;
+    };
+
+    environment = {
+      gnome.excludePackages = with pkgs; with pkgs.gnome; [
+        gnome-photos
+        gnome-tour
+        gnome-music
+        gedit
+        epiphany
+        geary
+        tali
+        iagno
+        hitori
+        atomix
+        yelp
+        gnome-contacts
+        gnome-initial-setup
+      ];
     };
 
     # Enable geoclue2.
@@ -117,6 +122,7 @@ in
     services.tailscale.enable = true;
 
     # Setup audio.
+    hardware.pulseaudio.enable = false;
     security.rtkit.enable = true;
     services.pipewire = {
       enable = true;

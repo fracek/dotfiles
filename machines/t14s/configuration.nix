@@ -10,7 +10,6 @@
   fra.desktop = {
     enable = true;
     hostname = "t14s";
-    withPicom = false;
   };
 
   # Bootloader.
@@ -18,7 +17,7 @@
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
-      efi.efiSysMountPoint = "/boot/efi";
+      #   efi.efiSysMountPoint = "/boot/efi";
     };
     kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = [
@@ -56,15 +55,6 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
-  # Setup power management
-  services.tlp = {
-    enable = true;
-    settings = {
-      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-      CPU_SCALING_GOVERNOR_ON_AC = "performance";
-    };
-  };
 
   # fingerprint
   services.fprintd = {
