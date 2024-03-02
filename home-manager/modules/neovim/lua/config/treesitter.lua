@@ -8,6 +8,7 @@ function M.setup()
       'typescript', 'javascript', 'python', -- good to have
       'bash', 'json', 'yaml' -- also good to have
     },
+    ignore_install = { 'help' },
     auto_install = true,
     highlight = {
       enable = true,
