@@ -205,6 +205,14 @@
         gtk-application-prefer-dark-theme=1
       '';
     };
+    gtk3.extraCss = ''
+      VteTerminal,
+      TerminalScreen,
+      vte-terminal {
+        padding: 10px 10px 10px 10px;
+        -VteTerminal-inner-border: 10px 10px 10px 10px;
+      }
+    '';
 
     gtk4.extraConfig = {
       Settings = ''
