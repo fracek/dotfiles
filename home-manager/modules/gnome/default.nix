@@ -9,13 +9,56 @@ in
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
+      pop-launcher
       gnomeExtensions.pop-shell
+      gnomeExtensions.vitals
     ];
+
+    programs.gnome-terminal = {
+      enable = true;
+      showMenubar = false;
+      profile."3a7a63eb-4515-4532-81ba-de766b863396" = {
+        default = true;
+        visibleName = "Default";
+        cursorShape = "underline";
+        cursorBlinkMode = "on";
+        colors = {
+          backgroundColor = "#1e1e2e";
+          foregroundColor = "#cdd6f4";
+          cursor = {
+            background = "#f5e0dc";
+            foreground = "#1e1e2e";
+          };
+          highlight = {
+            background = "#1e1e2e";
+            foreground = "#585b70";
+          };
+          palette = [
+            "#45475a"
+            "#f38ba8"
+            "#a6e3a1"
+            "#f9e2af"
+            "#89b4fa"
+            "#f5c2e7"
+            "#94e2d5"
+            "#bac2de"
+            "#585b70"
+            "#f38ba8"
+            "#a6e3a1"
+            "#f9e2af"
+            "#89b4fa"
+            "#f5c2e7"
+            "#94e2d5"
+            "#a6adc8"
+          ];
+        };
+      };
+    };
 
     dconf.settings = {
       "org/gnome/desktop/input-sources" = {
         sources = [
-          (mkTuple ["xkb" "us+dvorak"])
+          (mkTuple [ "xkb" "us+dvorak" ])
         ];
       };
 
@@ -27,14 +70,21 @@ in
 
       "org/gnome/desktop/wm/preferences" = {
         titlebar-font = "Noto Sans Bold 11";
+        num-workspaces = 10;
       };
 
       "org/gnome/shell" = {
-         disable-user-extensions = false;
-         enabled-extensions = [
+        disable-user-extensions = false;
+        enabled-extensions = [
+          "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
           "user-theme@gnome-shell-extensions.gcampax.github.com"
           "pop-shell@system76.com"
-         ];
+          "Vitals@CoreCoding.com"
+        ];
+        favorite-apps = [
+          "org.gnome.Terminal.desktop"
+          "qalculate-gtk.desktop"
+        ];
       };
 
       "org/gnome/shell/extensions/user-theme" = {
@@ -42,6 +92,7 @@ in
       };
 
       "org/gnome/shell/extensions/pop-shell" = {
+        search = [ "<Super>r" ];
         tile-by-default = true;
         hint-color-rgba = "#f5c2e7"; # pink
         fullscreen-launcher = true;
@@ -53,35 +104,72 @@ in
 
       # Shortcuts
       "org/gnome/desktop/wm/keybindings" = {
-        minimize = [];
-        maximize = [];
-        unmaximize = [];
-        move-to-monitor-down = [];
-        move-to-monitor-left = [];
-        move-to-monitor-right = [];
-        move-to-monitor-up = [];
-        switch-to-workspace-left = [];
-        switch-to-workspace-right = [];
-        move-to-workspace-1 = ["<Shift><Super>1"];
-        move-to-workspace-2 = ["<Shift><Super>2"];
-        move-to-workspace-3 = ["<Shift><Super>3"];
-        move-to-workspace-4 = ["<Shift><Super>4"];
-        move-to-workspace-5 = ["<Super><Shift>5"];
-        move-to-workspace-6 = ["<Super><Shift>6"];
-        move-to-workspace-7 = ["<Super><Shift>7"];
-        move-to-workspace-8 = ["<Super><Shift>8"];
-        move-to-workspace-9 = ["<Super><Shift>9"];
-        move-to-workspace-10 = ["<Super><Shift>0"];
-        switch-to-workspace-1 = ["<Super>1"];
-        switch-to-workspace-2 = ["<Super>2"];
-        switch-to-workspace-3 = ["<Super>3"];
-        switch-to-workspace-4 = ["<Super>4"];
-        switch-to-workspace-5 = ["<Super>5"];
-        switch-to-workspace-6 = ["<Super>6"];
-        switch-to-workspace-7 = ["<Super>7"];
-        switch-to-workspace-8 = ["<Super>8"];
-        switch-to-workspace-9 = ["<Super>9"];
-        switch-to-workspace-10 = ["<Super>0"];
+        close = [ "<Super>w" ];
+        minimize = [ ];
+        maximize = [ ];
+        unmaximize = [ ];
+        move-to-monitor-down = [ ];
+        move-to-monitor-left = [ ];
+        move-to-monitor-right = [ ];
+        move-to-monitor-up = [ ];
+        move-to-workspace-left = [ ];
+        move-to-workspace-right = [ ];
+        switch-to-workspace-left = [ ];
+        switch-to-workspace-right = [ ];
+        move-to-workspace-1 = [ "<Shift><Super>1" ];
+        move-to-workspace-2 = [ "<Shift><Super>2" ];
+        move-to-workspace-3 = [ "<Shift><Super>3" ];
+        move-to-workspace-4 = [ "<Shift><Super>4" ];
+        move-to-workspace-5 = [ "<Super><Shift>5" ];
+        move-to-workspace-6 = [ "<Super><Shift>6" ];
+        move-to-workspace-7 = [ "<Super><Shift>7" ];
+        move-to-workspace-8 = [ "<Super><Shift>8" ];
+        move-to-workspace-9 = [ "<Super><Shift>9" ];
+        move-to-workspace-10 = [ "<Super><Shift>0" ];
+        switch-to-workspace-1 = [ "<Super>1" ];
+        switch-to-workspace-2 = [ "<Super>2" ];
+        switch-to-workspace-3 = [ "<Super>3" ];
+        switch-to-workspace-4 = [ "<Super>4" ];
+        switch-to-workspace-5 = [ "<Super>5" ];
+        switch-to-workspace-6 = [ "<Super>6" ];
+        switch-to-workspace-7 = [ "<Super>7" ];
+        switch-to-workspace-8 = [ "<Super>8" ];
+        switch-to-workspace-9 = [ "<Super>9" ];
+        switch-to-workspace-10 = [ "<Super>0" ];
+      };
+
+      "org/gnome/shell/keybindings" = {
+        toggle-application-view = [ ];
+        toggle-message-tray = [ ];
+        toggle-quick-settings = [ ];
+        focus-active-notification = [ ];
+        switch-to-application-1 = [ "<Super><Shift>t" ];
+        switch-to-application-2 = [ "<Super><Shift>k" ];
+        switch-to-application-3 = [ ];
+        switch-to-application-4 = [ ];
+        switch-to-application-5 = [ ];
+        switch-to-application-6 = [ ];
+        switch-to-application-7 = [ ];
+        switch-to-application-8 = [ ];
+        switch-to-application-9 = [ ];
+      };
+
+      "org/gnome/mutter/keybindings" = {
+        toggle-tiled-left = [ ];
+        toggle-tiled-right = [ ];
+      };
+
+      "org/gnome/mutter/wayland/keybindings" = {
+        restore-shortcuts = [ ];
+      };
+
+      "org/gnome/settings-daemon/plugins/media-keys" = {
+        screensaver = [ ];
+        screenreader = [ ];
+        magnifier = [ ];
+        magnifier-zoom-in = [ ];
+        magnifier-zoom-out = [ ];
+        help = [ ];
       };
     };
   };

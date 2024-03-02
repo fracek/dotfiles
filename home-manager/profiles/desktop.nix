@@ -3,6 +3,7 @@
   fra = {
     programs = {
       gnome.enable = true;
+      alacritty.enable = true;
       neovim.enable = true;
       neomutt.enable = true;
       bash.enable = true;
@@ -12,7 +13,6 @@
       tmux.enable = true;
       xplr.enable = true;
       vscode.enable = true;
-      wezterm.enable = true;
     };
     i18n.enable = true;
   };
