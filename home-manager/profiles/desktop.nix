@@ -2,6 +2,7 @@
 {
   fra = {
     programs = {
+      gnome.enable = true;
       neovim.enable = true;
       neomutt.enable = true;
       bash.enable = true;
@@ -199,6 +200,17 @@
       name = "Papirus";
       package = pkgs.papirus-icon-theme;
     };
+    gtk3.extraConfig = {
+      Settings = ''
+        gtk-application-prefer-dark-theme=1
+      '';
+    };
+
+    gtk4.extraConfig = {
+      Settings = ''
+        gtk-application-prefer-dark-theme=1
+      '';
+    };
   };
 
   qt = {
@@ -243,5 +255,6 @@
     NIXPKGS_ALLOW_UNFREE = "1";
     NIXPKGS_ALLOW_INSECURE = "1";
     DEFAULT_BROSWER = "${pkgs.chromium}/bin/chromium";
+    GTK_THEME = "Catppuccin-Mocha-Compact-Pink-Dark";
   };
 }
