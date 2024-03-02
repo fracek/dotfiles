@@ -140,12 +140,13 @@ in
       };
 
       "org/gnome/shell/keybindings" = {
+        toggle-overview = [ "<Super>e" ];
         toggle-application-view = [ ];
         toggle-message-tray = [ ];
         toggle-quick-settings = [ ];
         focus-active-notification = [ ];
-        switch-to-application-1 = [ "<Super><Shift>t" ];
-        switch-to-application-2 = [ "<Super><Shift>k" ];
+        switch-to-application-1 = [ ];
+        switch-to-application-2 = [ ];
         switch-to-application-3 = [ ];
         switch-to-application-4 = [ ];
         switch-to-application-5 = [ ];
@@ -153,6 +154,10 @@ in
         switch-to-application-7 = [ ];
         switch-to-application-8 = [ ];
         switch-to-application-9 = [ ];
+      };
+
+      "org/gnome/mutter" = {
+        overlay-key = "Super_R";
       };
 
       "org/gnome/mutter/keybindings" = {
@@ -164,7 +169,16 @@ in
         restore-shortcuts = [ ];
       };
 
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+        binding = "<Super><Shift>t";
+        command = "gnome-terminal --window";
+        name = "term";
+      };
+
       "org/gnome/settings-daemon/plugins/media-keys" = {
+        custom-keybindings = [
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+        ];
         screensaver = [ ];
         screenreader = [ ];
         magnifier = [ ];
