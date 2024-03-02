@@ -72,7 +72,7 @@ in
       "org/gnome/desktop/wm/preferences" = {
         titlebar-font = "Noto Sans Bold 11";
         num-workspaces = 10;
-        focus-mode = "sloppy";
+        focus-mode = "mouse";
       };
 
       "org/gnome/shell" = {
