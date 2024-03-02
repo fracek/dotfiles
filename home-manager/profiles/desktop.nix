@@ -53,7 +53,7 @@
     ngrok
     tree
     insomnia
-    supabase
+    supabase-cli
     mirrord-bin
     starkli-bin
     httpie

@@ -121,7 +121,6 @@
             # devtools
             apalache = pkgs.apalache;
             quint = pkgs.quint;
-            supabase = pkgs.supabase;
             mirrord-bin = pkgs.mirrord-bin;
             radicle-bin = pkgs.radicle-bin;
             starkli-bin = pkgs.starkli-bin;

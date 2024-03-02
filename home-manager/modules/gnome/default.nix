@@ -71,6 +71,7 @@ in
       "org/gnome/desktop/wm/preferences" = {
         titlebar-font = "Noto Sans Bold 11";
         num-workspaces = 10;
+        focus-mode = "sloppy";
       };
 
       "org/gnome/shell" = {
@@ -106,8 +107,8 @@ in
       "org/gnome/desktop/wm/keybindings" = {
         close = [ "<Super>w" ];
         minimize = [ ];
-        maximize = [ ];
-        unmaximize = [ ];
+        maximize = [ "<Super>m" ];
+        unmaximize = [ "<Super><Shift>m" ];
         move-to-monitor-down = [ ];
         move-to-monitor-left = [ ];
         move-to-monitor-right = [ ];
