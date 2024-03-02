@@ -59,6 +59,7 @@ in
       "org/gnome/desktop/input-sources" = {
         sources = [
           (mkTuple [ "xkb" "us+dvorak" ])
+          (mkTuple [ "xkb" "us" ])
         ];
       };
 
