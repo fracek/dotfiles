@@ -99,7 +99,7 @@ in
         hint-color-rgba = "#f5c2e7"; # pink
         fullscreen-launcher = true;
         active-hint = true;
-        smart-gaps = true;
+        smart-gaps = false;
         gap-inner = mkUint32 4;
         gap-outer = mkUint32 4;
       };
