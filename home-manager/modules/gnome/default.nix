@@ -164,6 +164,7 @@ in
       "org/gnome/mutter/keybindings" = {
         toggle-tiled-left = [ ];
         toggle-tiled-right = [ ];
+        switch-monitor = [ ];
       };
 
       "org/gnome/mutter/wayland/keybindings" = {
