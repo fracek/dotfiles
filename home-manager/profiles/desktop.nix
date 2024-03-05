@@ -75,7 +75,6 @@
     libqalculate
     qalculate-gtk
     inkscape
-    openrgb
     font-manager
     mailspring
     morgen
@@ -86,8 +85,8 @@
     zoom-us
     mpv
     ffmpeg
-    simplescreenrecorder
     framesh
+    notion-app-enhanced
   ];
 
   # Setup X11 session.
@@ -231,17 +230,6 @@
     provider = "manual";
     latitude = 52.0;
     longitude = 0.12;
-  };
-
-  # services.screen-locker = {
-  #   enable = true;
-  #   lockCmd = "${pkgs.i3lock}/bin/i3lock -n -c 1e1e2e";
-  # };
-
-  # services.network-manager-applet = { enable = true; };
-
-  services.flameshot = {
-    enable = true;
   };
 
   services.ssh-agent = {
