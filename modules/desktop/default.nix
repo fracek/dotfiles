@@ -97,7 +97,6 @@ in
         hitori
         atomix
         yelp
-        gnome-contacts
         gnome-initial-setup
       ];
     };
