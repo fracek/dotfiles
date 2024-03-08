@@ -128,6 +128,7 @@
             # office
             mailspring = pkgs.mailspring;
             morgen = pkgs.morgen;
+            smile = pkgs.smile;
           };
         }
       ) //

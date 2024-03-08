@@ -1,4 +1,4 @@
-{ pkgs, withPicom, ... }:
+{ pkgs, ... }:
 {
   fra = {
     programs = {
@@ -87,6 +87,7 @@
     ffmpeg
     framesh
     notion-app-enhanced
+    smile
   ];
 
   # Setup X11 session.

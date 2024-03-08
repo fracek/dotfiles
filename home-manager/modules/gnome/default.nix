@@ -86,6 +86,7 @@ in
         favorite-apps = [
           "org.gnome.Terminal.desktop"
           "qalculate-gtk.desktop"
+          "it.mijorus.smile.desktop"
         ];
       };
 
@@ -177,9 +178,16 @@ in
         name = "term";
       };
 
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+        binding = "<Super><Shift>j";
+        command = "smile";
+        name = "smile";
+      };
+
       "org/gnome/settings-daemon/plugins/media-keys" = {
         custom-keybindings = [
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
         ];
         screensaver = [ ];
         screenreader = [ ];
@@ -187,6 +195,11 @@ in
         magnifier-zoom-in = [ ];
         magnifier-zoom-out = [ ];
         help = [ ];
+      };
+
+      "it/mijorus/smile" = {
+        iconify-on-esc = true;
+        load-hidden-on-startup = true;
       };
     };
   };
