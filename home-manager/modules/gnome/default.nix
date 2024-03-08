@@ -180,7 +180,7 @@ in
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
         binding = "<Super><Shift>j";
-        command = "smile";
+        command = "${pkgs.smile}/bin/smile";
         name = "smile";
       };
 
