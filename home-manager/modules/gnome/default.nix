@@ -179,9 +179,9 @@ in
       };
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-        binding = "<Super><Shift>j";
-        command = "${pkgs.smile}/bin/smile";
-        name = "smile";
+        binding = "<Super><Shift>n";
+        command = "${pkgs.obsidian}/bin/obsidian";
+        name = "obsidian";
       };
 
       "org/gnome/settings-daemon/plugins/media-keys" = {

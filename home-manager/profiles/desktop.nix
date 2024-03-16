@@ -88,6 +88,7 @@
     framesh
     notion-app-enhanced
     smile
+    obsidian
   ];
 
   # Setup X11 session.
