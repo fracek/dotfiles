@@ -22,5 +22,5 @@ self: super:
   # fcitx5-catppuccin = super.callPackage ../packages/fcitx5-catppuccin { };
   # fonts
   berkeley-mono = super.callPackage ../packages/berkeley-mono { };
-  # monolisa = super.callPackage ../packages/monolisa { };
+  monolisa = super.callPackage ../packages/monolisa { };
 }

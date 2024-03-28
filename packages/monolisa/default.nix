@@ -1,17 +1,17 @@
 { lib, stdenv, requireFile, pkgs }:
 stdenv.mkDerivation rec {
   pname = "monolisa";
-  version = "2.010";
-  src = pkgs.requireFile {
-    name = "MonoLisa-Basic-${version}-ttf.zip";
+  version = "2.012";
+  src = requireFile rec {
+    name = "MonoLisa-Basic-${version}.zip";
     message = ''
-      Please add MonoLisa-Basic-${version}-ttf.zip to the nixos store by running
+      Please add MonoLisa-Basic-${version}.zip to the nixos store by running
 
-      nix-prefetch-url --type sha256 file://$(pwd)/MonoLisa-Basic-${version}-ttf.zip
+      nix-prefetch-url --type sha256 --name ${name} <URL>
 
       and updating the sha256 below if necessary.
     '';
-    sha256 = "1zy054766apnbjqq44gm0mcsy3jl5by00halmgjyfkh5lkdz0kpy";
+    sha256 = "0xqwmgj7yl2glr30bxsk7xhv9j8xfw0d7f4ncvjj2dq75fiaqgy6";
   };
 
   installPhase = ''
