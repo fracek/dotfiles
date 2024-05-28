@@ -89,6 +89,7 @@
     notion-app-enhanced
     smile
     obsidian
+    wpsoffice
   ];
 
   # Setup X11 session.
