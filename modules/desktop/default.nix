@@ -89,7 +89,6 @@ in
         gnome-photos
         gnome-tour
         gnome-music
-        gedit
         epiphany
         geary
         tali
