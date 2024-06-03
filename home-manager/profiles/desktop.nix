@@ -68,7 +68,6 @@
     apalache
     duckdb
     mongodb-compass
-    radicle-bin
 
     # office
     chromium
@@ -89,7 +88,7 @@
     notion-app-enhanced
     smile
     obsidian
-    wpsoffice
+    # wpsoffice
   ];
 
   # Setup X11 session.

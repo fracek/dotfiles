@@ -122,7 +122,6 @@
             apalache = pkgs.apalache;
             quint = pkgs.quint;
             mirrord-bin = pkgs.mirrord-bin;
-            radicle-bin = pkgs.radicle-bin;
             starkli-bin = pkgs.starkli-bin;
             youplot = pkgs.youplot;
             # office
