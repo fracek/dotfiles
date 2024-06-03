@@ -41,10 +41,10 @@
   };
 
   # Configure keymap in X11
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "us";
-    xkbVariant = "dvorak";
-    xkbOptions = "ctrl:swapcaps,altwin:swap_alt_win";
+    variant = "dvorak";
+    options = "ctrl:swapcaps,altwin:swap_alt_win";
   };
 
   # Setup trackpoint.
