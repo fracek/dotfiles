@@ -34,6 +34,7 @@
     file
     scrot
     xclip
+    wl-clipboard
 
     # cli
     btop

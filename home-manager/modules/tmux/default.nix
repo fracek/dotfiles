@@ -12,6 +12,12 @@ in
       prefix = "C-h";
       baseIndex = 1;
       keyMode = "vi";
+      mouse = true;
+      plugins = with pkgs; [
+        {
+          plugin = tmuxPlugins.yank;
+        }
+      ];
       extraConfig = ''
         bind-key R source-file ~/.config/tmux/tmux.conf \; display-message "tmux config reloaded"
         set-option -g default-terminal "screen-256color"
