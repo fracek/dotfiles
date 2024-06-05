@@ -53,10 +53,6 @@
     jq
     ngrok
     tree
-    insomnia
-    supabase-cli
-    mirrord-bin
-    starkli-bin
     httpie
     pgcli
     tig
@@ -69,6 +65,11 @@
     apalache
     duckdb
     mongodb-compass
+    hoppscotch
+
+    supabase-cli
+    mirrord-bin
+    starkli-bin
 
     # office
     chromium
