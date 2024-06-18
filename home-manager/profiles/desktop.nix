@@ -65,7 +65,7 @@
     apalache
     duckdb
     mongodb-compass
-    hoppscotch
+    bruno
 
     supabase-cli
     mirrord-bin
