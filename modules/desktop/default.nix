@@ -51,6 +51,7 @@ in
       vim
       virt-manager
       gnome.gnome-tweaks
+      config.boot.kernelPackages.perf
     ];
 
     # Setup networking.
@@ -127,6 +128,8 @@ in
       pulse.enable = true;
       jack.enable = true;
     };
+
+    programs.bcc.enable = true;
 
     # Fix for kube + podman
     systemd.services."user@".serviceConfig = {

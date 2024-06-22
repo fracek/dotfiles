@@ -63,20 +63,27 @@
 
   system.stateVersion = "22.05";
 
-  # Use systemd-boot efi boot loader.
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
+  boot = {
+    # Use systemd-boot efi boot loader.
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+
+    extraModulePackages = with config.boot.kernelPackages; [
+      # Allow virtual camera in obs studio
+      v4l2loopback
+      perf
+    ];
+
+    kernel.sysctl = {
+      "kernel.perf_event_paranoid" = -1;
+    };
+
+    extraModprobeConfig = ''
+      options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
+    '';
   };
-
-  # Allow virtual camera in obs studio
-  boot.extraModulePackages = with config.boot.kernelPackages; [
-    v4l2loopback
-  ];
-
-  boot.extraModprobeConfig = ''
-    options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
-  '';
 
   security.polkit.enable = true;
 }

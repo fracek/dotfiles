@@ -45,6 +45,10 @@
     ripgrep
     ueberzug
 
+    # perf tools
+    perf-tools
+    sysstat
+
     # dev
     docker-client
     graphite-cli
