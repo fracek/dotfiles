@@ -48,6 +48,7 @@
     # perf tools
     perf-tools
     sysstat
+    bpftrace
 
     # dev
     docker-client
