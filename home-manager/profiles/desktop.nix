@@ -46,7 +46,6 @@
     ueberzug
 
     # perf tools
-    perf-tools
     sysstat
     bpftrace
 
