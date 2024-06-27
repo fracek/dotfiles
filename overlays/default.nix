@@ -4,6 +4,7 @@ let
 in
 self: super:
 {
+  vscodeExtensions = inputs.nix-vscode-extensions.extensions.${builtins.currentSystem};
   # dev tools
   hello-custom = super.callPackage ../packages/hello-custom { };
   apalache = super.callPackage ../packages/apalache { };
@@ -15,11 +16,7 @@ self: super:
   mailspring = super.callPackage ../packages/mailspring { };
   morgen = super.callPackage ../packages/morgen { };
   smile = super.callPackage ../packages/smile { };
-  # ctgen = super.python3.pkgs.callPackage ../packages/ctgen { };
-  # cbmp = super.callPackage ../packages/cbmp { };
-  # fuchsia-cursor = super.callPackage ../packages/fuchsia-cursor { };
-  # fcitx5-catppuccin = super.callPackage ../packages/fcitx5-catppuccin { };
   # fonts
   berkeley-mono = super.callPackage ../packages/berkeley-mono { };
-  monolisa = super.callPackage ../packages/monolisa { };
+  # monolisa = super.callPackage ../packages/monolisa { };
 }

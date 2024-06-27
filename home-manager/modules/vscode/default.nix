@@ -2,6 +2,36 @@
 with lib;
 let
   cfg = config.fra.programs.vscode;
+  extensions = pkgs.vscodeExtensions.vscode-marketplace;
+  vscode = pkgs.vscode-with-extensions.override {
+    vscode = pkgs.vscode;
+    vscodeExtensions = [
+      extensions.vspacecode.whichkey
+      extensions.vscodevim.vim
+      extensions.eamodio.gitlens
+      extensions.streetsidesoftware.code-spell-checker
+      extensions.editorconfig.editorconfig
+      # Github
+      extensions.github.copilot
+      extensions.github.vscode-pull-request-github
+      extensions.github.vscode-github-actions
+      # Language Specific
+      extensions.biomejs.biome
+      extensions.mylesmurphy.prettify-ts
+      extensions.yoavbls.pretty-ts-errors
+      extensions.rust-lang.rust-analyzer
+      extensions.jnoortheen.nix-ide
+      extensions.ms-azuretools.vscode-docker
+      extensions.tamasfe.even-better-toml
+      extensions.ziglang.vscode-zig
+      extensions.informal.quint-vscode
+      extensions.zxh404.vscode-proto3
+      extensions.ms-vscode.hexeditor
+      # Look
+      extensions.catppuccin.catppuccin-vsc
+      extensions.cdonohue.quill-icons
+    ];
+  };
 in
 {
   options.fra.programs.vscode.enable = mkEnableOption "vscode";
@@ -9,6 +39,11 @@ in
   config = mkIf cfg.enable {
     programs.vscode = {
       enable = true;
+      package = vscode // {
+        inherit (pkgs.vscode) pname version;
+      };
+      enableUpdateCheck = false;
+      enableExtensionUpdateCheck = false;
       userSettings = {
         "editor.fontFamily" = "monospace";
         "editor.fontSize" = 16;
@@ -256,56 +291,6 @@ in
           "command" = "git.stage";
           "when" =
             "listFocus && sideBarFocus && activeViewlet == 'workbench.view.scm'";
-        }
-      ];
-      extensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-        {
-          name = "vim";
-          publisher = "vscodevim";
-          version = "1.27.1";
-          sha256 = "sha256-tfQ6+rPjflMd4PZ50kXo336IiwyZxdvx7EHWMEjKh1I=";
-        }
-        {
-          name = "catppuccin-vsc";
-          publisher = "Catppuccin";
-          version = "3.11.1";
-          sha256 = "sha256-wO3UwS2/I3ASNpAS9daBKnltTJfamhsSiOnH0QD8vkA=";
-        }
-        {
-          name = "whichkey";
-          publisher = "VSpaceCode";
-          version = "0.11.4";
-          sha256 = "sha256-PnaOwOIcSo1Eff1wOtQPhoHYvrHDGTcsRy9mQfdBPX4";
-        }
-        {
-          name = "gitlens";
-          publisher = "eamodio";
-          version = "2024.2.1104";
-          sha256 = "sha256-KaNC5auyU/XasehWsIQwFKrdtQU7gkVQAMWw2nplP9Q=";
-        }
-        {
-          name = "nix-ide";
-          publisher = "jnoortheen";
-          version = "0.2.2";
-          sha256 = "sha256-jwOM+6LnHyCkvhOTVSTUZvgx77jAg6hFCCpBqY8AxIg=";
-        }
-        {
-          name = "copilot";
-          publisher = "GitHub";
-          version = "1.159.703";
-          sha256 = "sha256-JWyH1+2Y56omCzKZUmb5PlvY0le4LAFzHXdlQ/7uYpk=";
-        }
-        {
-          name = "prettier-vscode";
-          publisher = "esbenp";
-          version = "10.1.0";
-          sha256 = "sha256-SQuf15Jq84MKBVqK6UviK04uo7gQw9yuw/WEBEXcQAc=";
-        }
-        {
-          name = "quill-icons";
-          publisher = "cdonohue";
-          version = "0.0.2";
-          sha256 = "sha256-hi/NOVLJLoVo6Ka9xLTZ1lwrTyoBZoPf0ZpZMKXZmho=";
         }
       ];
     };

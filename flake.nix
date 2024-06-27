@@ -29,6 +29,10 @@
       url = "github:nix-community/ethereum.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+    };
   };
 
   outputs = { self, ... }@inputs:
@@ -128,6 +132,9 @@
             mailspring = pkgs.mailspring;
             morgen = pkgs.morgen;
             smile = pkgs.smile;
+            xxx = pkgs.vscode-with-extensions.override {
+              vscode = pkgs.vscode;
+            };
           };
         }
       ) //
