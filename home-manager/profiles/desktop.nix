@@ -2,17 +2,13 @@
 {
   fra = {
     programs = {
-      gnome.enable = true;
-      alacritty.enable = true;
-      neovim.enable = true;
-      neomutt.enable = true;
       bash.enable = true;
-      discord.enable = true;
-      rofi.enable = true;
+      gnome.enable = true;
+      neovim.enable = true;
       obs-studio.enable = true;
       tmux.enable = true;
-      xplr.enable = true;
       vscode.enable = true;
+      xplr.enable = true;
     };
     i18n.enable = true;
   };
@@ -94,6 +90,7 @@
     notion-app-enhanced
     smile
     obsidian
+    discord
     # wpsoffice
   ];
 
@@ -196,12 +193,8 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Catppuccin-Mocha-Compact-Pink-Dark";
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "pink" ];
-        size = "compact";
-        variant = "mocha";
-      };
+      name = "Tokyonight-Dark-BL-LB";
+      package = pkgs.tokyonight-gtk-theme;
     };
     iconTheme = {
       name = "Papirus";
@@ -259,6 +252,6 @@
     NIXPKGS_ALLOW_UNFREE = "1";
     NIXPKGS_ALLOW_INSECURE = "1";
     DEFAULT_BROSWER = "${pkgs.chromium}/bin/chromium";
-    GTK_THEME = "Catppuccin-Mocha-Compact-Pink-Dark";
+    GTK_THEME = "Tokyonight-Dark-BL-LB";
   };
 }

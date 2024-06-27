@@ -23,33 +23,34 @@ in
         cursorShape = "underline";
         cursorBlinkMode = "on";
         colors = {
-          backgroundColor = "#1e1e2e";
-          foregroundColor = "#cdd6f4";
+          backgroundColor = "#1A1B26";
+          foregroundColor = "#C0CAF5";
           cursor = {
-            background = "#f5e0dc";
-            foreground = "#1e1e2e";
+            foreground = "#1A1B26";
+            background = "#C0CAF5";
           };
           highlight = {
-            background = "#1e1e2e";
-            foreground = "#585b70";
+            foreground = "#1A1B26";
+            background = "#C0CAF5";
           };
           palette = [
-            "#45475a"
-            "#f38ba8"
-            "#a6e3a1"
-            "#f9e2af"
-            "#89b4fa"
-            "#f5c2e7"
-            "#94e2d5"
-            "#bac2de"
-            "#585b70"
-            "#f38ba8"
-            "#a6e3a1"
-            "#f9e2af"
-            "#89b4fa"
-            "#f5c2e7"
-            "#94e2d5"
-            "#a6adc8"
+            "#414868" # Black (Host)
+            "#F7768E" # Red (Syntax string)
+            "#9ECE6A" # Green (Command)
+            "#E0AF68" # Yellow (Command second)
+            "#7AA2F7" # Blue (Path)
+            "#BB9AF7" # Magenta (Syntax var)
+            "#7DCFFF" # Cyan (Prompt)
+            "#A9B1D6" # White
+
+            "#414868" # Bright Black
+            "#F7768E" # Bright Red (Command error)
+            "#9ECE6A" # Bright Green (Exec)
+            "#E0AF68" # Bright Yellow
+            "#7AA2F7" # Bright Blue (Folder)
+            "#BB9AF7" # Bright Magenta
+            "#7DCFFF" # Bright Cyan
+            "#C0CAF5" # Bright White
           ];
         };
       };
@@ -67,6 +68,7 @@ in
         monospace-font-name = "Monospace 14";
         font-name = "Noto Sans 11";
         document-font-name = "Noto Sans 11";
+        color-scheme = "prefer-dark";
       };
 
       "org/gnome/desktop/wm/preferences" = {
@@ -91,13 +93,13 @@ in
       };
 
       "org/gnome/shell/extensions/user-theme" = {
-        name = "Catppuccin-Mocha-Compact-Pink-Dark";
+        name = "Tokyonight-Dark-BL-LB";
       };
 
       "org/gnome/shell/extensions/pop-shell" = {
         search = [ "<Super>r" ];
         tile-by-default = true;
-        hint-color-rgba = "#f5c2e7"; # pink
+        hint-color-rgba = "#9ECE6A";
         fullscreen-launcher = true;
         active-hint = true;
         smart-gaps = false;

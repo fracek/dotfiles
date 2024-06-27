@@ -28,7 +28,9 @@ let
       extensions.zxh404.vscode-proto3
       extensions.ms-vscode.hexeditor
       # Look
-      extensions.catppuccin.catppuccin-vsc
+      extensions.jdinhlife.gruvbox
+      extensions.mvllow.rose-pine
+      extensions.enkia.tokyo-night
       extensions.cdonohue.quill-icons
     ];
   };
@@ -49,7 +51,7 @@ in
         "editor.fontSize" = 16;
         "editor.stickyScroll.enabled" = true;
         "workbench.iconTheme" = "quill-icons-minimal";
-        "workbench.colorTheme" = "Catppuccin Mocha";
+        "workbench.colorTheme" = "Tokyo Night";
         "workbench.activityBar.visible" = false;
         "workbench.editor.showTabs" = false;
         "workbench.statusBar.visible" = true;
@@ -63,8 +65,6 @@ in
         "gitlens.codeLens.enabled" = false;
         "gitlens.currentLine.enabled" = false;
         "git.mergeEditor" = true;
-        "catppuccin.accentColor" = "pink";
-        "catppuccin.workbenchMode" = "flat";
         # Vim Config
         "vim.cursorStylePerMode.insert" = "line";
         "vim.cursorStylePerMode.normal" = "block";
