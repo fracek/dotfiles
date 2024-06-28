@@ -66,6 +66,7 @@
     duckdb
     mongodb-compass
     bruno
+    hotspot
 
     supabase-cli
     mirrord-bin
