@@ -11,8 +11,9 @@ let
       extensions.eamodio.gitlens
       extensions.streetsidesoftware.code-spell-checker
       extensions.editorconfig.editorconfig
+      extensions.supermaven.supermaven
       # Github
-      extensions.github.copilot
+      # extensions.github.copilot
       extensions.github.vscode-pull-request-github
       extensions.github.vscode-github-actions
       # Language Specific
