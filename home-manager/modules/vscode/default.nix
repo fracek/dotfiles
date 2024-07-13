@@ -8,14 +8,14 @@ let
     vscodeExtensions = [
       extensions.vspacecode.whichkey
       extensions.vscodevim.vim
-      extensions.eamodio.gitlens
       extensions.streetsidesoftware.code-spell-checker
       extensions.editorconfig.editorconfig
       extensions.supermaven.supermaven
-      # Github
+      # Git + Github
       # extensions.github.copilot
       extensions.github.vscode-pull-request-github
       extensions.github.vscode-github-actions
+      extensions.mhutchie.git-graph
       # Language Specific
       extensions.biomejs.biome
       extensions.mylesmurphy.prettify-ts
@@ -62,9 +62,6 @@ in
         "editor.formatOnSave" = true;
         "editor.semanticHighlighting.enabled" = true;
         "window.menuBarVisibility" = "toggle";
-        "gitlens.advanced.telemetry.enabled" = false;
-        "gitlens.codeLens.enabled" = false;
-        "gitlens.currentLine.enabled" = false;
         "git.mergeEditor" = true;
         # Vim Config
         "vim.cursorStylePerMode.insert" = "line";
@@ -205,10 +202,10 @@ in
                 "command" = "git.push";
               }
               {
-                "key" = "s";
-                "name" = "status";
+                "key" = "g";
+                "name" = "graph";
                 "type" = "command";
-                "command" = "gitlens.showQuickRepoStatus";
+                "command" = "git-graph.view";
               }
             ];
           }
