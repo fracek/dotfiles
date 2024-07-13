@@ -50,6 +50,8 @@ in
       git
       vim
       virt-manager
+      man-pages
+      man-pages-posix
       gnome.gnome-tweaks
       config.boot.kernelPackages.perf
     ];
@@ -65,6 +67,14 @@ in
       nameservers = [
         "1.1.1.1"
       ];
+    };
+
+    documentation = {
+      enable = true;
+      man.enable = true;
+      info.enable = true;
+      dev.enable = true;
+      nixos.enable = true;
     };
 
     # Setup docker/podman and qemu.

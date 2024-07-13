@@ -44,6 +44,8 @@
     # perf tools
     sysstat
     bpftrace
+    bpftools
+    bpftop
 
     # dev
     docker-client
