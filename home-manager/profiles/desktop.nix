@@ -9,6 +9,8 @@
       tmux.enable = true;
       vscode.enable = true;
       xplr.enable = true;
+      kitty.enable = true;
+      zellij.enable = true;
     };
     i18n.enable = true;
   };
