@@ -2,7 +2,7 @@
 with lib;
 let
   cfg = config.fra.programs.vscode;
-  extensions = pkgs.vscodeExtensions.vscode-marketplace;
+  extensions = (pkgs.vscodeExtensions.forVSCodeVersion pkgs.vscode.version).vscode-marketplace;
   vscode = pkgs.vscode-with-extensions.override {
     vscode = pkgs.vscode;
     vscodeExtensions = [
