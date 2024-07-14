@@ -9,7 +9,7 @@ in
   config = mkIf cfg.enable {
     programs.zellij = {
       enable = true;
-      enableBashIntegration = true;
+      enableBashIntegration = false;
       settings = {
         theme = "tokyo-night";
         pane_frames = false;
