@@ -101,7 +101,6 @@ in
         gnome-tour
         gnome-music
         epiphany
-        geary
         tali
         iagno
         hitori
