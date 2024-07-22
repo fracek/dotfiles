@@ -20,11 +20,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-ld = {
-      url = "github:Mic92/nix-ld";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     ethereum = {
       url = "github:nix-community/ethereum.nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -83,7 +78,6 @@
                   (./machines + "/${x}/configuration.nix")
                   { imports = builtins.attrValues self.nixosModules; }
                   home-manager.nixosModules.home-manager
-                  nix-ld.nixosModules.nix-ld
                 ];
               };
             }

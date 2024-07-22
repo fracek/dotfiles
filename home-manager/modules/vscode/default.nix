@@ -13,7 +13,7 @@ let
       extensions.supermaven.supermaven
       # Git + Github
       # extensions.github.copilot
-      extensions.github.vscode-pull-request-github
+      # extensions.github.vscode-pull-request-github
       extensions.github.vscode-github-actions
       extensions.mhutchie.git-graph
       # Language Specific
