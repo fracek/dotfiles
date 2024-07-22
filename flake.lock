@@ -277,6 +277,21 @@
         "type": "github"
       }
     },
+    "madness": {
+      "locked": {
+        "lastModified": 1720637547,
+        "narHash": "sha256-5MGG0iRBvP35VlcHvxVrapuLygZwHwMB3g0M0fWxz58=",
+        "owner": "antithesishq",
+        "repo": "madness",
+        "rev": "c22c9c03579b7175d94f63e44ee0e518bb5ccdba",
+        "type": "github"
+      },
+      "original": {
+        "owner": "antithesishq",
+        "repo": "madness",
+        "type": "github"
+      }
+    },
     "nix-vscode-extensions": {
       "inputs": {
         "flake-compat": "flake-compat_2",
@@ -385,6 +400,7 @@
         "ethereum": "ethereum",
         "flake-utils": "flake-utils_2",
         "home-manager": "home-manager",
+        "madness": "madness",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixpkgs": "nixpkgs_2",
         "nur": "nur",

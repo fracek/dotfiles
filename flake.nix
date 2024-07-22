@@ -15,6 +15,10 @@
       url = "github:nix-community/NUR";
     };
 
+    madness = {
+      url = "github:antithesishq/madness";
+    };
+
     oxalica = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -78,6 +82,7 @@
                   (./machines + "/${x}/configuration.nix")
                   { imports = builtins.attrValues self.nixosModules; }
                   home-manager.nixosModules.home-manager
+                  madness.nixosModules.madness
                 ];
               };
             }
