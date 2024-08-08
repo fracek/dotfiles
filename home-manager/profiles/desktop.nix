@@ -65,6 +65,7 @@
     buildah
     skopeo
     kubectl
+    k9s
     quint
     apalache
     duckdb
