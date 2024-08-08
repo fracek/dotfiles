@@ -14,9 +14,6 @@ function M.setup()
     -- tab bar
     use 'nanozuki/tabby.nvim'
 
-    -- will replace me someday
-    use 'github/copilot.vim'
-
     -- Quickly jump around
     use {
       'nvim-telescope/telescope.nvim', 
