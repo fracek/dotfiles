@@ -11,6 +11,7 @@
       xplr.enable = true;
       kitty.enable = true;
       zellij.enable = true;
+      k9s.enable = true;
     };
     i18n.enable = true;
   };
@@ -65,13 +66,13 @@
     buildah
     skopeo
     kubectl
-    k9s
     quint
     apalache
     duckdb
     mongodb-compass
     bruno
     hotspot
+    fblog
 
     supabase-cli
     mirrord-bin
