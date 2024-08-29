@@ -5,13 +5,13 @@
 
 buildNpmPackage rec {
   pname = "quint";
-  version = "0.17.1";
+  version = "0.21.1";
 
   src = fetchFromGitHub {
     owner = "informalsystems";
     repo = pname;
     rev = "v${version}";
-    sha256 = "sha256-mbwuJWlQGkxaJx2G0WHAmQg+rfKXTAKjFTxgH/9bhXI=";
+    sha256 = "sha256-VjAvaFO/OdqIYPqTNbbBZl7ah1GPGMVQJltZYkJx5IY=";
   };
 
   prePatch = ''
@@ -19,7 +19,7 @@ buildNpmPackage rec {
   '';
 
   npmBuildScript = "compile";
-  npmDepsHash = "sha256-pJSIaOLZ9KpE9KhqqcK1k0dYlYnPFN/uHmLzDJWQZ90=";
+  npmDepsHash = "sha256-nMZ57ArvNz3qNCZNIGVwszRZ7g+zdYo1AJONBOdekaY=";
 
   meta = with lib; {
     homepage = "https://github.com/informalsystems/quint";

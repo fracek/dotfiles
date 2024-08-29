@@ -28,6 +28,7 @@ let
       extensions.informal.quint-vscode
       extensions.zxh404.vscode-proto3
       extensions.ms-vscode.hexeditor
+      extensions.informal.quint-vscode
       # Look
       extensions.jdinhlife.gruvbox
       extensions.mvllow.rose-pine

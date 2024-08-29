@@ -7,12 +7,12 @@
 
 stdenv.mkDerivation rec {
   pname = "apalache";
-  version = "0.44.2";
+  version = "0.45.3";
 
   src = fetchzip {
     name = "${pname}.zip";
-    url = "https://github.com/informalsystems/apalache/releases/download/v${version}/apalache-${version}.zip";
-    hash = "sha256-5igZtsA1RGGgxXoo3eVV4B40895pXQ+c1lHjIhhMm5k=";
+    url = "https://github.com/apalache-mc/apalache/releases/download/v${version}/apalache-${version}.zip";
+    hash = "sha256-wWXoe/OFI05z0lnF3oK1mRZ30ZHNFbPIQXVFAL7N5Vs=";
   };
 
   nativeBuildInputs = [ makeWrapper ];
@@ -22,8 +22,6 @@ stdenv.mkDerivation rec {
 
   installPhase = ''
     runHook preInstall
-    echo "HERE";
-    ls $src
     install -Dm555 $src/lib/apalache.jar $out/lib/apalache.jar
     install -Dm555 $src/bin/apalache-mc $out/bin/.apalache-wrapped
     makeWrapper "$out/bin/.apalache-wrapped" "$out/bin/apalache" \
