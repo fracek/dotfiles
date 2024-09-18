@@ -18,13 +18,14 @@ in
         noto-fonts-emoji
         noto-fonts-cjk-sans
         noto-fonts-cjk-serif
+        iosevka
       ];
 
       fontconfig = {
         defaultFonts = {
           serif = [ "Noto Serif" ];
           sansSerif = [ "Noto Sans" ];
-          monospace = [ "Berkeley Mono" ];
+          monospace = [ "Iosevka" ];
           emoji = [ "Noto Color Emoji" ];
         };
       };
