@@ -83,6 +83,7 @@
     libqalculate
     qalculate-gtk
     inkscape
+    pinta
     font-manager
     mailspring
     morgen
