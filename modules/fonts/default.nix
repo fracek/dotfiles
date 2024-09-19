@@ -12,7 +12,7 @@ in
     fonts = {
       enableDefaultPackages = true;
       packages = with pkgs; [
-        berkeley-mono
+        # berkeley-mono
         dejavu_fonts
         noto-fonts
         noto-fonts-emoji
