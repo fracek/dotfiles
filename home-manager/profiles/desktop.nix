@@ -98,6 +98,7 @@
     notion-app-enhanced
     smile
     obsidian
+    mailspring
     discord
 
     (pkgs.appimageTools.wrapType2 {
