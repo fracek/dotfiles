@@ -79,6 +79,7 @@
     starkli-bin
 
     # office
+    anki-bin
     chromium
     libqalculate
     qalculate-gtk
