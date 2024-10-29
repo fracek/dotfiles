@@ -127,13 +127,11 @@
             mirrord-bin = pkgs.mirrord-bin;
             starkli-bin = pkgs.starkli-bin;
             youplot = pkgs.youplot;
+            gitkraken = pkgs.gitkraken;
             # office
             mailspring = pkgs.mailspring;
             morgen = pkgs.morgen;
             smile = pkgs.smile;
-            xxx = pkgs.vscode-with-extensions.override {
-              vscode = pkgs.vscode;
-            };
           };
         }
       ) //

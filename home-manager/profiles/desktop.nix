@@ -73,6 +73,7 @@
     bruno
     hotspot
     fblog
+    gitkraken
 
     supabase-cli
     mirrord-bin
