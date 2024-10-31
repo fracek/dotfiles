@@ -55,6 +55,7 @@
     git
     git-absorb
     grpcurl
+    gh-notify
     jq
     ngrok
     tree
@@ -73,7 +74,6 @@
     bruno
     hotspot
     fblog
-    gitkraken
 
     supabase-cli
     mirrord-bin
