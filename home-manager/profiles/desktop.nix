@@ -106,8 +106,8 @@
     (pkgs.appimageTools.wrapType2 {
       name = "en-croissant";
       src = pkgs.fetchurl {
-        url = "https://github.com/franciscoBSalgueiro/en-croissant/releases/download/v0.10.0/en-croissant_0.10.0_amd64.AppImage";
-        sha256 = "sha256-dCPDdd9zY7MR6G3HWbNib5LAg7vJYpjcuWh+ZbnxuI4=";
+        url = "https://github.com/franciscoBSalgueiro/en-croissant/releases/download/v0.11.1/en-croissant_0.11.1_amd64.AppImage";
+        sha256 = "sha256-HfUZGV4cgXgOA2sfyVyqTSQdJaUe6eBk43BslF7SfVc=";
       };
     })
   ];

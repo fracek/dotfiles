@@ -29,10 +29,9 @@
     ];
     extraModulePackages = with config.boot.kernelPackages; [
       acpi_call
-      perf
     ];
     kernel.sysctl = {
-      "kernel.perf_event_paranoid" = -1;
+      # "kernel.perf_event_paranoid" = -1;
     };
   };
 

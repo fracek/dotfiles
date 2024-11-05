@@ -55,7 +55,7 @@ in
       man-pages
       man-pages-posix
       gnome.gnome-tweaks
-      config.boot.kernelPackages.perf
+      # config.boot.kernelPackages.perf
     ];
 
     # Setup networking.
