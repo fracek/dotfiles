@@ -74,6 +74,7 @@
     bruno
     hotspot
     fblog
+    ollama
 
     supabase-cli
     mirrord-bin
