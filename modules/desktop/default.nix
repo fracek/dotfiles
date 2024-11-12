@@ -147,6 +147,10 @@ in
       Delegate = "memory pids cpu cpuset io";
     };
 
+    services.ollama = {
+      enable = true;
+    };
+
     nixpkgs.config.allowUnfree = true;
   };
 }

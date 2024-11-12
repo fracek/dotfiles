@@ -10,7 +10,8 @@ let
       extensions.vscodevim.vim
       extensions.streetsidesoftware.code-spell-checker
       extensions.editorconfig.editorconfig
-      extensions.supermaven.supermaven
+      # extensions.supermaven.supermaven
+      extensions.continue.continue
       # Git + Github
       # extensions.github.copilot
       # extensions.github.vscode-pull-request-github
@@ -292,6 +293,14 @@ in
             "listFocus && sideBarFocus && activeViewlet == 'workbench.view.scm'";
         }
       ];
+    };
+
+    home.file = {
+      ".continue/config.json" = {
+        recursive = false;
+        source = ./config.json;
+        target = ".continue/config.json";
+      };
     };
   };
 }

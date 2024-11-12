@@ -1,0 +1,10 @@
+{
+    "allowAnonymousTelemetry": false,
+    "models": [
+        {
+            "title": "Starcoder 2",
+            "provider": "ollama",
+            "model": "starcoder2"
+        }
+    ]
+}
