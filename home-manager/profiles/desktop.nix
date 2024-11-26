@@ -67,7 +67,7 @@
     buildah
     skopeo
     kubectl
-    quint
+    # quint
     apalache
     duckdb
     mongodb-compass
