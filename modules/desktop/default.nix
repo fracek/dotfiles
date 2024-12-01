@@ -54,7 +54,7 @@ in
       virt-manager
       man-pages
       man-pages-posix
-      gnome.gnome-tweaks
+      gnome-tweaks
       # config.boot.kernelPackages.perf
     ];
 
@@ -98,7 +98,7 @@ in
     };
 
     environment = {
-      gnome.excludePackages = with pkgs; with pkgs.gnome; [
+      gnome.excludePackages = with pkgs; [
         gnome-photos
         gnome-tour
         gnome-music

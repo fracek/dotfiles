@@ -9,8 +9,6 @@ in
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      pop-launcher
-      gnomeExtensions.pop-shell
       gnomeExtensions.vitals
     ];
 
@@ -82,7 +80,6 @@ in
         enabled-extensions = [
           "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
           "user-theme@gnome-shell-extensions.gcampax.github.com"
-          "pop-shell@system76.com"
           "Vitals@CoreCoding.com"
         ];
         favorite-apps = [
@@ -90,21 +87,6 @@ in
           "qalculate-gtk.desktop"
           "it.mijorus.smile.desktop"
         ];
-      };
-
-      "org/gnome/shell/extensions/user-theme" = {
-        name = "Tokyonight-Dark-BL-LB";
-      };
-
-      "org/gnome/shell/extensions/pop-shell" = {
-        search = [ "<Super>r" ];
-        tile-by-default = true;
-        hint-color-rgba = "#9ECE6A";
-        fullscreen-launcher = true;
-        active-hint = true;
-        smart-gaps = false;
-        gap-inner = mkUint32 4;
-        gap-outer = mkUint32 4;
       };
 
       # Shortcuts
