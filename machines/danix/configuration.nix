@@ -35,10 +35,8 @@
     enableGraphical = true;
   };
 
-  # Enable vulkan.
-  hardware.opengl = {
-    driSupport = true;
-    driSupport32Bit = true;
+  hardware.graphics = {
+    enable32Bit = true;
   };
 
   # WiFi

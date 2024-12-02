@@ -13,7 +13,9 @@ in
       extraGroups = [ "wheel" "podman" "networkmanager" "audio" "dialout" "libvirtd" ];
     };
 
-    programs.bash.enableCompletion = true;
+    programs.bash = {
+      completion.enable = true;
+    };
 
     nix.settings = {
       allowed-users = [ "fra" ];
