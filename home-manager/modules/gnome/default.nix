@@ -10,6 +10,7 @@ in
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       gnomeExtensions.vitals
+      gnomeExtensions.tiling-shell
     ];
 
     programs.gnome-terminal = {
@@ -67,6 +68,7 @@ in
         font-name = "Noto Sans 11";
         document-font-name = "Noto Sans 11";
         color-scheme = "prefer-dark";
+        accent-color = "purple";
       };
 
       "org/gnome/desktop/wm/preferences" = {
@@ -79,8 +81,8 @@ in
         disable-user-extensions = false;
         enabled-extensions = [
           "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
-          "user-theme@gnome-shell-extensions.gcampax.github.com"
           "Vitals@CoreCoding.com"
+          "tilingshell@ferrarodomenico.com"
         ];
         favorite-apps = [
           "org.gnome.Terminal.desktop"

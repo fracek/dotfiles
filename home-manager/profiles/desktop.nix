@@ -212,14 +212,6 @@
 
   gtk = {
     enable = true;
-    # theme = {
-    #   name = "Tokyonight-Dark-BL-LB";
-    #   package = pkgs.tokyonight-gtk-theme;
-    # };
-    # iconTheme = {
-    #   name = "Papirus";
-    #   package = pkgs.papirus-icon-theme;
-    # };
     gtk3.extraConfig = {
       Settings = ''
         gtk-application-prefer-dark-theme=1
@@ -272,6 +264,5 @@
     NIXPKGS_ALLOW_UNFREE = "1";
     NIXPKGS_ALLOW_INSECURE = "1";
     DEFAULT_BROSWER = "${pkgs.chromium}/bin/chromium";
-    # GTK_THEME = "Tokyonight-Dark-BL-LB";
   };
 }
