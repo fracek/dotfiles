@@ -103,6 +103,8 @@
     mailspring
     discord
 
+    code-cursor
+
     (pkgs.appimageTools.wrapType2 {
       name = "en-croissant";
       src = pkgs.fetchurl {
