@@ -127,6 +127,7 @@
             mirrord-bin = pkgs.mirrord-bin;
             starkli-bin = pkgs.starkli-bin;
             youplot = pkgs.youplot;
+            windsurf = pkgs.windsurf;
             # office
             mailspring = pkgs.mailspring;
             morgen = pkgs.morgen;

@@ -67,6 +67,7 @@
     buildah
     skopeo
     kubectl
+    windsurf
     # quint
     apalache
     duckdb
