@@ -32,6 +32,10 @@
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
     };
+
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
   };
 
   outputs = { self, ... }@inputs:
@@ -128,6 +132,8 @@
             starkli-bin = pkgs.starkli-bin;
             youplot = pkgs.youplot;
             windsurf = pkgs.windsurf;
+            ghostty = pkgs.ghostty;
+            berkeley-mono = pkgs.berkeley-mono;
             # office
             mailspring = pkgs.mailspring;
             morgen = pkgs.morgen;

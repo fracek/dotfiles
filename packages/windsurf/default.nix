@@ -1,12 +1,12 @@
 # https://github.com/EmberCraze/dotfiles/blob/a76f79a24ce1b1e03939be263a1d8f26a6f55b86/files/.config/nixos/windsurf.nix#L11
-{
-  lib,
-  stdenv,
-  pkgs,
-  callPackage,
-  fetchurl,
-  nixosTests,
-  commandLineArgs ? "",
+{ lib
+, stdenv
+, pkgs
+, callPackage
+, fetchurl
+, nixosTests
+, commandLineArgs ? ""
+,
 }:
 # https://windsurf-stable.codeium.com/api/update/linux-x64/stable/latest
 callPackage "${pkgs.path}/pkgs/applications/editors/vscode/generic.nix" rec {

@@ -160,7 +160,7 @@ in
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
         binding = "<Super><Shift>t";
-        command = "kitty";
+        command = "ghostty";
         name = "term";
       };
 

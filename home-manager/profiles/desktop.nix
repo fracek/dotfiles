@@ -12,6 +12,7 @@
       kitty.enable = true;
       zellij.enable = true;
       k9s.enable = true;
+      ghostty.enable = true;
     };
     i18n.enable = true;
   };

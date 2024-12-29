@@ -1,9 +1,11 @@
 { lib, stdenv, requireFile, pkgs }:
-stdenv.mkDerivation {
+stdenv.mkDerivation rec {
   pname = "berkeley-mono";
-  version = "1.0";
+  version = "2.0";
+  variant = "241229NJMZYVR1QL";
+  subvariant = "TX-02-QVK28ZYY";
   src = requireFile rec {
-    name = "berkeley-mono-typeface.zip";
+    name = "berkeley-mono-v2.zip";
     message = ''
       Please add ${name} to the nixos store by running
 
@@ -11,17 +13,16 @@ stdenv.mkDerivation {
 
       and updating the sha256 below if necessary.
     '';
-    sha256 = "0mwdgsqmqaj6hgx50v8l25zn3x7pi9kkzgxnn7xsxp8ng2anpvfy";
+    sha256 = "1m3h8bw3ylm4mbj39hr1mgrj2nxi80rccl8lryx3m2qsmzpjld5c";
   };
 
   installPhase = ''
     runHook preInstall
 
     ls -lAh *
-    mkdir -vp $out/share/fonts/{,truetype}
+    mkdir -vp $out/share/fonts/{opentype,truetype}
 
-    mv -v berkeley-mono/OTF $out/share/fonts/opentype
-    mv -v berkeley-mono{,variable}/TTF/*.ttf $out/share/fonts/truetype
+    mv -v ${variant}/${subvariant} $out/share/fonts/opentype
 
     runHook postInstall
   '';
