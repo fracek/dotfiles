@@ -2,8 +2,8 @@
 stdenv.mkDerivation rec {
   pname = "berkeley-mono";
   version = "2.0";
-  variant = "241229NJMZYVR1QL";
-  subvariant = "TX-02-QVK28ZYY";
+  variant = "24122903LPX5Q63M";
+  ticketNumber = "TX-02-82QJZ01K";
   src = requireFile rec {
     name = "berkeley-mono-v2.zip";
     message = ''
@@ -13,16 +13,17 @@ stdenv.mkDerivation rec {
 
       and updating the sha256 below if necessary.
     '';
-    sha256 = "1m3h8bw3ylm4mbj39hr1mgrj2nxi80rccl8lryx3m2qsmzpjld5c";
+    sha256 = "0rf9p72bhrybkb6lmjsnjahaw1m60pmw1swvqvd4p1j1cimanw2z";
   };
 
   installPhase = ''
     runHook preInstall
 
-    ls -lAh *
-    mkdir -vp $out/share/fonts/{opentype,truetype}
+    ls -lAh ${variant}
+    ls -lAh ${variant}/${ticketNumber}
+    mkdir -vp $out/share/fonts/opentype
 
-    mv -v ${variant}/${subvariant} $out/share/fonts/opentype
+    mv -v ${variant}/${ticketNumber}/*.otf $out/share/fonts/opentype
 
     runHook postInstall
   '';
