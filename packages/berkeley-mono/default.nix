@@ -2,8 +2,8 @@
 stdenv.mkDerivation rec {
   pname = "berkeley-mono";
   version = "2.0";
-  variant = "24122903LPX5Q63M";
-  ticketNumber = "TX-02-82QJZ01K";
+  variant = "24123002P2PZY8Q0";
+  ticketNumber = "TX-02-94N41JK6";
   src = requireFile rec {
     name = "berkeley-mono-v2.zip";
     message = ''
@@ -13,7 +13,7 @@ stdenv.mkDerivation rec {
 
       and updating the sha256 below if necessary.
     '';
-    sha256 = "0rf9p72bhrybkb6lmjsnjahaw1m60pmw1swvqvd4p1j1cimanw2z";
+    sha256 = "0b9zkvzw54mq0958wg3f0y9r57agl8dz37a3lcvvblhq33qx8959";
   };
 
   installPhase = ''
