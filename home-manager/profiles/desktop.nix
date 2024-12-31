@@ -99,6 +99,7 @@
     mpv
     ffmpeg
     framesh
+    en-croissant
     notion-app-enhanced
     smile
     obsidian
@@ -106,14 +107,7 @@
     discord
 
     code-cursor
-
-    (pkgs.appimageTools.wrapType2 {
-      name = "en-croissant";
-      src = pkgs.fetchurl {
-        url = "https://github.com/franciscoBSalgueiro/en-croissant/releases/download/v0.11.1/en-croissant_0.11.1_amd64.AppImage";
-        sha256 = "sha256-HfUZGV4cgXgOA2sfyVyqTSQdJaUe6eBk43BslF7SfVc=";
-      };
-    })
+    msty
   ];
 
   # Setup X11 session.

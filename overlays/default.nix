@@ -15,9 +15,11 @@ self: super:
   windsurf = super.callPackage ../packages/windsurf { };
   ghostty = inputs.ghostty.packages.${self.system}.ghostty;
   # desktop + eye candy
+  msty = super.callPackage ../packages/msty { };
   mailspring = super.callPackage ../packages/mailspring { };
   morgen = super.callPackage ../packages/morgen { };
   smile = super.callPackage ../packages/smile { };
+  en-croissant = super.callPackage ../packages/en-croissant { };
   # fonts
   berkeley-mono = super.callPackage ../packages/berkeley-mono { };
   # monolisa = super.callPackage ../packages/monolisa { };

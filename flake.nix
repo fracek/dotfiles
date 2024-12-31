@@ -138,6 +138,8 @@
             mailspring = pkgs.mailspring;
             morgen = pkgs.morgen;
             smile = pkgs.smile;
+            msty = pkgs.msty;
+            en-croissant = pkgs.en-croissant;
           };
         }
       ) //
