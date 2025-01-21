@@ -63,8 +63,14 @@ in
       networkmanager.enable = true;
       hostName = cfg.hostname;
 
-      firewall.enable = false;
       nftables.enable = true;
+      firewall = {
+        enable = false;
+        trustedInterfaces = [ "tailscale0" ];
+        allowedUDPPorts = [ config.services.tailscale.port ];
+        allowedTCPPorts = [ 22 ];
+      };
+
 
       nameservers = [
         "1.1.1.1"
