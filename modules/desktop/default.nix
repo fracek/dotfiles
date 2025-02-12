@@ -135,7 +135,10 @@ in
     programs.seahorse.enable = true;
 
     # Setup tailscale.
-    services.tailscale.enable = true;
+    services.tailscale = {
+      enable = true;
+      openFirewall = true;
+    };
 
     # Setup audio.
     hardware.pulseaudio.enable = false;
