@@ -9,7 +9,7 @@ let
   src = fetchurl {
     url = "https://assets.msty.app/prod/latest/linux/amd64/Msty_x86_64_amd64.AppImage";
     name = "Msty_x86_64.AppImage";
-    hash = "sha256-9ft9vK4RjzWcX/9iy17UkqWKYnPZdZORd3fxib+NsTc=";
+    hash = "sha256-k6hcT7Dp53e4zWXXJhsonNlfOwCLIOo/kz8FcDq8OKo=";
   };
 
   appimageContents = appimageTools.extractType2 { inherit pname version src; };
