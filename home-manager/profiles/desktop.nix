@@ -131,16 +131,50 @@
         editor = "nvim";
         autocrlf = "input";
       };
+      commit = {
+        verbose = true;
+      };
       merge = {
-        conflictStyle = "diff3";
+        conflictStyle = "zdiff3";
       };
       diff = {
-        colorMoved = "default";
+        algorithm = "histogram";
+        colorMoved = "plain";
+        mnemonicPrefix = true;
+        renames = true;
       };
-      init = { defaultBranch = "main"; };
-      push.default = "current";
+      column = {
+        ui = "auto";
+      };
+      branch = {
+        sort = "-committerdate";
+      };
+      tag = {
+        sort = "version:refname";
+      };
+      init = {
+        defaultBranch = "main";
+      };
+      rebase = {
+        autoSquash = true;
+        autoStash = true;
+        updateRefs = true;
+      };
+      push = {
+        default = "simple";
+        autoSetupRemote = true;
+        followTags = true;
+      };
       pull.rebase = true;
-      fetch.prune = true;
+      fetch = {
+        prune = true;
+        pruneTags = true;
+        all = true;
+      };
+      rerere = {
+        enabled = true;
+        autoupdate = true;
+      };
       alias = {
         ca = "commit --amend";
         ab = "absorb";
@@ -156,14 +190,6 @@
         ra = "rebase --abort";
         brrr = "for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'";
         lg = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all";
-      };
-    };
-    delta = {
-      enable = true;
-      options = {
-        navigate = true;
-        side-by-side = true;
-        line-numbers = true;
       };
     };
   };
