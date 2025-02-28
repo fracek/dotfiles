@@ -55,7 +55,6 @@
     # dev
     docker-client
     git
-    git-absorb
     grpcurl
     gh-notify
     jq
@@ -127,6 +126,7 @@
       user = {
         name = "Francesco Ceccon";
         email = "francesco@ceccon.me";
+        signingkey = "ECCB5F68902EF443";
       };
       core = {
         editor = "nvim";
@@ -134,6 +134,7 @@
       };
       commit = {
         verbose = true;
+        gpgsign = true;
       };
       merge = {
         conflictStyle = "zdiff3";
