@@ -58,6 +58,30 @@ in
       # config.boot.kernelPackages.perf
     ];
 
+    # Yubikey
+    security.pam = {
+      u2f = {
+        enable = true;
+        settings = {
+          interactive = true;
+          cue = true;
+          origin = "pam://yubi";
+          authFile = pkgs.writeText "u2f-mappings" ''
+            fra
+            :Ek7piRaKrfqKy5sd2dcoR8tBWtd8AaKHJx2Blvglxl5Omm+EC5kkj/Es77PaYIWWZrhyfzokHrPQqujNGsOOiw==,8tqVvK6XIXo99G+iFLUH+FDWlUvRznG0XSU1dR/9jaI+g1n/3f8VxE31vjEp65+9UXAAG6OHxnf0kPyP0wVu7Q==,es256,+presence
+          '';
+        };
+      };
+      services = {
+        login.u2fAuth = true;
+        sudo.u2fAuth = true;
+      };
+    };
+    services = {
+      pcscd.enable = true;
+      udev.packages = [ pkgs.yubikey-personalization ];
+    };
+
     # Setup networking.
     networking = {
       networkmanager.enable = true;
