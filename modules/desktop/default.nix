@@ -110,6 +110,7 @@ in
     };
 
     # Setup docker/podman and qemu.
+    programs.virt-manager.enable = true;
     virtualisation = {
       podman = {
         enable = true;
@@ -118,6 +119,7 @@ in
       };
 
       libvirtd.enable = true;
+      spiceUSBRedirection.enable = true;
     };
 
     # Enable Gnome.
