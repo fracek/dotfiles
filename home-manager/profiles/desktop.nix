@@ -105,9 +105,6 @@
     obsidian
     mailspring
     discord
-
-    code-cursor
-    msty
   ];
 
   # Setup X11 session.

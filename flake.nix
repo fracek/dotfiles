@@ -158,6 +158,7 @@
           go = import ./shells/go.nix { inherit pkgs; };
           protobuf = import ./shells/protobuf.nix { inherit pkgs; };
           rust = import ./shells/rust.nix { inherit pkgs; };
+          azure = import ./shells/azure.nix { inherit pkgs; };
         };
       }
     ));

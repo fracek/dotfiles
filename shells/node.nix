@@ -2,8 +2,8 @@
 pkgs.mkShell {
   packages = with pkgs; [
     bun
-    nodejs
-    nodePackages.pnpm
+    nodejs_22
+    pnpm_10
     nodePackages.typescript
     nodePackages.typescript-language-server
   ];
