@@ -77,6 +77,7 @@
     hotspot
     fblog
     ollama
+    aptakube
 
     # supabase-cli
     # mirrord-bin

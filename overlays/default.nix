@@ -13,6 +13,7 @@ self: super:
   starkli-bin = super.callPackage ../packages/starkli-bin { };
   youplot = super.callPackage ../packages/youplot { };
   windsurf = super.callPackage ../packages/windsurf { };
+  aptakube = super.callPackage ../packages/aptakube { };
   ghostty = inputs.ghostty.packages.${self.system}.ghostty;
   # desktop + eye candy
   msty = super.callPackage ../packages/msty { };

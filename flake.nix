@@ -132,6 +132,7 @@
             starkli-bin = pkgs.starkli-bin;
             youplot = pkgs.youplot;
             windsurf = pkgs.windsurf;
+            aptakube = pkgs.aptakube;
             ghostty = pkgs.ghostty;
             berkeley-mono = pkgs.berkeley-mono;
             # office
