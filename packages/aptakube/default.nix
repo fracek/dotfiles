@@ -14,33 +14,22 @@ let
 
     extraPkgs = pkgs: with pkgs; [
       libsecret
+      kubelogin
+      kubelogin-oidc
     ];
   };
-  desktopFile = pkgs.substituteAll {
-    inherit version;
-    src = ./share/applications/aptakube.desktop;
+  desktopItem = pkgs.makeDesktopItem {
+    name = "aptakube";
+    desktopName = "Aptakube";
     exec = "${appImage}/bin/${appImage.pname}";
-    icon = ./share/icons/aptakube.png;
+    terminal = false;
   };
-  xdgDirectory = stdenv.mkDerivation {
-    inherit version;
-    pname = "${pname-base}-xdg";
-    src = desktopFile;
-
-    installPhase = ''
-      install -d $out/share/applications
-
-      cp $src $out/share/applications
-    '';
-    unpackPhase = ":";
-  };
-  appImageWrapper = (pkgs.writeShellScriptBin "aptakube" "exec -a $0 ${appImage}/bin/${appImage.pname} $@");
 in
 pkgs.symlinkJoin
 {
   name = "${pname-base}-${version}";
   inherit version;
-  paths = [ appImageWrapper ];
+  paths = [ appImage desktopItem ];
 
   meta = with lib; {
     homepage = "https://aptakube.com";
