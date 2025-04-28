@@ -12,7 +12,7 @@ in
     xdg.configFile."ghostty/config".text = ''
       font-family = "monospace"
       font-size = 13
-      theme = "tokyonight"
+      theme = "catppuccin-mocha"
     '';
   };
 }

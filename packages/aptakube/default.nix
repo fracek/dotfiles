@@ -16,6 +16,7 @@ let
       libsecret
       kubelogin
       kubelogin-oidc
+      kubernetes-helm
     ];
   };
   desktopItem = pkgs.makeDesktopItem {

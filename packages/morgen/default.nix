@@ -15,7 +15,7 @@
 
 stdenv.mkDerivation rec {
   pname = "morgen";
-  version = "3.1.6";
+  version = "3.6.12";
 
   src = fetchurl {
     url = "https://dl.todesktop.com/210203cqcj00tw1/linux/deb/x64?v=${version}";
