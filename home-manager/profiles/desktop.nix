@@ -78,6 +78,9 @@
     fblog
     ollama
     aptakube
+    heaptrack
+    samply
+    valgrind
 
     # supabase-cli
     # mirrord-bin
