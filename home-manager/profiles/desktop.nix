@@ -68,8 +68,7 @@
     buildah
     skopeo
     kubectl
-    windsurf
-    # quint
+    code-cursor
     apalache
     duckdb
     mongodb-compass

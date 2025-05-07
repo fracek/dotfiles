@@ -7,12 +7,13 @@ self: super:
   vscodeExtensions = inputs.nix-vscode-extensions.extensions.${builtins.currentSystem};
   # dev tools
   hello-custom = super.callPackage ../packages/hello-custom { };
+  # code-cursor = super.callPackage ../packages/code-cursor { };
   apalache = super.callPackage ../packages/apalache { };
   quint = super.callPackage ../packages/quint { };
   mirrord-bin = super.callPackage ../packages/mirrord-bin { };
   starkli-bin = super.callPackage ../packages/starkli-bin { };
   youplot = super.callPackage ../packages/youplot { };
-  windsurf = super.callPackage ../packages/windsurf { };
+  # windsurf = super.callPackage ../packages/windsurf { };
   aptakube = super.callPackage ../packages/aptakube { };
   ghostty = inputs.ghostty.packages.${self.system}.ghostty;
   # desktop + eye candy
