@@ -4,6 +4,8 @@ pkgs.mkShell {
     bun
     nodejs_22
     pnpm_10
+    vtsls
+    biome
     nodePackages.typescript
     nodePackages.typescript-language-server
   ];
