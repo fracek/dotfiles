@@ -8,6 +8,7 @@ self: super:
   # dev tools
   hello-custom = super.callPackage ../packages/hello-custom { };
   # code-cursor = super.callPackage ../packages/code-cursor { };
+  zed-editor-bin = super.callPackage ../packages/zed-editor-bin { };
   apalache = super.callPackage ../packages/apalache { };
   quint = super.callPackage ../packages/quint { };
   mirrord-bin = super.callPackage ../packages/mirrord-bin { };

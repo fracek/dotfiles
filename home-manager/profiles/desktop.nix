@@ -7,10 +7,10 @@
       neovim.enable = true;
       obs-studio.enable = true;
       tmux.enable = true;
-      vscode.enable = true;
-      xplr.enable = true;
+      # vscode.enable = true;
+      # xplr.enable = true;
       kitty.enable = true;
-      zellij.enable = true;
+      zed.enable = true;
       k9s.enable = true;
       ghostty.enable = true;
     };
@@ -94,7 +94,7 @@
     font-manager
     mailspring
     morgen
-    figma-linux
+    # figma-linux
     slack
     tdesktop
     zathura

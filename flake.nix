@@ -126,7 +126,7 @@
           packages = flake-utils.lib.flattenTree {
             hello-custom = pkgs.hello-custom;
             # devtools
-            # code-cursor = pkgs.code-cursor;
+            zed-editor-bin = pkgs.zed-editor-bin;
             apalache = pkgs.apalache;
             quint = pkgs.quint;
             mirrord-bin = pkgs.mirrord-bin;
