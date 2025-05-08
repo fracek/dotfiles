@@ -52,8 +52,7 @@ stdenv.mkDerivation rec {
 
     # Create a wrapper script that sets up the correct environment
     makeWrapper $out/bin/zed-original $out/bin/zed \
-      --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath buildInputs} \
-      --suffix PATH : ${lib.makeBinPath [ pkgs.nodePackages_latest.nodejs ] }
+      --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath buildInputs}
   '';
 
   meta = {

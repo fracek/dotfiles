@@ -16,6 +16,7 @@ in
 
   systemd.user.sessionVariables = {
     EDITOR = editor;
+    MADNESS_ALLOW_LDD = "1";
   };
 
   home = {
@@ -27,6 +28,7 @@ in
     sessionVariables = {
       NIX_SHELL_PRESERVE_PROMPT = 1;
       EDITOR = editor;
+      MADNESS_ALLOW_LDD = "1";
     };
 
     stateVersion = "22.05";
