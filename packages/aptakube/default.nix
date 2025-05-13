@@ -1,15 +1,15 @@
-{ lib, stdenv, pkgs, fetchurl, appimageTools, ... }:
+{ lib, pkgs, fetchurl, appimageTools, ... }:
 
 let
   pname-base = "aptakube";
-  version = "1.11.4";
+  version = "1.11.5";
   appImage = appimageTools.wrapType2 {
     inherit version;
     pname = "${pname-base}-wrapped";
 
     src = fetchurl {
       url = "https://releases.aptakube.com/aptakube_${version}_amd64.AppImage";
-      hash = "sha256-G5E7qqWA53W/6SPEZmvqKKcm+INo45L48W5PLdtmmU0=";
+      hash = "sha256-c0qVfV/ClW4Wv7lrSy8Yr8C402LPxK9fESR1NZexKUo=";
     };
 
     extraPkgs = pkgs: with pkgs; [
