@@ -10,7 +10,7 @@
       # vscode.enable = true;
       # xplr.enable = true;
       kitty.enable = true;
-      zed.enable = true;
+      # zed.enable = true;
       k9s.enable = true;
       ghostty.enable = true;
     };
@@ -80,6 +80,8 @@
     heaptrack
     samply
     valgrind
+    zed-editor-fhs
+    azure-cli
 
     # supabase-cli
     # mirrord-bin
