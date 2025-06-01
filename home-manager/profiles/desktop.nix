@@ -10,7 +10,8 @@
       # vscode.enable = true;
       # xplr.enable = true;
       kitty.enable = true;
-      # zed.enable = true;
+      # disabled until the config is stable
+      zed.enable = false;
       k9s.enable = true;
       ghostty.enable = true;
     };
@@ -83,6 +84,7 @@
     zed-editor-fhs
     azure-cli
 
+    zed-editor-fhs
     # supabase-cli
     # mirrord-bin
 
