@@ -7,7 +7,6 @@
       neovim.enable = true;
       obs-studio.enable = true;
       tmux.enable = true;
-      # vscode.enable = true;
       # xplr.enable = true;
       kitty.enable = true;
       # disabled until the config is stable
@@ -83,10 +82,7 @@
     valgrind
     zed-editor-fhs
     azure-cli
-
-    zed-editor-fhs
-    # supabase-cli
-    # mirrord-bin
+    dagger
 
     # office
     anki-bin

@@ -65,8 +65,8 @@ in
 
       "org/gnome/desktop/interface" = {
         monospace-font-name = "Monospace 14";
-        font-name = "Noto Sans 11";
-        document-font-name = "Noto Sans 11";
+        font-name = "Adwaita Sans 11";
+        document-font-name = "Adwaita Sans 11";
         color-scheme = "prefer-dark";
         accent-color = "purple";
       };
@@ -146,6 +146,7 @@ in
 
       "org/gnome/mutter" = {
         overlay-key = "Super_R";
+        dynamic-workspaces = false;
       };
 
       "org/gnome/mutter/keybindings" = {
@@ -186,6 +187,18 @@ in
       "it/mijorus/smile" = {
         iconify-on-esc = true;
         load-hidden-on-startup = true;
+      };
+
+      "org/gnome/desktop/break-reminders" = {
+        selected-breaks = ["movement" "eyesight"];
+      };
+
+      "org/gnome/desktop/break-reminders/movement" = {
+        play-sound = true;
+      };
+
+      "org/gnome/desktop/break-reminders/eyesight" = {
+        play-sound = true;
       };
     };
   };

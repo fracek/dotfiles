@@ -2,12 +2,12 @@
   description = "Francesco's NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
     flake-utils.url = "github:numtide/flake-utils";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -27,10 +27,6 @@
     ethereum = {
       url = "github:nix-community/ethereum.nix";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nix-vscode-extensions = {
-      url = "github:nix-community/nix-vscode-extensions";
     };
 
     ghostty = {
@@ -128,6 +124,7 @@
             # devtools
             zed-editor-bin = pkgs.zed-editor-bin;
             apalache = pkgs.apalache;
+            dagger = pkgs.dagger;
             quint = pkgs.quint;
             mirrord-bin = pkgs.mirrord-bin;
             starkli-bin = pkgs.starkli-bin;
