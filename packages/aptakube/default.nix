@@ -19,6 +19,7 @@ let
       kubernetes-helm
     ];
   };
+
   desktopItem = pkgs.makeDesktopItem {
     name = "aptakube";
     desktopName = "Aptakube";

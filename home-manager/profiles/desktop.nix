@@ -83,6 +83,9 @@
     zed-editor-fhs
     azure-cli
     dagger
+    kubelogin
+    kubelogin-oidc
+    kubernetes-helm
 
     # office
     anki-bin
@@ -309,7 +312,7 @@
     # https://github.com/drduh/config/blob/master/gpg-agent.conf
     defaultCacheTtl = 60;
     maxCacheTtl = 120;
-    pinentryPackage = lib.mkForce pkgs.pinentry-gnome3;
+    pinentry.package = lib.mkForce pkgs.pinentry-gnome3;
     extraConfig = ''
       ttyname $GPG_TTY
     '';

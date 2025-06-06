@@ -8,7 +8,7 @@ self: super:
   hello-custom = super.callPackage ../packages/hello-custom { };
   # code-cursor = super.callPackage ../packages/code-cursor { };
   zed-editor-bin = super.callPackage ../packages/zed-editor-bin { };
-  zed-editor-fhs = self.buildFHSUserEnv {
+  zed-editor-fhs = self.buildFHSEnv {
     name = "zed";
     targetPkgs = pkgs:
       with pkgs; [

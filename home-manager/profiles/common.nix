@@ -7,7 +7,7 @@ in
     config.allowUnfree = true;
     overlays = [
       flake-self.overlays.default
-      nur.overlay
+      nur.overlays.default
     ];
   };
 
