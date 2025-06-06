@@ -2,22 +2,15 @@
 
 let
   pname-base = "aptakube";
-  version = "1.11.5";
+  version = "1.11.6";
   appImage = appimageTools.wrapType2 {
     inherit version;
     pname = "${pname-base}-wrapped";
 
     src = fetchurl {
       url = "https://releases.aptakube.com/aptakube_${version}_amd64.AppImage";
-      hash = "sha256-c0qVfV/ClW4Wv7lrSy8Yr8C402LPxK9fESR1NZexKUo=";
+      hash = "sha256-e+F9dpoIXQPcBRufwge1la04kWTXXGNvrDGHPXK8JQU=";
     };
-
-    extraPkgs = pkgs: with pkgs; [
-      libsecret
-      kubelogin
-      kubelogin-oidc
-      kubernetes-helm
-    ];
   };
 
   desktopItem = pkgs.makeDesktopItem {
