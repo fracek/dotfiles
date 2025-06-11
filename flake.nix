@@ -132,6 +132,7 @@
             aptakube = pkgs.aptakube;
             ghostty = pkgs.ghostty;
             berkeley-mono = pkgs.berkeley-mono;
+            opencode = pkgs.opencode-git;
             # office
             mailspring = pkgs.mailspring;
             morgen = pkgs.morgen;
