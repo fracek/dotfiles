@@ -190,7 +190,7 @@ in
       };
 
       "org/gnome/desktop/break-reminders" = {
-        selected-breaks = ["movement" "eyesight"];
+        selected-breaks = [ ];
       };
 
       "org/gnome/desktop/break-reminders/movement" = {
