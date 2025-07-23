@@ -240,14 +240,6 @@
     ];
   };
 
-  programs.emacs = {
-    enable = true;
-  };
-
-  services.emacs = {
-    enable = true;
-  };
-
   gtk = {
     enable = true;
     gtk3.extraConfig = {
