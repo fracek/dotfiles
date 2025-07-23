@@ -1,35 +1,41 @@
-{ lib, pkgs, fetchurl, appimageTools, ... }:
+{ lib, stdenv, pkgs, fetchurl, autoPatchelfHook, dpkg, ... }:
 
-let
-  pname-base = "aptakube";
-  version = "1.11.6";
-  appImage = appimageTools.wrapType2 {
-    inherit version;
-    pname = "${pname-base}-wrapped";
+stdenv.mkDerivation rec {
+  name = "aptakube";
+  version = "1.12.0";
 
-    src = fetchurl {
-      url = "https://releases.aptakube.com/aptakube_${version}_amd64.AppImage";
-      hash = "sha256-e+F9dpoIXQPcBRufwge1la04kWTXXGNvrDGHPXK8JQU=";
-    };
+  src = fetchurl {
+    url = "https://github.com/aptakube/aptakube/releases/download/${version}/aptakube_${version}_amd64.deb";
+    sha256 = "sha256-ehU+crego7oxR+M5lG6gJTwybCex0HgpB9zUuCUxlR8=";
   };
 
-  desktopItem = pkgs.makeDesktopItem {
-    name = "aptakube";
-    desktopName = "Aptakube";
-    exec = "${appImage}/bin/${appImage.pname}";
-    terminal = false;
-  };
-in
-pkgs.symlinkJoin
-{
-  name = "${pname-base}-${version}";
-  inherit version;
-  paths = [ appImage desktopItem ];
+  nativeBuildInputs = [
+    autoPatchelfHook
+    dpkg
+  ];
+
+  buildInputs = with pkgs; [ webkitgtk_4_1 ];
+
+  unpackPhase = ''
+    runHook preUnpack
+    dpkg -X $src .
+    runHook postUnpack
+  '';
+
+  installPhase = ''
+    runHook preInstall
+    mkdir -p $out
+    cp -r usr/share usr/bin $out
+    runHook postInstall
+  '';
 
   meta = with lib; {
-    homepage = "https://aptakube.com";
-    description = "Modern. Lightweight. Multi-Cluster. Kubernetes GUI";
+    homepage = "";
+    description = "";
+    sourceProvenance = with sourceTypes; [ binaryNativeCode ];
+    license = [ ];
     platforms = [ "x86_64-linux" ];
-    mainProgram = "aptakube";
+    maintainers = [ ];
   };
 }
+
