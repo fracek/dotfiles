@@ -16,15 +16,6 @@ self: super:
       ];
     runScript = "zed";
   };
-  opencode-git = super.pkgs.opencode.overrideAttrs (old: rec {
-    version = "0.0.53";
-    src = super.fetchFromGitHub {
-      owner = "opencode-ai";
-      repo = "opencode";
-      tag = "v${version}";
-      hash = "sha256-Q7ArUsFMpe0zayUMBJd+fC1K4jTGElIFep31Qa/L1jY=";
-    };
-  });
   apalache = super.callPackage ../packages/apalache { };
   quint = super.callPackage ../packages/quint { };
   mirrord-bin = super.callPackage ../packages/mirrord-bin { };

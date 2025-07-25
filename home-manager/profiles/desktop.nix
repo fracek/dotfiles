@@ -86,7 +86,6 @@
     kubelogin
     kubelogin-oidc
     kubernetes-helm
-    opencode-git
 
     # office
     anki-bin
