@@ -116,12 +116,13 @@
       (system:
         let pkgs = nixpkgs.legacyPackages.${system}.extend self.overlays.default;
         in
-        rec {
+        {
           # Custom packages added via the overlay are selectively exposed here, to
           # allow using them from other flakes that import this one.
           packages = flake-utils.lib.flattenTree {
             hello-custom = pkgs.hello-custom;
             opencode = pkgs.opencode;
+            opencode-tui = pkgs.opencode.tui;
             # devtools
             zed-editor-bin = pkgs.zed-editor-bin;
             apalache = pkgs.apalache;

@@ -15,13 +15,21 @@ self: super:
       ];
     runScript = "zed";
   };
-  opencode = (super.opencode.overrideAttrs (oldAttrs: {
+  opencode = (super.opencode.overrideAttrs (oldAttrs:
+    let
+      bun-target = {
+        "aarch64-darwin" = "bun-darwin-arm64";
+        "aarch64-linux" = "bun-linux-arm64";
+        "x86_64-darwin" = "bun-darwin-x64";
+        "x86_64-linux" = "bun-linux-x64";
+      };
+    in rec {
         version = "0.4.2";
         src = super.fetchFromGitHub {
           owner = "sst";
           repo = "opencode";
-          rev = "7bbc643600a8a669f4dd9136a29f220a5b0e81ab";
-          sha256 = "1jn274p5396p9y1miylac68pqyl8ilaf5rm0f0jjrf26yr0yd9gj";
+          rev = "v${version}";
+          sha256 = "sha256-8qXmQfZGuCwlcKDm4hSNiHp8kWGK+liDT9ekUS45wso=";
         };
 
         tui = oldAttrs.tui.overrideAttrs (oldTuiAttrs: {
@@ -31,6 +39,20 @@ self: super:
         node_modules = oldAttrs.node_modules.overrideAttrs (oldNodeAttrs: {
           outputHash = "sha256-LmNn4DdnSLVmGS5yqLyk/0e5pCiKfBzKIGRvvwZ6jHY=";
         });
+
+        buildPhase = ''
+          runHook preBuild
+
+          bun build \
+            --define OPENCODE_TUI_PATH="'${tui}/bin/tui'" \
+            --define OPENCODE_VERSION="'${version}'" \
+            --compile \
+            --target="bun" \
+            --outfile=opencode \
+            ./packages/opencode/src/index.ts \
+
+          runHook postBuild
+        '';
       }));
   apalache = super.callPackage ../packages/apalache { };
   quint = super.callPackage ../packages/quint { };
