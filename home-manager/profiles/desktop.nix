@@ -113,6 +113,8 @@
     obsidian
     mailspring
     discord
+    nufraw-thumbnailer
+    art
   ];
 
   # Setup X11 session.
