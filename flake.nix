@@ -123,6 +123,7 @@
             hello-custom = pkgs.hello-custom;
             # devtools
             zed-editor-bin = pkgs.zed-editor-bin;
+            opencode-git = pkgs.opencode-git;
             apalache = pkgs.apalache;
             dagger = pkgs.dagger;
             quint = pkgs.quint;

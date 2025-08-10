@@ -6,7 +6,7 @@ self: super:
 {
   # dev tools
   hello-custom = super.callPackage ../packages/hello-custom { };
-  # code-cursor = super.callPackage ../packages/code-cursor { };
+  opencode-git = super.callPackage ../packages/opencode-git { };
   zed-editor-bin = super.callPackage ../packages/zed-editor-bin { };
   zed-editor-fhs = self.buildFHSEnv {
     name = "zed";
