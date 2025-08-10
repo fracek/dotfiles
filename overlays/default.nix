@@ -6,7 +6,6 @@ self: super:
 {
   # dev tools
   hello-custom = super.callPackage ../packages/hello-custom { };
-  opencode-git = super.callPackage ../packages/opencode-git { };
   zed-editor-bin = super.callPackage ../packages/zed-editor-bin { };
   zed-editor-fhs = self.buildFHSEnv {
     name = "zed";
@@ -16,6 +15,23 @@ self: super:
       ];
     runScript = "zed";
   };
+  opencode = (super.opencode.overrideAttrs (oldAttrs: {
+        version = "0.4.2";
+        src = super.fetchFromGitHub {
+          owner = "sst";
+          repo = "opencode";
+          rev = "7bbc643600a8a669f4dd9136a29f220a5b0e81ab";
+          sha256 = "1jn274p5396p9y1miylac68pqyl8ilaf5rm0f0jjrf26yr0yd9gj";
+        };
+
+        tui = oldAttrs.tui.overrideAttrs (oldTuiAttrs: {
+          vendorHash = "sha256-jGaTgKyAvBMt8Js5JrPFUayhVt3QhgyclFoNatoHac4=";
+        });
+
+        node_modules = oldAttrs.node_modules.overrideAttrs (oldNodeAttrs: {
+          outputHash = "sha256-LmNn4DdnSLVmGS5yqLyk/0e5pCiKfBzKIGRvvwZ6jHY=";
+        });
+      }));
   apalache = super.callPackage ../packages/apalache { };
   quint = super.callPackage ../packages/quint { };
   mirrord-bin = super.callPackage ../packages/mirrord-bin { };
