@@ -7,15 +7,6 @@ in
   options.fra.programs.neovim.enable = mkEnableOption "neovim";
 
   config = mkIf cfg.enable {
-    home.sessionVariables = {
-      EDITOR = "nvim";
-      VISUAL = "nvim";
-      PAGER = "less -FRX";
-      DIFFPROG = "nvim -d";
-      MANPAGER = "nvim +Man!";
-      MANWIDTH = 900;
-    };
-
     home.packages = with pkgs; [
       # needed to compile tree sitter languages
       tree-sitter
@@ -60,4 +51,3 @@ in
     };
   };
 }
-

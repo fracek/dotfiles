@@ -1,11 +1,11 @@
 { lib, stdenv, pkgs, fetchurl, autoPatchelfHook, makeWrapper }:
 stdenv.mkDerivation rec {
   name = "zed-editor";
-  version = "0.199.6";
+  version = "0.200.4";
 
   src = fetchurl {
     url = "https://github.com/zed-industries/zed/releases/download/v${version}/zed-linux-x86_64.tar.gz";
-    sha256 = "sha256-t/ByXBpjQpA+FTcSnjEov/erHDmawJxrqjtU3+7qskY=";
+    sha256 = "sha256-pwuXgUB9LqrBf0MiQs/iddrDynSFvBdwi5c1nFuRYrY=";
   };
 
   nativeBuildInputs = [
@@ -63,7 +63,7 @@ stdenv.mkDerivation rec {
       GaetanLepage
       niklaskorz
     ];
-    mainProgram = "zeditor";
+    mainProgram = "zed";
     platforms = lib.platforms.linux ++ lib.platforms.darwin;
   };
 }

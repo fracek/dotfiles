@@ -1,6 +1,6 @@
 { pkgs, flake-self, nur, ... }:
 let
-  editor = "nvim";
+  editor = "zed -n -w";
 in
 {
   nixpkgs = {
@@ -17,6 +17,8 @@ in
   systemd.user.sessionVariables = {
     EDITOR = editor;
     MADNESS_ALLOW_LDD = "1";
+    PAGER = "less -FRX";
+    DIFFPROG = "zed -n -w --diff";
   };
 
   home = {
