@@ -121,8 +121,7 @@
           # allow using them from other flakes that import this one.
           packages = flake-utils.lib.flattenTree {
             hello-custom = pkgs.hello-custom;
-            opencode = pkgs.opencode;
-            opencode-tui = pkgs.opencode.tui;
+            opencode = pkgs.opencode-git;
             # devtools
             zed-editor-bin = pkgs.zed-editor-bin;
             apalache = pkgs.apalache;

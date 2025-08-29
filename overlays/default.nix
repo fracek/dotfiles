@@ -15,45 +15,7 @@ self: super:
       ];
     runScript = "zed";
   };
-  opencode = (super.opencode.overrideAttrs (oldAttrs:
-    let
-      bun-target = {
-        "aarch64-darwin" = "bun-darwin-arm64";
-        "aarch64-linux" = "bun-linux-arm64";
-        "x86_64-darwin" = "bun-darwin-x64";
-        "x86_64-linux" = "bun-linux-x64";
-      };
-    in rec {
-        version = "0.4.2";
-        src = super.fetchFromGitHub {
-          owner = "sst";
-          repo = "opencode";
-          rev = "v${version}";
-          sha256 = "sha256-8qXmQfZGuCwlcKDm4hSNiHp8kWGK+liDT9ekUS45wso=";
-        };
-
-        tui = oldAttrs.tui.overrideAttrs (oldTuiAttrs: {
-          vendorHash = "sha256-jGaTgKyAvBMt8Js5JrPFUayhVt3QhgyclFoNatoHac4=";
-        });
-
-        node_modules = oldAttrs.node_modules.overrideAttrs (oldNodeAttrs: {
-          outputHash = "sha256-LmNn4DdnSLVmGS5yqLyk/0e5pCiKfBzKIGRvvwZ6jHY=";
-        });
-
-        buildPhase = ''
-          runHook preBuild
-
-          bun build \
-            --define OPENCODE_TUI_PATH="'${tui}/bin/tui'" \
-            --define OPENCODE_VERSION="'${version}'" \
-            --compile \
-            --target="bun" \
-            --outfile=opencode \
-            ./packages/opencode/src/index.ts \
-
-          runHook postBuild
-        '';
-      }));
+  opencode-git = super.callPackage ../packages/opencode-git { };
   apalache = super.callPackage ../packages/apalache { };
   quint = super.callPackage ../packages/quint { };
   mirrord-bin = super.callPackage ../packages/mirrord-bin { };
