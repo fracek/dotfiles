@@ -86,7 +86,7 @@
     kubelogin
     kubelogin-oidc
     kubernetes-helm
-    opencode
+    opencode-git
     bun
 
     # office

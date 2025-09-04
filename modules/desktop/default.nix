@@ -161,10 +161,10 @@ in
     programs.seahorse.enable = true;
 
     # Setup tailscale.
-    services.tailscale = {
-      enable = true;
-      openFirewall = true;
-    };
+    # services.tailscale = {
+    #   enable = true;
+    #   openFirewall = true;
+    # };
 
     # Setup audio.
     security.rtkit.enable = true;
