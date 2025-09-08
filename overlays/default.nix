@@ -5,6 +5,13 @@ in
 self: super:
 {
   # dev tools
+  bun = (super.bun.overrideAttrs (oldAttrs: rec {
+      version = "1.2.21";
+      src = self.fetchurl {
+        url = "https://github.com/oven-sh/bun/releases/download/bun-v${version}/bun-linux-x64.zip";
+        hash = "sha256-WU9FTVHOVxmdQyDIXL1JW+nAVO8XquvKXmyQir/aYXk=";
+      };
+  }));
   hello-custom = super.callPackage ../packages/hello-custom { };
   zed-editor-bin = super.callPackage ../packages/zed-editor-bin { };
   zed-editor-fhs = self.buildFHSEnv {

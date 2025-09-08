@@ -13,6 +13,7 @@ in
       font-family = "monospace"
       font-size = 13
       theme = "catppuccin-mocha"
+      window-inherit-working-directory = false
     '';
   };
 }

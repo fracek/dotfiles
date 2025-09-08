@@ -20,43 +20,21 @@ let
 in
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "opencode";
-  version = "0.6.3";
+  version = "0.6.5";
   src = fetchFromGitHub {
     owner = "sst";
     repo = "opencode";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-hufgCO3g0WZT4+hX1lqmhvrthFO30c0NS3ryNJMmOxo=";
-  };
-
-  tui = buildGoModule {
-    pname = "opencode-tui";
-    inherit (finalAttrs) version src;
-
-    modRoot = "packages/tui";
-
-    vendorHash = "sha256-8pwVQVraLSE1DRL6IFMlQ/y8HQ8464N/QwAS8Faloq4=";
-
-    subPackages = [ "cmd/opencode" ];
-
-    env.CGO_ENABLED = 0;
-
-    ldflags = [
-      "-s"
-      "-X=main.Version=${finalAttrs.version}"
-    ];
-
-    installPhase = ''
-      runHook preInstall
-
-      install -Dm755 $GOPATH/bin/opencode $out/bin/tui
-
-      runHook postInstall
-    '';
+    hash = "sha256-jw2S/PP/kjvK5tXdc4WcywHokmFIspFPLKO1oXT6jLA=";
   };
 
   node_modules = stdenvNoCC.mkDerivation {
     pname = "opencode-node_modules";
     inherit (finalAttrs) version src;
+
+    outputHash = "sha256-PmLO0aU2E7NlQ7WtoiCQzLRw4oKdKxS5JI571lvbhHo=";
+    outputHashAlgo = "sha256";
+    outputHashMode = "recursive";
 
     impureEnvVars = lib.fetchers.proxyImpureEnvVars ++ [
       "GIT_PROXY_COMMAND"
@@ -98,10 +76,32 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
     # Required else we get errors that our fixed-output derivation references store paths
     dontFixup = true;
+  };
 
-    outputHash = "sha256-PmLO0aU2E7NlQ7WtoiCQzLRw4oKdKxS5JI571lvbhHo=";
-    outputHashAlgo = "sha256";
-    outputHashMode = "recursive";
+  tui = buildGoModule {
+    pname = "opencode-tui";
+    inherit (finalAttrs) version src;
+
+    modRoot = "packages/tui";
+
+    vendorHash = "sha256-8pwVQVraLSE1DRL6IFMlQ/y8HQ8464N/QwAS8Faloq4=";
+
+    subPackages = [ "cmd/opencode" ];
+
+    env.CGO_ENABLED = 0;
+
+    ldflags = [
+      "-s"
+      "-X=main.Version=${finalAttrs.version}"
+    ];
+
+    installPhase = ''
+      runHook preInstall
+
+      install -Dm755 $GOPATH/bin/opencode $out/bin/tui
+
+      runHook postInstall
+    '';
   };
 
   nativeBuildInputs = [
