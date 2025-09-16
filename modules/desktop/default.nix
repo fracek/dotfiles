@@ -112,6 +112,7 @@ in
     # Setup docker/podman and qemu.
     programs.virt-manager.enable = true;
     virtualisation = {
+      waydroid.enable = true;
       podman = {
         enable = true;
         dockerSocket.enable = true;
@@ -125,7 +126,10 @@ in
     # Enable Gnome.
     services.xserver = {
       enable = true;
-      displayManager.gdm.enable = true;
+      displayManager.gdm = {
+        enable = true;
+        wayland = true;
+      };
       desktopManager.gnome.enable = true;
     };
 
