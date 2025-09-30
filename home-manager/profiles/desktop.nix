@@ -279,6 +279,10 @@
     longitude = 0.12;
   };
 
+  services.easyeffects = {
+    enable = true;
+  };
+
   programs.gpg = {
     enable = true;
 
