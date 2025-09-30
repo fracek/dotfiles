@@ -36,6 +36,7 @@
     xclip
     wl-clipboard
     yubikey-manager
+    easyeffects
 
     # cli
     btop
