@@ -12,19 +12,21 @@ in
     fonts = {
       enableDefaultPackages = true;
       packages = with pkgs; [
+        berkeley-mono
         dejavu_fonts
         noto-fonts
         noto-fonts-emoji
         noto-fonts-cjk-sans
         noto-fonts-cjk-serif
         jetbrains-mono
+        monaspace
       ];
 
       fontconfig = {
         defaultFonts = {
           serif = [ "Noto Serif" ];
           sansSerif = [ "Noto Sans" ];
-          monospace = [ "JetBrains Mono" ];
+          monospace = [ "Berkeley Mono" ];
           emoji = [ "Noto Color Emoji" ];
         };
       };

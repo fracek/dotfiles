@@ -2,28 +2,28 @@
 stdenv.mkDerivation rec {
   pname = "berkeley-mono";
   version = "2.0";
-  variant = "24123002P2PZY8Q0";
-  ticketNumber = "TX-02-94N41JK6";
+  variant = "251003255KQ86MR2";
+  ticketNumber = "9JQ308P8";
   src = requireFile rec {
-    name = "berkeley-mono-v2.zip";
+    name = "${variant}.zip";
     message = ''
       Please add ${name} to the nixos store by running
 
-      nix-prefetch-url --type sha256 --name ${name} <URL>
+      nix-prefetch-url --type sha256 file:///home/fra/Downloads/${variant}.zip
 
       and updating the sha256 below if necessary.
     '';
-    sha256 = "0b9zkvzw54mq0958wg3f0y9r57agl8dz37a3lcvvblhq33qx8959";
+    sha256 = "1xq07v9h30fv7q43cwjix661c2z9rqa7isqli8ynqazmcy7lcxck";
   };
 
   installPhase = ''
     runHook preInstall
 
     ls -lAh ${variant}
-    ls -lAh ${variant}/${ticketNumber}
+    ls -lAh ${variant}/TX-02-${ticketNumber}
     mkdir -vp $out/share/fonts/opentype
 
-    mv -v ${variant}/${ticketNumber}/*.otf $out/share/fonts/opentype
+    mv -v ${variant}/TX-02-${ticketNumber}/*.otf $out/share/fonts/opentype
 
     runHook postInstall
   '';
