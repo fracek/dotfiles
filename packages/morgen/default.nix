@@ -19,7 +19,7 @@ stdenv.mkDerivation rec {
 
   src = fetchurl {
     url = "https://dl.todesktop.com/210203cqcj00tw1/linux/deb/x64?v=${version}";
-    sha256 = "sha256-j1iv37b7erKOgvKU7R9GaTRNtcQpS4n9Awnni4OLvus=";
+    sha256 = "sha256-OvV+GNKQBzUpHEOfaBV6SGRxA/gvRWFkP5D7CihY7pU=";
   };
 
   nativeBuildInputs = [
