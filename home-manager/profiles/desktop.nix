@@ -116,6 +116,8 @@
     discord
     nufraw-thumbnailer
     art
+    supercollider
+    bitwig-studio
   ];
 
   # Setup X11 session.
