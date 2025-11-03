@@ -22,7 +22,7 @@ self: super:
       ];
     runScript = "zed";
   };
-  opencode-git = super.callPackage ../packages/opencode-git { };
+  opencode-bin = super.callPackage ../packages/opencode-bin { };
   apalache = super.callPackage ../packages/apalache { };
   quint = super.callPackage ../packages/quint { };
   mirrord-bin = super.callPackage ../packages/mirrord-bin { };
