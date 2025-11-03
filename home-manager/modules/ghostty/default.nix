@@ -12,7 +12,7 @@ in
     xdg.configFile."ghostty/config".text = ''
       font-family = "monospace"
       font-size = 13
-      theme = "catppuccin-mocha"
+      theme = "Catppuccin Mocha"
       window-inherit-working-directory = false
     '';
   };
