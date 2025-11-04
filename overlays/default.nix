@@ -6,10 +6,10 @@ self: super:
 {
   # dev tools
   bun = (super.bun.overrideAttrs (oldAttrs: rec {
-      version = "1.2.21";
+      version = "1.3.1";
       src = self.fetchurl {
         url = "https://github.com/oven-sh/bun/releases/download/bun-v${version}/bun-linux-x64.zip";
-        hash = "sha256-WU9FTVHOVxmdQyDIXL1JW+nAVO8XquvKXmyQir/aYXk=";
+        hash = "sha256-QAgkyCv8wIVDZbytoRz1PXOE7LHiw9oOLAosalJ9Vik=";
       };
   }));
   hello-custom = super.callPackage ../packages/hello-custom { };
@@ -22,7 +22,7 @@ self: super:
       ];
     runScript = "zed";
   };
-  opencode-bin = super.callPackage ../packages/opencode-bin { };
+  opencode = super.callPackage ../packages/opencode { };
   apalache = super.callPackage ../packages/apalache { };
   quint = super.callPackage ../packages/quint { };
   mirrord-bin = super.callPackage ../packages/mirrord-bin { };
