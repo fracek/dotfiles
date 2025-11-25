@@ -2,11 +2,11 @@
 
 stdenv.mkDerivation rec {
   name = "aptakube";
-  version = "1.13.1";
+  version = "1.13.6";
 
   src = fetchurl {
     url = "https://github.com/aptakube/aptakube/releases/download/${version}/aptakube_${version}_amd64.deb";
-    sha256 = "sha256-gfvIqSyuMOTiiyeqlxbZ9R4OXEC0C8H8bLzF0ARxZQc=";
+    sha256 = "sha256-Lku5v3uMIZY/FZ3sQdy6hIW+PRsNtV2irI3S3QVCuGk=";
   };
 
   nativeBuildInputs = [
@@ -38,4 +38,3 @@ stdenv.mkDerivation rec {
     maintainers = [ ];
   };
 }
-
