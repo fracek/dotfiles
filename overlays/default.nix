@@ -23,6 +23,7 @@ self: super:
     runScript = "zed";
   };
   opencode = super.callPackage ../packages/opencode { };
+  models-dev = super.callPackage ../packages/models-dev { };
   apalache = super.callPackage ../packages/apalache { };
   quint = super.callPackage ../packages/quint { };
   mirrord-bin = super.callPackage ../packages/mirrord-bin { };
