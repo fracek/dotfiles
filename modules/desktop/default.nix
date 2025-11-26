@@ -48,6 +48,14 @@ in
 
     madness.enable = true;
 
+    i18n.inputMethod = {
+      enable = true;
+      type = "ibus";
+      ibus.engines = with pkgs.ibus-engines; [
+        libpinyin
+      ];
+    };
+
     environment.systemPackages = with pkgs; [
       git
       vim
@@ -77,6 +85,7 @@ in
         sudo.u2fAuth = true;
       };
     };
+
     services = {
       pcscd.enable = true;
       udev.packages = [ pkgs.yubikey-personalization ];

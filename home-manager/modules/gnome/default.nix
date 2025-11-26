@@ -60,6 +60,7 @@ in
         sources = [
           (mkTuple [ "xkb" "us+dvorak" ])
           (mkTuple [ "xkb" "us" ])
+          (mkTuple [ "ibus" "libpinyin"])
         ];
       };
 
@@ -199,6 +200,10 @@ in
 
       "org/gnome/desktop/break-reminders/eyesight" = {
         play-sound = true;
+      };
+
+      "com/github/libpinyin/ibus-libpinyin/libpinyin" = {
+        enable-cloud-input = true;
       };
     };
   };
