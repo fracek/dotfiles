@@ -138,11 +138,11 @@ in
     # Enable Gnome.
     services.xserver = {
       enable = true;
-      displayManager.gdm = {
-        enable = true;
-        wayland = true;
-      };
-      desktopManager.gnome.enable = true;
+    };
+    services.desktopManager.gnome.enable = true;
+    services.displayManager.gdm = {
+      enable = true;
+      wayland = true;
     };
 
     environment = {

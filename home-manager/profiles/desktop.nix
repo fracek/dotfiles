@@ -102,7 +102,7 @@
     morgen
     # figma-linux
     slack
-    tdesktop
+    telegram-desktop
     zathura
     zoom-us
     mpv
