@@ -1,4 +1,4 @@
-{ config, nixpkgs, pkgs, ... }:
+{ config, pkgs, ... }:
 {
   imports = [ ./hardware-configuration.nix ];
 
@@ -27,7 +27,9 @@
   };
 
   services.xserver.videoDrivers = [ "amdgpu" ];
-  users.users.fra = { extraGroups = [ "i2c-dev" ]; };
+  users.users.fra = {
+    extraGroups = [ "i2c-dev" ];
+  };
 
   # Enable logitech mouse.
   hardware.logitech.wireless = {
@@ -66,10 +68,10 @@
       efi.canTouchEfiVariables = true;
     };
 
-    extraModulePackages = with config.boot.kernelPackages; [
+    extraModulePackages = [
       # Allow virtual camera in obs studio
-      v4l2loopback
-      perf
+      config.boot.kernelPackages.v4l2loopback
+      pkgs.perf
     ];
 
     kernel.sysctl = {
