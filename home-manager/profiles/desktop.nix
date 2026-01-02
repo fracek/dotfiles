@@ -62,6 +62,7 @@
     ngrok
     tree
     httpie
+    httpie-desktop
     pgcli
     tig
     youplot
