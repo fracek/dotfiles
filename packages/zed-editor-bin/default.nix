@@ -8,11 +8,11 @@
 }:
 stdenv.mkDerivation rec {
   name = "zed-editor";
-  version = "0.217.3";
+  version = "0.218.6";
 
   src = fetchurl {
     url = "https://github.com/zed-industries/zed/releases/download/v${version}/zed-linux-x86_64.tar.gz";
-    sha256 = "sha256-IRT+sWIraOvoZ12XPU8LR3XJZ83Fpvv8X3NTPwUDOO0=";
+    sha256 = "sha256-t1Q7kX6MDt74qERRjWO0s2aHWhEq9TUjybyaDkUqxPI=";
   };
 
   nativeBuildInputs = [
