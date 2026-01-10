@@ -13,6 +13,7 @@
       zed.enable = false;
       k9s.enable = true;
       ghostty.enable = true;
+      opencode.enable = true;
     };
     i18n.enable = true;
   };
@@ -88,7 +89,6 @@
     kubelogin
     kubelogin-oidc
     kubernetes-helm
-    opencode
     bun
 
     # office
