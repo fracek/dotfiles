@@ -55,6 +55,7 @@
     bpftop
 
     # dev
+    python315
     docker-client
     git
     grpcurl
