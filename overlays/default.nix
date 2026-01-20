@@ -40,6 +40,7 @@ self: super: {
   morgen = super.callPackage ../packages/morgen { };
   smile = super.callPackage ../packages/smile { };
   en-croissant = super.callPackage ../packages/en-croissant { };
+  kaya-go = super.callPackage ../packages/kaya-go { };
   # fonts
   berkeley-mono = super.callPackage ../packages/berkeley-mono { };
   # monolisa = super.callPackage ../packages/monolisa { };

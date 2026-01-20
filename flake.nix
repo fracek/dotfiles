@@ -34,7 +34,8 @@
     };
   };
 
-  outputs = { self, ... }@inputs:
+  outputs =
+    { self, ... }@inputs:
     with inputs;
     {
 
@@ -55,66 +56,70 @@
       };
 
       # expose all modules in ./modules.
-      nixosModules = builtins.listToAttrs
-        (map
-          (x:
-            {
-              name = x;
-              value = import (./modules + "/${x}");
-            }
-          )
-          (builtins.attrNames (builtins.readDir ./modules)));
+      nixosModules = builtins.listToAttrs (
+        map (x: {
+          name = x;
+          value = import (./modules + "/${x}");
+        }) (builtins.attrNames (builtins.readDir ./modules))
+      );
 
       # each directory in ./machines is a host.
-      nixosConfigurations = builtins.listToAttrs
-        (map
-          (x:
-            {
-              name = x;
-              value = nixpkgs.lib.nixosSystem {
-                # Make inputs and the flake itself accessible as module parameters.
-                # Technically, adding the inputs is redundant as they can be also
-                # accessed with flake-self.inputs.X, but adding them individually
-                # allows to only pass what is needed to each module.
-                specialArgs = { flake-self = self; } // inputs;
-                system = "x86_64-linux";
-                modules = [
-                  (./machines + "/${x}/configuration.nix")
-                  { imports = builtins.attrValues self.nixosModules; }
-                  home-manager.nixosModules.home-manager
-                  madness.nixosModules.madness
-                ];
-              };
+      nixosConfigurations = builtins.listToAttrs (
+        map (x: {
+          name = x;
+          value = nixpkgs.lib.nixosSystem {
+            # Make inputs and the flake itself accessible as module parameters.
+            # Technically, adding the inputs is redundant as they can be also
+            # accessed with flake-self.inputs.X, but adding them individually
+            # allows to only pass what is needed to each module.
+            specialArgs = {
+              flake-self = self;
             }
-          )
-          (builtins.attrNames (builtins.readDir ./machines)));
+            // inputs;
+            system = "x86_64-linux";
+            modules = [
+              (./machines + "/${x}/configuration.nix")
+              { imports = builtins.attrValues self.nixosModules; }
+              home-manager.nixosModules.home-manager
+              madness.nixosModules.madness
+            ];
+          };
+        }) (builtins.attrNames (builtins.readDir ./machines))
+      );
 
       # home manager configuration.
       homeConfigurations = {
-        desktop = { pkgs, lib, username, ... }: {
-          imports = [
-            ./home-manager/profiles/common.nix
-            ./home-manager/profiles/desktop.nix
-          ] ++ (builtins.attrValues self.homeManagerModules);
-        };
+        desktop =
+          {
+            pkgs,
+            lib,
+            username,
+            ...
+          }:
+          {
+            imports = [
+              ./home-manager/profiles/common.nix
+              ./home-manager/profiles/desktop.nix
+            ]
+            ++ (builtins.attrValues self.homeManagerModules);
+          };
       };
 
       # home manager modules.
-      homeManagerModules = builtins.listToAttrs
-        (map
-          (x:
-            {
-              name = x;
-              value = import (./home-manager/modules + "/${x}");
-            }
-          )
-          (builtins.attrNames (builtins.readDir ./home-manager/modules)));
+      homeManagerModules = builtins.listToAttrs (
+        map (x: {
+          name = x;
+          value = import (./home-manager/modules + "/${x}");
+        }) (builtins.attrNames (builtins.readDir ./home-manager/modules))
+      );
 
-    } //
+    }
+    //
 
-    (flake-utils.lib.eachSystem [ "x86_64-linux" ])
-      (system:
-        let pkgs = nixpkgs.legacyPackages.${system}.extend self.overlays.default;
+      (flake-utils.lib.eachSystem [ "x86_64-linux" ]) (
+        system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system}.extend self.overlays.default;
         in
         {
           # Custom packages added via the overlay are selectively exposed here, to
@@ -139,26 +144,29 @@
             smile = pkgs.smile;
             msty = pkgs.msty;
             en-croissant = pkgs.en-croissant;
+            kaya-go = pkgs.kaya-go;
           };
         }
-      ) //
+      )
+    //
 
-    (flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = nixpkgs.legacyPackages.${system}.extend self.overlays.default;
-      in
-      {
-        # format with `nix fmt`.
-        formatter = nixpkgs.legacyPackages.${system}.nixpkgs-fmt;
+      (flake-utils.lib.eachDefaultSystem (
+        system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system}.extend self.overlays.default;
+        in
+        {
+          # format with `nix fmt`.
+          formatter = nixpkgs.legacyPackages.${system}.nixpkgs-fmt;
 
-        devShells = {
-          ld = import ./shells/ld.nix { inherit pkgs; };
-          node = import ./shells/node.nix { inherit pkgs; };
-          go = import ./shells/go.nix { inherit pkgs; };
-          protobuf = import ./shells/protobuf.nix { inherit pkgs; };
-          rust = import ./shells/rust.nix { inherit pkgs; };
-          azure = import ./shells/azure.nix { inherit pkgs; };
-        };
-      }
-    ));
+          devShells = {
+            ld = import ./shells/ld.nix { inherit pkgs; };
+            node = import ./shells/node.nix { inherit pkgs; };
+            go = import ./shells/go.nix { inherit pkgs; };
+            protobuf = import ./shells/protobuf.nix { inherit pkgs; };
+            rust = import ./shells/rust.nix { inherit pkgs; };
+            azure = import ./shells/azure.nix { inherit pkgs; };
+          };
+        }
+      ));
 }

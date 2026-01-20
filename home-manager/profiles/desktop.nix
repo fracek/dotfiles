@@ -111,6 +111,7 @@
     ffmpeg
     framesh
     en-croissant
+    kaya-go
     notion-app-enhanced
     smile
     obsidian
