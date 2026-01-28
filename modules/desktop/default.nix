@@ -63,7 +63,7 @@ in
       man-pages
       man-pages-posix
       gnome-tweaks
-      uv
+      # uv
       # config.boot.kernelPackages.perf
     ];
 
