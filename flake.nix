@@ -32,6 +32,10 @@
     ghostty = {
       url = "github:ghostty-org/ghostty";
     };
+
+    opencode = {
+      url = "github:anomalyco/opencode";
+    };
   };
 
   outputs =
@@ -129,6 +133,7 @@
             # devtools
             zed-editor-bin = pkgs.zed-editor-bin;
             opencode = pkgs.opencode;
+            opencode-desktop = pkgs.opencode-desktop;
             apalache = pkgs.apalache;
             dagger = pkgs.dagger;
             quint = pkgs.quint;

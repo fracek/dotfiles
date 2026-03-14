@@ -23,7 +23,8 @@ self: super: {
       ];
     runScript = "zed";
   };
-  opencode = super.callPackage ../packages/opencode { };
+  opencode = inputs.opencode.packages.${self.stdenv.hostPlatform.system}.opencode;
+  opencode-desktop = inputs.opencode.packages.${self.stdenv.hostPlatform.system}.desktop;
   models-dev = super.callPackage ../packages/models-dev { };
   apalache = super.callPackage ../packages/apalache { };
   quint = super.callPackage ../packages/quint { };
