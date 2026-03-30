@@ -121,6 +121,7 @@
     art
     supercollider
     bitwig-studio
+    bottles
   ];
 
   # Setup X11 session.
