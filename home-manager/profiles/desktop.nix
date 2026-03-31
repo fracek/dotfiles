@@ -91,6 +91,7 @@
     kubelogin-oidc
     kubernetes-helm
     bun
+    clinfo
 
     # office
     anki-bin
@@ -112,6 +113,8 @@
     framesh
     en-croissant
     kaya-go
+    katrain
+    katago
     notion-app-enhanced
     smile
     obsidian

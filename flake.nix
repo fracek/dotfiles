@@ -150,6 +150,7 @@
             msty = pkgs.msty;
             en-croissant = pkgs.en-croissant;
             kaya-go = pkgs.kaya-go;
+            katrain = pkgs.katrain;
           };
         }
       )

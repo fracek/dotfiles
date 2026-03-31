@@ -41,6 +41,10 @@
     enable32Bit = true;
   };
 
+  hardware.amdgpu = {
+    opencl.enable = true;
+  };
+
   # WiFi
   hardware.enableAllFirmware = true;
   hardware.enableRedistributableFirmware = true;

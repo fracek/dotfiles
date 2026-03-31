@@ -42,7 +42,17 @@ self: super: {
   smile = super.callPackage ../packages/smile { };
   en-croissant = super.callPackage ../packages/en-croissant { };
   kaya-go = super.callPackage ../packages/kaya-go { };
+  katrain = super.callPackage ../packages/katrain { };
   # fonts
   berkeley-mono = super.callPackage ../packages/berkeley-mono { };
   # monolisa = super.callPackage ../packages/monolisa { };
+  python3Packages = super.python3Packages // {
+    ffpyplayer = self.python3Packages.callPackage ../packages/ffpyplayer {
+        inherit (self) SDL2 SDL2_mixer ffmpeg_6;
+      };
+
+      kivymd = self.python3Packages.callPackage ../packages/kivymd {
+        inherit (self.python3Packages) kivy pillow requests;
+      };
+  };
 }
