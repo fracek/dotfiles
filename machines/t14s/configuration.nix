@@ -60,6 +60,10 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  hardware.amdgpu = {
+    opencl.enable = true;
+  };
+
   # fingerprint
   services.fprintd = {
     enable = true;
