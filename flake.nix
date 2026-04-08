@@ -143,6 +143,7 @@
             aptakube = pkgs.aptakube;
             ghostty = pkgs.ghostty;
             berkeley-mono = pkgs.berkeley-mono;
+            pragmata-pro = pkgs.pragmata-pro;
             # office
             mailspring = pkgs.mailspring;
             morgen = pkgs.morgen;

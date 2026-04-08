@@ -45,6 +45,7 @@ self: super: {
   katrain = super.callPackage ../packages/katrain { };
   # fonts
   berkeley-mono = super.callPackage ../packages/berkeley-mono { };
+  pragmata-pro = super.callPackage ../packages/pragmata-pro { };
   # monolisa = super.callPackage ../packages/monolisa { };
   python3Packages = super.python3Packages // {
     ffpyplayer = self.python3Packages.callPackage ../packages/ffpyplayer {

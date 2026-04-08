@@ -12,21 +12,22 @@ in
     fonts = {
       enableDefaultPackages = true;
       packages = with pkgs; [
-        berkeley-mono
         dejavu_fonts
         noto-fonts
         noto-fonts-color-emoji
         noto-fonts-cjk-sans
         noto-fonts-cjk-serif
+
+        berkeley-mono
+        pragmata-pro
         jetbrains-mono
-        monaspace
       ];
 
       fontconfig = {
         defaultFonts = {
           serif = [ "Noto Serif" ];
           sansSerif = [ "Noto Sans" ];
-          monospace = [ "Berkeley Mono" ];
+          monospace = [ "Essential PragmataPro" ];
           emoji = [ "Noto Color Emoji" ];
         };
       };
