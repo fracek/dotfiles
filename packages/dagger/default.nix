@@ -26,7 +26,7 @@ stdenv.mkDerivation rec {
   meta = {
     description = "An open-source runtime for composable workflows. Great for AI agents and CI/CD.";
     license = lib.licenses.asl20;
-    maintainers = [];
+    maintainers = [ ];
     platforms = lib.platforms.linux;
   };
 }

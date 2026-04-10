@@ -92,6 +92,7 @@
     kubernetes-helm
     bun
     clinfo
+    gitbutler-cli
 
     # office
     anki-bin
