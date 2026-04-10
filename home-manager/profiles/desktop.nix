@@ -154,6 +154,9 @@
         verbose = true;
         gpgsign = true;
       };
+      gitbutler = {
+        signCommits = true;
+      };
       merge = {
         conflictStyle = "zdiff3";
       };
