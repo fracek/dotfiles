@@ -60,7 +60,7 @@ in
         sources = [
           (mkTuple [ "xkb" "us+dvorak" ])
           (mkTuple [ "xkb" "us" ])
-          (mkTuple [ "ibus" "libpinyin"])
+          (mkTuple [ "ibus" "libpinyin" ])
         ];
       };
 

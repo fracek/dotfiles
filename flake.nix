@@ -40,85 +40,90 @@
 
   outputs =
     { self, ... }@inputs:
-    with inputs;
-    {
+      with inputs;
+      {
 
-      # expose overlay to output.
-      overlays.default = (import ./overlays inputs);
+        # expose overlay to output.
+        overlays.default = (import ./overlays inputs);
 
-      # common templates I use.
-      templates = {
-        rust = {
-          path = ./templates/rust;
-          description = "A rust project";
+        # common templates I use.
+        templates = {
+          rust = {
+            path = ./templates/rust;
+            description = "A rust project";
+          };
+
+          node = {
+            path = ./templates/node;
+            description = "A node project";
+          };
         };
 
-        node = {
-          path = ./templates/node;
-          description = "A node project";
+        # expose all modules in ./modules.
+        nixosModules = builtins.listToAttrs (
+          map
+            (x: {
+              name = x;
+              value = import (./modules + "/${x}");
+            })
+            (builtins.attrNames (builtins.readDir ./modules))
+        );
+
+        # each directory in ./machines is a host.
+        nixosConfigurations = builtins.listToAttrs (
+          map
+            (x: {
+              name = x;
+              value = nixpkgs.lib.nixosSystem {
+                # Make inputs and the flake itself accessible as module parameters.
+                # Technically, adding the inputs is redundant as they can be also
+                # accessed with flake-self.inputs.X, but adding them individually
+                # allows to only pass what is needed to each module.
+                specialArgs = {
+                  flake-self = self;
+                }
+                // inputs;
+                system = "x86_64-linux";
+                modules = [
+                  (./machines + "/${x}/configuration.nix")
+                  { imports = builtins.attrValues self.nixosModules; }
+                  home-manager.nixosModules.home-manager
+                  madness.nixosModules.madness
+                ];
+              };
+            })
+            (builtins.attrNames (builtins.readDir ./machines))
+        );
+
+        # home manager configuration.
+        homeConfigurations = {
+          desktop =
+            { pkgs
+            , lib
+            , username
+            , ...
+            }:
+            {
+              imports = [
+                ./home-manager/profiles/common.nix
+                ./home-manager/profiles/desktop.nix
+              ]
+              ++ (builtins.attrValues self.homeManagerModules);
+            };
         };
-      };
 
-      # expose all modules in ./modules.
-      nixosModules = builtins.listToAttrs (
-        map (x: {
-          name = x;
-          value = import (./modules + "/${x}");
-        }) (builtins.attrNames (builtins.readDir ./modules))
-      );
+        # home manager modules.
+        homeManagerModules = builtins.listToAttrs (
+          map
+            (x: {
+              name = x;
+              value = import (./home-manager/modules + "/${x}");
+            })
+            (builtins.attrNames (builtins.readDir ./home-manager/modules))
+        );
 
-      # each directory in ./machines is a host.
-      nixosConfigurations = builtins.listToAttrs (
-        map (x: {
-          name = x;
-          value = nixpkgs.lib.nixosSystem {
-            # Make inputs and the flake itself accessible as module parameters.
-            # Technically, adding the inputs is redundant as they can be also
-            # accessed with flake-self.inputs.X, but adding them individually
-            # allows to only pass what is needed to each module.
-            specialArgs = {
-              flake-self = self;
-            }
-            // inputs;
-            system = "x86_64-linux";
-            modules = [
-              (./machines + "/${x}/configuration.nix")
-              { imports = builtins.attrValues self.nixosModules; }
-              home-manager.nixosModules.home-manager
-              madness.nixosModules.madness
-            ];
-          };
-        }) (builtins.attrNames (builtins.readDir ./machines))
-      );
-
-      # home manager configuration.
-      homeConfigurations = {
-        desktop =
-          {
-            pkgs,
-            lib,
-            username,
-            ...
-          }:
-          {
-            imports = [
-              ./home-manager/profiles/common.nix
-              ./home-manager/profiles/desktop.nix
-            ]
-            ++ (builtins.attrValues self.homeManagerModules);
-          };
-      };
-
-      # home manager modules.
-      homeManagerModules = builtins.listToAttrs (
-        map (x: {
-          name = x;
-          value = import (./home-manager/modules + "/${x}");
-        }) (builtins.attrNames (builtins.readDir ./home-manager/modules))
-      );
-
-    }
-    //
+      }
+      //
 
       (flake-utils.lib.eachSystem [ "x86_64-linux" ]) (
         system:
@@ -137,8 +142,8 @@
             apalache = pkgs.apalache;
             dagger = pkgs.dagger;
             quint = pkgs.quint;
+            gitbutler-cli = pkgs.gitbutler-cli;
             mirrord-bin = pkgs.mirrord-bin;
-            starkli-bin = pkgs.starkli-bin;
             youplot = pkgs.youplot;
             aptakube = pkgs.aptakube;
             ghostty = pkgs.ghostty;
@@ -155,7 +160,7 @@
           };
         }
       )
-    //
+      //
 
       (flake-utils.lib.eachDefaultSystem (
         system:

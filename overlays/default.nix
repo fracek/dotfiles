@@ -3,16 +3,12 @@ let
   inherit inputs;
 in
 self: super: {
+  # from flakes
+  opencode = inputs.opencode.packages.${self.stdenv.hostPlatform.system}.opencode;
+  opencode-desktop = inputs.opencode.packages.${self.stdenv.hostPlatform.system}.desktop;
+  ghostty = inputs.ghostty.packages.${self.stdenv.hostPlatform.system}.ghostty;
+
   # dev tools
-  bun = (
-    super.bun.overrideAttrs (oldAttrs: rec {
-      version = "1.3.1";
-      src = self.fetchurl {
-        url = "https://github.com/oven-sh/bun/releases/download/bun-v${version}/bun-linux-x64.zip";
-        hash = "sha256-QAgkyCv8wIVDZbytoRz1PXOE7LHiw9oOLAosalJ9Vik=";
-      };
-    })
-  );
   hello-custom = super.callPackage ../packages/hello-custom { };
   zed-editor-bin = super.callPackage ../packages/zed-editor-bin { };
   zed-editor-fhs = self.buildFHSEnv {
@@ -23,18 +19,16 @@ self: super: {
       ];
     runScript = "zed";
   };
-  opencode = inputs.opencode.packages.${self.stdenv.hostPlatform.system}.opencode;
-  opencode-desktop = inputs.opencode.packages.${self.stdenv.hostPlatform.system}.desktop;
+
   models-dev = super.callPackage ../packages/models-dev { };
   apalache = super.callPackage ../packages/apalache { };
   quint = super.callPackage ../packages/quint { };
   mirrord-bin = super.callPackage ../packages/mirrord-bin { };
-  starkli-bin = super.callPackage ../packages/starkli-bin { };
   youplot = super.callPackage ../packages/youplot { };
   dagger = super.callPackage ../packages/dagger { };
-  # windsurf = super.callPackage ../packages/windsurf { };
   aptakube = super.callPackage ../packages/aptakube { };
-  ghostty = inputs.ghostty.packages.${self.stdenv.hostPlatform.system}.ghostty;
+  gitbutler-cli = super.callPackage ../packages/gitbutler-cli { };
+
   # desktop + eye candy
   msty = super.callPackage ../packages/msty { };
   mailspring = super.callPackage ../packages/mailspring { };
@@ -47,13 +41,15 @@ self: super: {
   berkeley-mono = super.callPackage ../packages/berkeley-mono { };
   pragmata-pro = super.callPackage ../packages/pragmata-pro { };
   # monolisa = super.callPackage ../packages/monolisa { };
+
+  # neeeded by other packages
   python3Packages = super.python3Packages // {
     ffpyplayer = self.python3Packages.callPackage ../packages/ffpyplayer {
-        inherit (self) SDL2 SDL2_mixer ffmpeg_6;
-      };
+      inherit (self) SDL2 SDL2_mixer ffmpeg_6;
+    };
 
-      kivymd = self.python3Packages.callPackage ../packages/kivymd {
-        inherit (self.python3Packages) kivy pillow requests;
-      };
+    kivymd = self.python3Packages.callPackage ../packages/kivymd {
+      inherit (self.python3Packages) kivy pillow requests;
+    };
   };
 }

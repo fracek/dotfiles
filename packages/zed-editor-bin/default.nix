@@ -1,18 +1,18 @@
-{
-  lib,
-  stdenv,
-  pkgs,
-  fetchurl,
-  autoPatchelfHook,
-  makeWrapper,
+{ lib
+, stdenv
+, pkgs
+, fetchurl
+, autoPatchelfHook
+, makeWrapper
+,
 }:
 stdenv.mkDerivation rec {
   name = "zed-editor";
-  version = "0.228.0";
+  version = "0.231.2";
 
   src = fetchurl {
     url = "https://github.com/zed-industries/zed/releases/download/v${version}/zed-linux-x86_64.tar.gz";
-    sha256 = "sha256-uuy483M9+VNGuDoYZNjekOm2MoWp9qZ8u06BYewz+L4=";
+    sha256 = "sha256-kgZRPji4o3zyfodL/z38ZebdGrH0rg++X+Eq90Zdw9w=";
   };
 
   nativeBuildInputs = [

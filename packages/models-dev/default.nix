@@ -1,10 +1,10 @@
-{
-  lib,
-  stdenvNoCC,
-  bun,
-  fetchFromGitHub,
-  nix-update-script,
-  writableTmpDirAsHomeHook,
+{ lib
+, stdenvNoCC
+, bun
+, fetchFromGitHub
+, nix-update-script
+, writableTmpDirAsHomeHook
+,
 }:
 let
   pname = "models-dev";
