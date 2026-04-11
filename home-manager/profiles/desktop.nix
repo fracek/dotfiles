@@ -126,6 +126,7 @@
     supercollider
     bitwig-studio
     bottles
+    gcolor3
   ];
 
   # Setup X11 session.
@@ -156,6 +157,13 @@
       };
       gitbutler = {
         signCommits = true;
+      };
+      but = {
+        alias = {
+          "ci" = "commit";
+          "st" = "status -f";
+          "stu" = "status -f -u";
+        };
       };
       merge = {
         conflictStyle = "zdiff3";
