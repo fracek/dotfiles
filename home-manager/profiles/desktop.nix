@@ -103,7 +103,6 @@
     pinta
     font-manager
     mailspring
-    morgen
     # figma-linux
     slack
     telegram-desktop

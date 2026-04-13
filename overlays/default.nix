@@ -32,7 +32,6 @@ self: super: {
   # desktop + eye candy
   msty = super.callPackage ../packages/msty { };
   mailspring = super.callPackage ../packages/mailspring { };
-  morgen = super.callPackage ../packages/morgen { };
   smile = super.callPackage ../packages/smile { };
   en-croissant = super.callPackage ../packages/en-croissant { };
   kaya-go = super.callPackage ../packages/kaya-go { };
