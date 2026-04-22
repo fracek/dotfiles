@@ -19,7 +19,7 @@
       efi.canTouchEfiVariables = true;
       #   efi.efiSysMountPoint = "/boot/efi";
     };
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages;
     kernelModules = [
       "acpi_call"
     ];
