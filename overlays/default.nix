@@ -15,6 +15,7 @@ self: super: {
   });
   opencode-desktop = inputs.opencode.packages.${self.stdenv.hostPlatform.system}.desktop;
   ghostty = inputs.ghostty.packages.${self.stdenv.hostPlatform.system}.ghostty;
+  tuicr = inputs.tuicr.defaultPackage.${self.stdenv.hostPlatform.system};
 
   # dev tools
   hello-custom = super.callPackage ../packages/hello-custom { };

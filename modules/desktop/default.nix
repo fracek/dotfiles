@@ -63,6 +63,8 @@ in
       man-pages
       man-pages-posix
       gnome-tweaks
+
+      wineWow64Packages.waylandFull
       # uv
       # config.boot.kernelPackages.perf
     ];

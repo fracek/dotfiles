@@ -93,6 +93,8 @@
     bun
     clinfo
     gitbutler-cli
+    hexyl
+    tuicr
 
     # office
     anki-bin

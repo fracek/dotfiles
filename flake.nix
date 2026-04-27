@@ -36,6 +36,10 @@
     opencode = {
       url = "github:anomalyco/opencode";
     };
+
+    tuicr = {
+      url = "github:agavra/tuicr";
+    };
   };
 
   outputs =
@@ -139,6 +143,7 @@
             zed-editor-bin = pkgs.zed-editor-bin;
             opencode = pkgs.opencode;
             opencode-desktop = pkgs.opencode-desktop;
+            tuicr = pkgs.tuicr;
             apalache = pkgs.apalache;
             dagger = pkgs.dagger;
             quint = pkgs.quint;
