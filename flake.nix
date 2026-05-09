@@ -144,7 +144,6 @@
             opencode = pkgs.opencode;
             opencode-desktop = pkgs.opencode-desktop;
             tuicr = pkgs.tuicr;
-            pi-coding-agent = pkgs.pi-coding-agent;
             apalache = pkgs.apalache;
             dagger = pkgs.dagger;
             quint = pkgs.quint;
