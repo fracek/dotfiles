@@ -66,8 +66,8 @@ in
 
       "org/gnome/desktop/interface" = {
         monospace-font-name = "Monospace 14";
-        font-name = "Adwaita Sans 11";
-        document-font-name = "Adwaita Sans 11";
+        font-name = "Noto Sans Medium 11 @wght=500";
+        document-font-name = "Noto Sans Medium 11 @wght=500";
         color-scheme = "prefer-dark";
         accent-color = "purple";
       };

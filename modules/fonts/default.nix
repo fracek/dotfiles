@@ -27,7 +27,7 @@ in
         defaultFonts = {
           serif = [ "Noto Serif" ];
           sansSerif = [ "Noto Sans" ];
-          monospace = [ "Essential PragmataPro" ];
+          monospace = [ "Berkeley Mono" ];
           emoji = [ "Noto Color Emoji" ];
         };
       };

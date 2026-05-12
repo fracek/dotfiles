@@ -31,11 +31,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1778046078,
-        "narHash": "sha256-f8+RMC7UK8DIGTG9GzLgUSrKoiEpTRchN0Td0p/UGdc=",
+        "lastModified": 1778565216,
+        "narHash": "sha256-+++CQFCvhCvLrAqTxfdgz6esk2HZ3MEGvWM6yBUHfhg=",
         "owner": "nix-community",
         "repo": "ethereum.nix",
-        "rev": "342f78566e02d4431e0ac8c7537e689257e0d984",
+        "rev": "b130fa2d6ed80e035541b418a0b79de84beaf95d",
         "type": "github"
       },
       "original": {
@@ -132,11 +132,11 @@
         "zon2nix": "zon2nix"
       },
       "locked": {
-        "lastModified": 1777971579,
-        "narHash": "sha256-9XQugqNfZ/s1CIbws5WL5vHuEAd9ZaOaEmWVXPWUs3A=",
+        "lastModified": 1778507667,
+        "narHash": "sha256-OxYiulGeX6PRtVXRlYvAQliI25X3KgZ5IUVkctuVvIU=",
         "owner": "ghostty-org",
         "repo": "ghostty",
-        "rev": "f9a9d33b3a40a95ba01cfbc0f89586567932a22b",
+        "rev": "b0f8276658fbcc75318d2125d40146074a3fc505",
         "type": "github"
       },
       "original": {
@@ -173,11 +173,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777851538,
-        "narHash": "sha256-Gp8qwTEYNoy2yvmErVGlvLOQvrtEECCAKbonW7VJef8=",
+        "lastModified": 1778401693,
+        "narHash": "sha256-OVHdCqXXUF5UdGkH+FF2ZL06OLZjj2kvP2dIUmzVWoo=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "cc09c0f9b7eaa95c2d9827338a5eb03d32505ca5",
+        "rev": "389b83002efc26f1145e89a6a8e6edc5a6435948",
         "type": "github"
       },
       "original": {
@@ -240,11 +240,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1778003029,
-        "narHash": "sha256-q/nkKLDtHIyLjZpKhWk3cSK5IYsFqtMd6UtXF3ddjgA=",
+        "lastModified": 1778430510,
+        "narHash": "sha256-Ti+ZBvW6yrWWAg2szExVTwCd4qOJ3KlVr1tFHfyfi8Q=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "0c88e1f2bdb93d5999019e99cb0e61e1fe2af4c5",
+        "rev": "8fd9daa3db09ced9700431c5b7ad0e8ba199b575",
         "type": "github"
       },
       "original": {
@@ -308,11 +308,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1778075885,
-        "narHash": "sha256-6BFEDOeUu9n812iYVReU/bVjlTu98m+UggBPR5MiDVk=",
+        "lastModified": 1778576050,
+        "narHash": "sha256-CFTK1kWP6eB8pePk9XEGiHu4epapwbVwPLnPu0mlSTE=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "28f0b0e6215d472384e238c5edf1673673ab2619",
+        "rev": "1ba1c2a9d1fb21f5c45889d921cbb68437859077",
         "type": "github"
       },
       "original": {
@@ -326,11 +326,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1778077542,
-        "narHash": "sha256-WTP00Lwrg14dYXg28eQ0Lz4dfL356p6gXvuVzM5s97A=",
+        "lastModified": 1778575221,
+        "narHash": "sha256-XEh9RHQzaUlj4jDHo2qjuoJrne7plXzaUDliOLNt7xQ=",
         "owner": "anomalyco",
         "repo": "opencode",
-        "rev": "2abc4507b23834986f08c22b87cf15ff91417782",
+        "rev": "caf1151cb5d574d2aac2ed6ccb20a9121880c18a",
         "type": "github"
       },
       "original": {
@@ -346,11 +346,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1778037418,
-        "narHash": "sha256-EZnAOkPgEeOO2rCRhwkTvesCq/E6dbsyxhMyaefgIWM=",
+        "lastModified": 1778555852,
+        "narHash": "sha256-55EmwooVAS4UpA0oWd5wilKPRqCiHD5BAej9QiNwheY=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "adf987c76af8d17b8256d23631bcf203f81e1a63",
+        "rev": "f29b0f7a9f367e0056b716f8aa137cb41e784444",
         "type": "github"
       },
       "original": {
@@ -479,11 +479,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1778008442,
-        "narHash": "sha256-7nvQpAk6wn4CPULSnug2h0F4DZ0l3+/FwBrZ4h3Cc8A=",
+        "lastModified": 1778536449,
+        "narHash": "sha256-JE2XApYB9np5bluWMCTfvBT+DhYDAyEQAyTazsJKJWI=",
         "owner": "agavra",
         "repo": "tuicr",
-        "rev": "f29d52da8c72662a45fe1c13cdd94e142be2c67e",
+        "rev": "e234bfc87a5f646d0e69c161a415737995965759",
         "type": "github"
       },
       "original": {

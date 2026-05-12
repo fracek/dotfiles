@@ -14,7 +14,6 @@ in
         "nix"
         "toml"
       ];
-      # extraPackages = [ pkgs.nixd ];
       userSettings = {
         auto_update = false;
       };

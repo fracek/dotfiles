@@ -10,7 +10,7 @@ in
     home.packages = [ pkgs.ghostty ];
 
     xdg.configFile."ghostty/config".text = ''
-      font-family = "Essential PragmataPro"
+      font-family = "Berkeley Mono"
       font-size = 13
       theme = "Catppuccin Mocha"
       window-inherit-working-directory = false
