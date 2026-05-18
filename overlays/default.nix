@@ -13,7 +13,6 @@ self: super: {
         --replace-fail 'const estree = await import("prettier/plugins/estree")' 'const estree = {}'
     '';
   });
-  opencode-desktop = inputs.opencode.packages.${self.stdenv.hostPlatform.system}.desktop;
   ghostty = inputs.ghostty.packages.${self.stdenv.hostPlatform.system}.ghostty;
   tuicr = inputs.tuicr.defaultPackage.${self.stdenv.hostPlatform.system};
 
