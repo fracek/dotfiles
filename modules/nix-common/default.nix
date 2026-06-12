@@ -1,4 +1,4 @@
-{ config, pkgs, lib, flake-self, nixpkgs, ethereum, ... }:
+{ config, pkgs, lib, flake-self, nixpkgs, ... }:
 with lib;
 let cfg = config.fra.defaults.nix;
 in
@@ -25,7 +25,6 @@ in
     nix.registry = {
       nixpkgs.flake = nixpkgs;
       fra.flake = flake-self;
-      ethereum.flake = ethereum;
     };
 
     nixpkgs.config = {

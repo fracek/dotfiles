@@ -1,49 +1,5 @@
 {
   "nodes": {
-    "blueprint": {
-      "inputs": {
-        "nixpkgs": [
-          "ethereum",
-          "nixpkgs"
-        ],
-        "systems": "systems"
-      },
-      "locked": {
-        "lastModified": 1776249299,
-        "narHash": "sha256-Dt9t1TGRmJFc0xVYhttNBD6QsAgHOHCArqGa0AyjrJY=",
-        "owner": "numtide",
-        "repo": "blueprint",
-        "rev": "56131e8628f173d24a27f6d27c0215eff57e40dd",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "blueprint",
-        "type": "github"
-      }
-    },
-    "ethereum": {
-      "inputs": {
-        "blueprint": "blueprint",
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "treefmt-nix": "treefmt-nix"
-      },
-      "locked": {
-        "lastModified": 1780985971,
-        "narHash": "sha256-BNCh7LUjcEtID2M3pbzPcwQCmZlsFPpw0I8sKQSboEw=",
-        "owner": "nix-community",
-        "repo": "ethereum.nix",
-        "rev": "22a8956de91cc275b7f7ae75024c78e1b8fe0721",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "ethereum.nix",
-        "type": "github"
-      }
-    },
     "fenix": {
       "inputs": {
         "nixpkgs": [
@@ -106,7 +62,7 @@
     },
     "flake-utils": {
       "inputs": {
-        "systems": "systems_2"
+        "systems": "systems"
       },
       "locked": {
         "lastModified": 1731533236,
@@ -127,16 +83,16 @@
         "flake-compat": "flake-compat",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "systems": "systems_3",
+        "systems": "systems_2",
         "zig": "zig",
         "zon2nix": "zon2nix"
       },
       "locked": {
-        "lastModified": 1780925481,
-        "narHash": "sha256-XH2zydfK97HYkW7Ra5I3nrL8hlZRDEMzXW+9OH+ryvU=",
+        "lastModified": 1781100864,
+        "narHash": "sha256-JgixhXDxFdaBcswZ0006cgYTEgsX2PrC8Q65XetO2Bk=",
         "owner": "ghostty-org",
         "repo": "ghostty",
-        "rev": "69095e298ab88bb0eb5ba541f4c505f2c22d07f5",
+        "rev": "5659cef41f4f2f7a478d0800a11836fa17e64d66",
         "type": "github"
       },
       "original": {
@@ -256,11 +212,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1780749050,
-        "narHash": "sha256-3av0pIjlOWQ6rDbNOmpUSvbNnJkGORQKKjb4LtCZsIY=",
+        "lastModified": 1781074563,
+        "narHash": "sha256-md8WlXOlfnIeHeOScMTTHFyf2d6iaTwPl2apR5EQ3P4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "a799d3e3886da994fa307f817a6bc705ae538eeb",
+        "rev": "9ae611a455b90cf061d8f332b977e387bda8e1ca",
         "type": "github"
       },
       "original": {
@@ -308,11 +264,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1781091606,
-        "narHash": "sha256-yP8lUA1xJRET7A6DS8qmkRRws5DlKLqNunRlqhtwzlE=",
+        "lastModified": 1781273468,
+        "narHash": "sha256-mWGvTWSsQrRgiGvHYUndOPQR4ooiVJI3LBYWM88OSHc=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "8c2b42e8b421122cf89dc4473cc08c7aeabfd305",
+        "rev": "d12eeb8b5376ece10c0f382353b07e309f79ddc6",
         "type": "github"
       },
       "original": {
@@ -347,11 +303,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1781061510,
-        "narHash": "sha256-tVuGHgt/TsWu1rUAqEL+eWRIJJHtiPE2+yQ63b+/WTU=",
+        "lastModified": 1781234414,
+        "narHash": "sha256-HdA+P4fKRGOomkewnI/Tww5Wz4xK1O7+hDO90YAsPB4=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "d286e9691bb03045febbf8304a658eab1487d1b5",
+        "rev": "1d18bfe3de6244c641ca4e8011186d0981b81d76",
         "type": "github"
       },
       "original": {
@@ -362,7 +318,6 @@
     },
     "root": {
       "inputs": {
-        "ethereum": "ethereum",
         "flake-utils": "flake-utils",
         "ghostty": "ghostty",
         "home-manager": "home-manager_2",
@@ -407,21 +362,6 @@
       }
     },
     "systems_2": {
-      "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default",
-        "type": "github"
-      }
-    },
-    "systems_3": {
       "flake": false,
       "locked": {
         "lastModified": 1681028828,
@@ -437,7 +377,7 @@
         "type": "github"
       }
     },
-    "systems_4": {
+    "systems_3": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
@@ -452,27 +392,6 @@
         "type": "github"
       }
     },
-    "treefmt-nix": {
-      "inputs": {
-        "nixpkgs": [
-          "ethereum",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1780220602,
-        "narHash": "sha256-eynAfOmbmxJnkp7YewvCEbShNnnYJ9gLLqkzsYtBPeM=",
-        "owner": "numtide",
-        "repo": "treefmt-nix",
-        "rev": "db947814a175b7ca6ded66e21383d938df01c227",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "treefmt-nix",
-        "type": "github"
-      }
-    },
     "tuicr": {
       "inputs": {
         "naersk": "naersk",
@@ -480,11 +399,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1781024832,
-        "narHash": "sha256-BgrIw/b1XSfZbJ/WfsWn3+UKPljMKZwVEvl0RPC59Tc=",
+        "lastModified": 1781192598,
+        "narHash": "sha256-VK8B6sMZBZJcAT8VVpZ5zeyXkvZx1CPHqxyICUhGUc8=",
         "owner": "agavra",
         "repo": "tuicr",
-        "rev": "7faea439c9f7f1145a85dd8b1668ce5d76937859",
+        "rev": "af04321bb98aeb5250a19f33173c42aec961182f",
         "type": "github"
       },
       "original": {
@@ -495,7 +414,7 @@
     },
     "utils": {
       "inputs": {
-        "systems": "systems_4"
+        "systems": "systems_3"
       },
       "locked": {
         "lastModified": 1731533236,

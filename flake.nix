@@ -24,11 +24,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ethereum = {
-      url = "github:nix-community/ethereum.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     ghostty = {
       url = "github:ghostty-org/ghostty";
     };
