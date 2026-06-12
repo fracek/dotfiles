@@ -4,8 +4,11 @@ pkgs.mkShell {
     cargo
     rustc
     rustfmt
+    clippy
     rust-analyzer
+    cargo-insta
     pkg-config
+    just
     openssl.dev
   ];
 }

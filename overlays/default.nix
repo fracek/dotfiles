@@ -14,7 +14,7 @@ self: super: {
     '';
   });
   ghostty = inputs.ghostty.packages.${self.stdenv.hostPlatform.system}.ghostty;
-  tuicr = inputs.tuicr.defaultPackage.${self.stdenv.hostPlatform.system};
+  tuicr = inputs.tuicr.packages.${self.stdenv.hostPlatform.system}.default;
 
   # dev tools
   hello-custom = super.callPackage ../packages/hello-custom { };
