@@ -123,12 +123,15 @@
     obsidian
     mailspring
     discord
-    nufraw-thumbnailer
-    art
     supercollider
     bitwig-studio
     bottles
     gcolor3
+    xournalpp
+    # photo
+    nufraw-thumbnailer
+    art
+    darktable
   ];
 
   # Setup X11 session.
