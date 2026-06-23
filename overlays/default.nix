@@ -32,7 +32,6 @@ self: super: {
   apalache = super.callPackage ../packages/apalache { };
   quint = super.callPackage ../packages/quint { };
   mirrord-bin = super.callPackage ../packages/mirrord-bin { };
-  youplot = super.callPackage ../packages/youplot { };
   dagger = super.callPackage ../packages/dagger { };
   aptakube = super.callPackage ../packages/aptakube { };
   gitbutler-cli = super.callPackage ../packages/gitbutler-cli { };

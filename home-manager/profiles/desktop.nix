@@ -72,7 +72,7 @@
     buildah
     skopeo
     kubectl
-    code-cursor
+    # code-cursor
     apalache
     duckdb
     mongodb-compass
@@ -106,6 +106,7 @@
     pinta
     font-manager
     mailspring
+    gradia
     # figma-linux
     slack
     telegram-desktop

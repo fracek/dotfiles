@@ -2,12 +2,12 @@
   description = "Francesco's NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
 
     flake-utils.url = "github:numtide/flake-utils";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -143,7 +143,6 @@
             quint = pkgs.quint;
             gitbutler-cli = pkgs.gitbutler-cli;
             mirrord-bin = pkgs.mirrord-bin;
-            youplot = pkgs.youplot;
             aptakube = pkgs.aptakube;
             ghostty = pkgs.ghostty;
             berkeley-mono = pkgs.berkeley-mono;
