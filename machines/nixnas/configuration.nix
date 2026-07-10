@@ -57,7 +57,6 @@
   # Setup samba
   services.samba = {
     enable = true;
-    securityType = "user";
     openFirewall = true;
     settings = {
       global = {
@@ -65,7 +64,7 @@
         "server string" = "NixOS NAS";
         "netbios name" = "nixnas";
         "security" = "user";
-        "hosts allow" = "192.168.2. 127.0.0.1";
+        "hosts allow" = "100.64.0.0/10 192.168.2. 127.0.0.1";
         "guest account" = "nobody";
         "map to guest" = "Bad User";
         "smb3 unix extensions" = "yes";
