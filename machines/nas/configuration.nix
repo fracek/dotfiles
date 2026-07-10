@@ -1,0 +1,105 @@
+{ config, lib, pkgs, ... }:
+
+{
+  imports = [ ./hardware-configuration.nix ];
+
+  fra.defaults = {
+    user.enable = true;
+    nix.enable = true;
+  };
+
+  time.timeZone = "Europe/Amsterdam";
+
+  boot = {
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+  };
+
+  networking = {
+    hostName = "nas";
+    networkmanager.enable = true;
+    nftables.enable = true;
+    firewall = {
+      enable = true;
+      trustedInterfaces = [ config.services.tailscale.interfaceName ];
+      allowedUDPPorts = [ config.services.tailscale.port ];
+      allowedTCPPorts = [ 22 ];
+    };
+
+    nameservers = [
+      "1.1.1.1"
+    ];
+  };
+
+  environment.systemPackages = with pkgs; [
+    vim
+    git
+  ];
+
+  # Allow SSH access.
+  services.openssh = {
+    enable = true;
+    openFirewall = true;
+    settings = {
+      PermitRootLogin = "yes";
+    };
+  };
+
+  # Join tailnet
+  services.tailscale = {
+    enable = true;
+    openFirewall = true;
+  };
+  systemd.services.tailscaled.serviceConfig.Environment = [
+    "TS_DEBUG_FIREWALL_MODE=nftables"
+  ];
+
+  # Setup samba
+  services.samba = {
+    enable = true;
+    securityType = "user";
+    openFirewall = true;
+    settings = {
+      global = {
+        "workgroup" = "WORKGROUP";
+        "server string" = "NixOS NAS";
+        "netbios name" = "nixnas";
+        "security" = "user";
+        "hosts allow" = "192.168.1. 127.0.0.1";
+        "guest account" = "nobody";
+        "map to guest" = "Bad User";
+        "smb3 unix extensions" = "yes";
+      };
+      "Photo" = {
+        "path" = "/srv/shares/photo";
+        "browseable" = "yes";
+        "writeable" = "yes";
+        "read only" = "no";
+        "guest ok" = "no";
+        "create mask" = "0664";
+        "directory mask" = "0775";
+        "force group" = "users";
+      };
+      "Public" = {
+        "path" = "/srv/shares/public";
+        "browseable" = "yes";
+        "read only" = "no";
+        "guest ok" = "yes";
+        "create mask" = "0664";
+        "directory mask" = "0775";
+        "force group" = "users";
+      };
+    };
+  };
+  services.avahi.enable = true;
+  services.samba-wsdd = {
+    enable = true;
+    openFirewall = true;
+  };
+
+  # Don't wait for network on boot.
+  systemd.network.wait-online.enable = false;
+  boot.initrd.systemd.network.wait-online.enable = false;
+
+  system.stateVersion = "26.05";
+}

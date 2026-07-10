@@ -8,7 +8,9 @@ in
 
   config = mkIf cfg.enable {
     users.users.fra = {
+      description = "Francesco";
       isNormalUser = true;
+      uid = 1000;
       shell = pkgs.bash;
       extraGroups = [ "wheel" "podman" "networkmanager" "audio" "dialout" "libvirtd" ];
     };
