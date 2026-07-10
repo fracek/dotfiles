@@ -94,7 +94,8 @@
         "guest ok" = "yes";
         "create mask" = "0664";
         "directory mask" = "0775";
-        "force group" = "users";
+        "force user" = "nobody";
+        "force group" = "nogroup";
       };
     };
   };
