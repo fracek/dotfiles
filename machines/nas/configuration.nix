@@ -65,7 +65,7 @@
         "server string" = "NixOS NAS";
         "netbios name" = "nixnas";
         "security" = "user";
-        "hosts allow" = "192.168.1. 127.0.0.1";
+        "hosts allow" = "192.168.2. 127.0.0.1";
         "guest account" = "nobody";
         "map to guest" = "Bad User";
         "smb3 unix extensions" = "yes";
