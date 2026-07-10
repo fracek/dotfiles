@@ -62,7 +62,6 @@
       global = {
         "workgroup" = "WORKGROUP";
         "server string" = "NixOS NAS";
-        "netbios name" = "nixnas";
         "security" = "user";
         "hosts allow" = "100.64.0.0/10 192.168.2. 127.0.0.1";
         "guest account" = "nobody";
