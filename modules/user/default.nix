@@ -11,6 +11,8 @@ in
       description = "Francesco";
       isNormalUser = true;
       uid = 1000;
+      home = "/home/fra";
+      createHome = true;
       shell = pkgs.bash;
       extraGroups = [ "wheel" "podman" "networkmanager" "audio" "dialout" "libvirtd" ];
     };
