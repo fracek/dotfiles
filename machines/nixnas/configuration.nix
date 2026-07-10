@@ -71,6 +71,8 @@
         "inherit permissions" = "yes";
         "getwd cache" = "yes";
         "socket options" = "TCP_NODELAY IPTOS_LOWDELAY SO_RCVBUF=2048000 SO_SNDBUF=2048000";
+        "min receivefile size" = "16384";
+        "write cache size" = "2097152";
 
         "fruit:delete_empty_adfiles" = "yes";
         "fruit:time machine" = "yes";
