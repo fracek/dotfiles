@@ -2,11 +2,11 @@
 
 stdenv.mkDerivation rec {
   name = "aptakube";
-  version = "1.17.1";
+  version = "1.18.4";
 
   src = fetchurl {
     url = "https://github.com/aptakube/aptakube/releases/download/${version}/aptakube_${version}_amd64.deb";
-    sha256 = "sha256-hVctQdj/h2SmnNM2is6/rw2cOagrdx3EK9mTPDNOl7E=";
+    sha256 = "sha256-1RyBUWqPSmUwzugTivVKvcRrv2jM7j/CL1KcS+qRIT8=";
   };
 
   nativeBuildInputs = [

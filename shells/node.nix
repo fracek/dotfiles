@@ -2,12 +2,12 @@
 pkgs.mkShell {
   packages = with pkgs; [
     bun
-    nodejs_24
-    pnpm_10
+    nodejs_26
+    pnpm_11
     vtsls
     biome
-    nodePackages.typescript
-    nodePackages.typescript-language-server
+    typescript
+    typescript-language-server
   ];
   NIX_LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
     pkgs.stdenv.cc.cc

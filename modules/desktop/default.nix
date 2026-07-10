@@ -101,8 +101,8 @@ in
 
       nftables.enable = true;
       firewall = {
-        enable = false;
-        trustedInterfaces = [ "tailscale0" ];
+        enable = true;
+        trustedInterfaces = [ config.services.tailscale.interfaceName ];
         allowedUDPPorts = [ config.services.tailscale.port ];
         allowedTCPPorts = [ 22 ];
       };
@@ -177,10 +177,13 @@ in
     programs.seahorse.enable = true;
 
     # Setup tailscale.
-    # services.tailscale = {
-    #   enable = true;
-    #   openFirewall = true;
-    # };
+    services.tailscale = {
+      enable = true;
+      openFirewall = true;
+    };
+    systemd.services.tailscaled.serviceConfig.Environment = [
+      "TS_DEBUG_FIREWALL_MODE=nftables"
+    ];
 
     # Setup audio.
     security.rtkit.enable = true;
@@ -198,9 +201,9 @@ in
       Delegate = "memory pids cpu cpuset io";
     };
 
-    services.ollama = {
-      enable = true;
-    };
+    # Don't wait for network on boot.
+    systemd.network.wait-online.enable = false;
+    boot.initrd.systemd.network.wait-online.enable = false;
 
     nixpkgs.config.allowUnfree = true;
   };
