@@ -67,6 +67,15 @@
         "guest account" = "nobody";
         "map to guest" = "Bad User";
         "smb3 unix extensions" = "yes";
+        "vfs objects" = "acl_xattr catia fruit streams_xattr";
+        "inherit permissions" = "yes";
+
+        "fruit:delete_empty_adfiles" = "yes";
+        "fruit:time machine" = "yes";
+        "fruit:veto_appledouble" = "no";
+        "fruit:wipe_intentionally_left_blank_rfork" = "yes";
+        "fruit:posix_rename" = "yes";
+        "fruit:metadata" = "stream";
       };
       "Photo" = {
         "path" = "/srv/shares/photo";
