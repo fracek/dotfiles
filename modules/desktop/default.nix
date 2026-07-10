@@ -185,6 +185,20 @@ in
       "TS_DEBUG_FIREWALL_MODE=nftables"
     ];
 
+    # Local service discovery (client onyl)
+    services.avahi = {
+      enable = true;
+      nssmdns4 = true;
+
+      # Disable broadcasting your own machine details
+      publish = {
+        enable = false;
+        addresses = false;
+        workstation = false;
+        userServices = false;
+      };
+    };
+
     # Setup audio.
     security.rtkit.enable = true;
     services.pulseaudio.enable = false;

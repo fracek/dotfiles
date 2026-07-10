@@ -93,6 +93,15 @@
   };
   services.avahi = {
     enable = true;
+    openFirewall = true;
+
+    publish = {
+      enable = true;
+      addresses = true;
+      workstation = true;
+      userServices = true;
+    };
+
     extraServiceFiles = {
       smb = ''
         <?xml version="1.0" standalone='no'?><!--*-nxml-*-->
