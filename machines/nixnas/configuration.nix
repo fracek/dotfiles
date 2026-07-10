@@ -16,7 +16,7 @@
   };
 
   networking = {
-    hostName = "nas";
+    hostName = "nixnas";
     networkmanager.enable = true;
     nftables.enable = true;
     firewall = {
