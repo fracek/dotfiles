@@ -58,6 +58,7 @@
   services.samba = {
     enable = true;
     openFirewall = true;
+    package = pkgs.sambaFull;
     settings = {
       global = {
         "workgroup" = "WORKGROUP";
@@ -75,12 +76,18 @@
         "aio read size" = "16384";
         "aio write size" = "16384";
 
+        # MacOS related config
         "fruit:delete_empty_adfiles" = "yes";
         "fruit:time machine" = "yes";
         "fruit:veto_appledouble" = "no";
         "fruit:wipe_intentionally_left_blank_rfork" = "yes";
         "fruit:posix_rename" = "yes";
         "fruit:metadata" = "stream";
+
+        # Printing
+        "load printers" = "yes";
+        "printing" = "cups";
+        "printcap name" = "cups";
       };
       "Photo" = {
         "path" = "/srv/shares/photo";
@@ -102,6 +109,17 @@
         "force user" = "nobody";
         "force group" = "nogroup";
       };
+      "Printers" = {
+        "comment" = "All Printers";
+        "path" = "/var/spool/samba";
+        "public" = "yes";
+        "browseable" = "yes";
+        # to allow user 'guest account' to print.
+        "guest ok" = "yes";
+        "writable" = "no";
+        "printable" = "yes";
+        "create mode" = 0700;
+      };
     };
   };
   services.avahi = {
@@ -115,6 +133,9 @@
       workstation = true;
       userServices = true;
     };
+    systemd.tmpfiles.rules = [
+      "d /var/spool/samba 1777 root root -"
+    ];
 
     extraServiceFiles = {
       smb = ''
