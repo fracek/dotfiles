@@ -29,7 +29,7 @@
     };
 
     opencode = {
-      url = "github:anomalyco/opencode?rev=f06b78751e08ca38dc50da7f7ca1c408e6ad6298";
+      url = "github:anomalyco/opencode";
     };
 
     tuicr = {
