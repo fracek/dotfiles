@@ -109,8 +109,7 @@
         "force user" = "nobody";
         "force group" = "nogroup";
       };
-      "Printers" = {
-        "comment" = "All Printers";
+      "Printer" = {
         "path" = "/var/spool/samba";
         "public" = "yes";
         "browseable" = "yes";
