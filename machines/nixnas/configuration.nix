@@ -151,6 +151,7 @@
     drivers = with pkgs; [
       cups-filters
       cups-browsed
+      hplipWithPlugin
     ];
   };
   # USB auto discovery
