@@ -133,9 +133,6 @@
       workstation = true;
       userServices = true;
     };
-    systemd.tmpfiles.rules = [
-      "d /var/spool/samba 1777 root root -"
-    ];
 
     extraServiceFiles = {
       smb = ''
@@ -164,6 +161,9 @@
     enable = true;
     openFirewall = true;
   };
+  systemd.tmpfiles.rules = [
+    "d /var/spool/samba 1777 root root -"
+  ];
 
   # Share printer on network
   services.printing = {
