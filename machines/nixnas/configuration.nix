@@ -107,6 +107,7 @@
   services.avahi = {
     enable = true;
     openFirewall = true;
+    nssmdns4 = true;
 
     publish = {
       enable = true;
@@ -142,6 +143,18 @@
     enable = true;
     openFirewall = true;
   };
+
+  # Share printer on network
+  services.printing = {
+    enable = true;
+
+    drivers = with pkgs; [
+      cups-filters
+      cups-browsed
+    ];
+  };
+  # USB auto discovery
+  services.ipp-usb.enable = true;
 
   # Don't wait for network on boot.
   systemd.network.wait-online.enable = false;
