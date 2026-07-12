@@ -183,6 +183,41 @@
   # USB auto discovery
   services.ipp-usb.enable = true;
 
+  # Backup to Cloudflare R2 with restic.
+  age.secrets = {
+    "restic/env".file = ../../secrets/restic/env;
+    "restic/password".file = ../../secrets/restic/password;
+    "restic/repo".file = ../../secrets/restic/repo;
+  };
+  services.restic.backups = {
+    daily = {
+      initialize = true;
+
+      environmentFile = config.age.secrets."restic/env".path;
+      passwordFile = config.age.secrets."restic/password".path;
+      repositoryFile = config.age.secrets."restic/repo".path;
+
+      timerConfig = {
+        OnCalendar = "03:33";
+        Persistent = true;
+      };
+
+      paths = [
+        "/srv/shares/photo"
+        "/srv/shares/public"
+      ];
+      pruneOpts = [
+        "--keep-daily 7"
+        "--keep-weekly 5"
+        "--keep-monthly 12"
+      ];
+
+      extraOptions = [
+        "forget.host=${config.networking.hostName}"
+      ];
+    };
+  };
+
   # Don't wait for network on boot.
   systemd.network.wait-online.enable = false;
   boot.initrd.systemd.network.wait-online.enable = false;

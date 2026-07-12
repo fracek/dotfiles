@@ -1,4 +1,4 @@
-{ config, pkgs, lib, flake-self, nixpkgs, ... }:
+{ config, pkgs, lib, flake-self, nixpkgs, nur, agenix, ... }:
 with lib;
 let cfg = config.fra.defaults.nix;
 in
@@ -16,7 +16,11 @@ in
     # and root e.g. `nix-channel --remove nixos`. `nix-channel
     # --list` should be empty for all users afterwards
     nix.nixPath = [ "nixpkgs=${nixpkgs}" ];
-    nixpkgs.overlays = [ flake-self.overlays.default ];
+    nixpkgs.overlays = [
+      flake-self.overlays.default
+      nur.overlays.default
+      agenix.overlays.default
+    ];
 
     # Let 'nixos-version --json' know the Git revision of this flake.
     system.configurationRevision =
@@ -30,6 +34,20 @@ in
     nixpkgs.config = {
       # Allow unfree licenced packages
       allowUnfree = true;
+    };
+    home-manager = {
+      # DON'T set useGlobalPackages! It's not necessary in newer
+      # home-manager versions and does not work with configs using
+      # nixpkgs.config`
+      useUserPackages = true;
+
+      sharedModules = [ ];
+
+      # Pass all flake inputs to home-manager modules aswell so we can use them
+      # there.
+      extraSpecialArgs = {
+        inherit flake-self nur agenix;
+      };
     };
 
     # Enable flakes

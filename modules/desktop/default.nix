@@ -1,4 +1,4 @@
-{ config, lib, pkgs, flake-self, nur, ... }:
+{ config, lib, pkgs, flake-self, ... }:
 with lib;
 let
   cfg = config.fra.desktop;
@@ -16,27 +16,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    nixpkgs.overlays = [
-      nur.overlays.default
-      flake-self.overlays.default
-    ];
-
-    home-manager = {
-      users.fra = flake-self.homeConfigurations.desktop;
-
-      # DON'T set useGlobalPackages! It's not necessary in newer
-      # home-manager versions and does not work with configs using
-      # nixpkgs.config`
-      useUserPackages = true;
-
-      sharedModules = [ ];
-
-      # Pass all flake inputs to home-manager modules aswell so we can use them
-      # there.
-      extraSpecialArgs = {
-        inherit flake-self nur;
-      };
-    };
+    home-manager.users.fra = flake-self.homeConfigurations.desktop;
 
     fra = {
       defaults = {

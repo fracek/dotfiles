@@ -1,4 +1,4 @@
-{ pkgs, flake-self, nur, ... }:
+{ pkgs, flake-self, nur, agenix, ... }:
 let
   editor = "zed -n -w";
 in
@@ -8,6 +8,7 @@ in
     overlays = [
       flake-self.overlays.default
       nur.overlays.default
+      agenix.overlays.default
     ];
   };
 
@@ -22,9 +23,10 @@ in
   };
 
   home = {
-    packages = with pkgs; [
-      htop
-      unzip
+    packages = [
+      pkgs.agenix
+      pkgs.htop
+      pkgs.unzip
     ];
 
     sessionVariables = {

@@ -19,6 +19,10 @@
       url = "github:antithesishq/madness";
     };
 
+    agenix = {
+      url = "github:ryantm/agenix";
+    };
+
     oxalica = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -88,6 +92,7 @@
                   { imports = builtins.attrValues self.nixosModules; }
                   home-manager.nixosModules.home-manager
                   madness.nixosModules.madness
+                  agenix.nixosModules.default
                 ];
               };
             })
