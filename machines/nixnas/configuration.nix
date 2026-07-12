@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, pkgs, flake-self, ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];
@@ -7,6 +7,8 @@
     user.enable = true;
     nix.enable = true;
   };
+
+  home-manager.users.fra = flake-self.homeConfigurations.minimal;
 
   time.timeZone = "Europe/Amsterdam";
 

@@ -101,6 +101,19 @@
 
         # home manager configuration.
         homeConfigurations = {
+          minimal =
+            { pkgs
+            , lib
+            , username
+            , ...
+            }:
+            {
+              imports = [
+                ./home-manager/profiles/common.nix
+              ]
+              ++ (builtins.attrValues self.homeManagerModules);
+            };
+
           desktop =
             { pkgs
             , lib
