@@ -43,6 +43,7 @@ self: super: {
   en-croissant = super.callPackage ../packages/en-croissant { };
   kaya-go = super.callPackage ../packages/kaya-go { };
   katrain = super.callPackage ../packages/katrain { };
+  darktable = super.callPackage ../packages/darktable { withAi = true; };
   # fonts
   berkeley-mono = super.callPackage ../packages/berkeley-mono { };
   pragmata-pro = super.callPackage ../packages/pragmata-pro { };

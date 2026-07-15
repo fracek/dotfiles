@@ -172,6 +172,7 @@
             en-croissant = pkgs.en-croissant;
             kaya-go = pkgs.kaya-go;
             katrain = pkgs.katrain;
+            darktable = pkgs.darktable;
           };
         }
       )
