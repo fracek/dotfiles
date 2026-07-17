@@ -74,9 +74,11 @@
         "inherit permissions" = "yes";
         "server signing" = "auto";
         "getwd cache" = "yes";
-        "socket options" = "TCP_NODELAY IPTOS_LOWDELAY SO_RCVBUF=2048000 SO_SNDBUF=2048000";
+        "socket options" = "TCP_NODELAY IPTOS_LOWDELAY";
         "aio read size" = "16384";
         "aio write size" = "16384";
+        "use sendfile" = "yes";
+        "min receivefile size" = "16384";
 
         # MacOS related config
         "fruit:delete_empty_adfiles" = "yes";
