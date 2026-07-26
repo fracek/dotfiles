@@ -129,6 +129,7 @@
     bottles
     gcolor3
     xournalpp
+    cherry-studio
     # photo
     nufraw-thumbnailer
     art
