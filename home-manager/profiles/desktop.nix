@@ -14,6 +14,7 @@
       k9s.enable = true;
       ghostty.enable = true;
       opencode.enable = true;
+      ampcode.enable = true;
     };
     i18n.enable = true;
   };

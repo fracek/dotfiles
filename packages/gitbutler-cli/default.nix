@@ -1,4 +1,4 @@
-{ lib, stdenv, pkgs, fetchurl, installShellFiles, makeWrapper }:
+{ lib, stdenv, pkgs, fetchurl, installShellFiles }:
 
 stdenv.mkDerivation rec {
   name = "gitbutler-cli";

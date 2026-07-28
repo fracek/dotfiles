@@ -163,6 +163,7 @@
             mirrord-bin = pkgs.mirrord-bin;
             aptakube = pkgs.aptakube;
             ghostty = pkgs.ghostty;
+            amp-cli = pkgs.amp-cli;
             berkeley-mono = pkgs.berkeley-mono;
             pragmata-pro = pkgs.pragmata-pro;
             # office
