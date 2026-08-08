@@ -30,10 +30,10 @@ self: super: {
   # bump to a newer version than nixpkgs provides.
   # https://static.ampcode.com/cli/cli-version.txt
   amp-cli = super.amp-cli.overrideAttrs (old: rec {
-    version = "0.0.1785241901-gcaf206";
+    version = "0.0.1786190746-gd7496c";
     src = super.fetchurl {
       url = "https://static.ampcode.com/cli/${version}/amp-linux-x64-baseline.gz";
-      hash = "sha256-6Z6bPlHqeenz/QxRs4RBdIFmorBN5k3cC7fhA6BJE/U=";
+      hash = "sha256-+s4bf98bOkc5wkAHA6fA8XwMps6WUFdE0Hp+heq58tg=";
     };
   });
 
