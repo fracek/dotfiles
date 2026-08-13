@@ -7,12 +7,12 @@
 
 stdenv.mkDerivation rec {
   pname = "apalache";
-  version = "0.45.3";
+  version = "0.61.0";
 
   src = fetchzip {
     name = "${pname}.zip";
     url = "https://github.com/apalache-mc/apalache/releases/download/v${version}/apalache-${version}.zip";
-    hash = "sha256-wWXoe/OFI05z0lnF3oK1mRZ30ZHNFbPIQXVFAL7N5Vs=";
+    hash = "sha256-/DdEdclrdTI0i++GbDDXI1mSnPvCBzH/xPNeoyDkGhc=";
   };
 
   nativeBuildInputs = [ makeWrapper ];
