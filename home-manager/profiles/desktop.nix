@@ -8,9 +8,7 @@
       obs-studio.enable = true;
       tmux.enable = true;
       # xplr.enable = true;
-      kitty.enable = true;
-      # disabled until the config is stable
-      zed.enable = false;
+      zed.enable = true;
       k9s.enable = true;
       ghostty.enable = true;
       opencode.enable = true;
@@ -76,7 +74,6 @@
     # code-cursor
     apalache
     duckdb
-    mongodb-compass
     bruno
     hotspot
     fblog
@@ -85,7 +82,6 @@
     heaptrack
     samply
     valgrind
-    zed-editor-fhs
     azure-cli
     dagger
     kubelogin

@@ -13,48 +13,6 @@ in
       gnomeExtensions.tiling-shell
     ];
 
-    programs.gnome-terminal = {
-      enable = true;
-      showMenubar = false;
-      profile."3a7a63eb-4515-4532-81ba-de766b863396" = {
-        default = true;
-        visibleName = "Default";
-        cursorShape = "underline";
-        cursorBlinkMode = "on";
-        colors = {
-          backgroundColor = "#1A1B26";
-          foregroundColor = "#C0CAF5";
-          cursor = {
-            foreground = "#1A1B26";
-            background = "#C0CAF5";
-          };
-          highlight = {
-            foreground = "#1A1B26";
-            background = "#C0CAF5";
-          };
-          palette = [
-            "#414868" # Black (Host)
-            "#F7768E" # Red (Syntax string)
-            "#9ECE6A" # Green (Command)
-            "#E0AF68" # Yellow (Command second)
-            "#7AA2F7" # Blue (Path)
-            "#BB9AF7" # Magenta (Syntax var)
-            "#7DCFFF" # Cyan (Prompt)
-            "#A9B1D6" # White
-
-            "#414868" # Bright Black
-            "#F7768E" # Bright Red (Command error)
-            "#9ECE6A" # Bright Green (Exec)
-            "#E0AF68" # Bright Yellow
-            "#7AA2F7" # Bright Blue (Folder)
-            "#BB9AF7" # Bright Magenta
-            "#7DCFFF" # Bright Cyan
-            "#C0CAF5" # Bright White
-          ];
-        };
-      };
-    };
-
     dconf.settings = {
       "org/gnome/desktop/input-sources" = {
         sources = [
@@ -69,7 +27,7 @@ in
         font-name = "Noto Sans Medium 11 @wght=500";
         document-font-name = "Noto Sans Medium 11 @wght=500";
         color-scheme = "prefer-dark";
-        accent-color = "purple";
+        accent-color = "pink";
       };
 
       "org/gnome/desktop/wm/preferences" = {
@@ -86,7 +44,7 @@ in
           "tilingshell@ferrarodomenico.com"
         ];
         favorite-apps = [
-          "org.gnome.Terminal.desktop"
+          "com.mitchellh.ghostty.desktop"
           "qalculate-gtk.desktop"
           "it.mijorus.smile.desktop"
         ];
