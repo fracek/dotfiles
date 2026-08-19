@@ -27,6 +27,7 @@ self: super: {
       ];
     runScript = "zed";
   };
+  delta-bin = super.callPackage ../packages/delta-bin { };
   # bump to a newer version than nixpkgs provides.
   # https://static.ampcode.com/cli/cli-version.txt
   amp-cli = super.amp-cli.overrideAttrs (old: rec {

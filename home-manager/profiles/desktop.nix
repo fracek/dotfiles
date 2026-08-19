@@ -93,6 +93,7 @@
     hexyl
     tuicr
     quint
+    delta-bin
 
     # office
     anki-bin

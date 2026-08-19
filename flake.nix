@@ -154,6 +154,7 @@
             hello-custom = pkgs.hello-custom;
             # devtools
             zed-editor-bin = pkgs.zed-editor-bin;
+            delta-bin = pkgs.delta-bin;
             opencode = pkgs.opencode;
             tuicr = pkgs.tuicr;
             apalache = pkgs.apalache;
