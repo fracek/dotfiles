@@ -37,6 +37,7 @@
     wl-clipboard
     yubikey-manager
     easyeffects
+    bitwarden-cli
 
     # cli
     btop
@@ -45,7 +46,6 @@
     fortune
     ranger
     ripgrep
-    ueberzug
 
     # perf tools
     sysstat
@@ -55,6 +55,7 @@
 
     # dev
     python315
+    secretspec
     docker-client
     git
     grpcurl
